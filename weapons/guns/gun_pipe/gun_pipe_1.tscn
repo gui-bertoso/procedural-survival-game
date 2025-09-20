@@ -29,6 +29,9 @@ rings = 1
 
 [node name="GunPipe" instance=ExtResource("1_bxtch")]
 
+[node name="FireLocale" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.19907841)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, -0.00541045, -0.99998534, 0, 0.99998534, -0.00541045, 0, 0, -0.09958331)
 material_override = SubResource("StandardMaterial3D_gxlak")

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://ckp4b53u6oy0k" path="res://control.gd" id="1_fj5cn"]
-[ext_resource type="PackedScene" uid="uid://jmggwfpl4530" path="res://weapons/guns/gun_core/gun_core_0.tscn" id="2_62e2m"]
 [ext_resource type="Script" uid="uid://cb4eam8v584o8" path="res://camera_3d.gd" id="2_iy58a"]
 [ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="8_6a6wx"]
 
@@ -17,7 +16,10 @@ uv1_scale = Vector3(10, 10, 10)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_qtu10"]
-size = Vector3(23, 11, 1)
+size = Vector3(9, 9, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+bg_color = Color(0.07815645, 0.078156464, 0.078156404, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -63,8 +65,6 @@ mesh = SubResource("BoxMesh_qtu10")
 
 [node name="CoreSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
-
-[node name="GunCore" parent="SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap" instance=ExtResource("2_62e2m")]
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -267,6 +267,29 @@ offset_top = 138.0
 offset_right = 210.0
 offset_bottom = 161.0
 text = "Do You Not Have Parts"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 74.0
+offset_right = 333.0
+offset_bottom = 444.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel2"]
+custom_minimum_size = Vector2(276, 304)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -138.0
+offset_right = 138.5
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]

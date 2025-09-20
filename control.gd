@@ -97,6 +97,7 @@ func update_core():
 	
 	var core = cores_list[core_index].instantiate()
 	core.name = "GunCore"
+	core.in_bench = true
 	core_snap.add_child(core)
 	gun_core = core
 	
