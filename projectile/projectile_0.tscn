@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://682q63w8i53p"]
+
+[ext_resource type="PackedScene" uid="uid://dc1h72qy67w3g" path="res://projectile/projectile.tscn" id="1_haqxh"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_dcun1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qdgn"]
+albedo_color = Color(0, 1, 0.0627451, 1)
+albedo_texture = ExtResource("2_dcun1")
+uv1_triplanar = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ff5ce"]
+radius = 0.043
+height = 0.215
+radial_segments = 6
+rings = 1
+
+[node name="Projectile" instance=ExtResource("1_haqxh")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7qdgn")
+mesh = SubResource("CapsuleMesh_ff5ce")

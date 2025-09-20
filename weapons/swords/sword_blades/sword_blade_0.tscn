@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://4cjk4jg3cq0t"]
+
+[ext_resource type="PackedScene" uid="uid://08u1237ges58" path="res://weapons/swords/sword_blades/sword_blade.tscn" id="1_mhpxe"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_ceuyh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngfko"]
+albedo_texture = ExtResource("2_ceuyh")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ceuyh"]
+size = Vector3(0.005, 0.8, 0.1)
+
+[node name="SwordBlade" instance=ExtResource("1_mhpxe")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+material_override = SubResource("StandardMaterial3D_ngfko")
+mesh = SubResource("BoxMesh_ceuyh")

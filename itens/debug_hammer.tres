@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://d2e2h761b60do"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_ucqfl"]
+
+[resource]
+script = ExtResource("1_ucqfl")
+item_name = "DebugHammer"

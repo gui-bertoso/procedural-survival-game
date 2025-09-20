@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvewtmm6d837k"]
+
+[ext_resource type="PackedScene" uid="uid://ciw4dnhuleuqw" path="res://interface/debug_panel/debug_panel.tscn" id="1_37p78"]
+[ext_resource type="Script" uid="uid://d3xgmdujcke3m" path="res://interface/hud/hud.gd" id="1_rftc2"]
+[ext_resource type="PackedScene" uid="uid://sfiu00ccwgeo" path="res://interface/stats_container/stats_container.tscn" id="2_64ctp"]
+[ext_resource type="PackedScene" uid="uid://cdkpfi3eprihb" path="res://interface/hotbar/hotbar.tscn" id="3_8sq4i"]
+[ext_resource type="PackedScene" uid="uid://hwkql520awev" path="res://interface/target/target.tscn" id="4_640wx"]
+[ext_resource type="PackedScene" uid="uid://c201kqm66rjry" path="res://interface/pause_menu/pause_menu.tscn" id="5_a2258"]
+[ext_resource type="PackedScene" uid="uid://ba2anhl5rk5t5" path="res://interface/weapon_left_down_data/weapon_left_down_data.tscn" id="6_1xsix"]
+[ext_resource type="PackedScene" uid="uid://c5om5lbj6todv" path="res://interface/inventory/inventory.tscn" id="8_5ajw3"]
+
+[node name="HUD" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_rftc2")
+
+[node name="Target" parent="." instance=ExtResource("4_640wx")]
+mouse_filter = 1
+
+[node name="WeaponRightDownData" parent="." instance=ExtResource("6_1xsix")]
+visible = false
+
+[node name="StatsContainer" parent="." instance=ExtResource("2_64ctp")]
+mouse_filter = 1
+
+[node name="Inventory" parent="." instance=ExtResource("8_5ajw3")]
+visible = false
+mouse_filter = 1
+
+[node name="Hotbar" parent="." instance=ExtResource("3_8sq4i")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_a2258")]
+visible = false
+mouse_filter = 1
+
+[node name="DebugPanel" parent="." instance=ExtResource("1_37p78")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -223.0
+offset_top = 18.0
+offset_right = -223.0
+offset_bottom = 18.0
+grow_horizontal = 0
+grow_vertical = 1
+mouse_filter = 1

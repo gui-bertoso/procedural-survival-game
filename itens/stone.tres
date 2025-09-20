@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cndvdj807e0li"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_or1kt"]
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="1_u044j"]
+[ext_resource type="PackedScene" uid="uid://d4dd4jvhoe24o" path="res://assets/template_item_mesh/template_item_mesh.tscn" id="2_746nu"]
+
+[resource]
+script = ExtResource("1_or1kt")
+item_name = "Stone"
+item_type = "resource"

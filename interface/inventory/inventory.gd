@@ -1,0 +1,63 @@
+extends Control
+
+func add_item(_item: Item):
+	if _item.item_type == "consumable" or _item.item_type == "resource":
+		for i in $Panel/GridContainer.get_children():
+			if i.item != null and i.item.item_name == _item.item_name and i.item.item_amount < i.item.item_stack:
+				i.update_amount("+", _item.item_amount)
+				save_inventory()
+				return
+	for i in $Panel/GridContainer.get_children():
+		if i.item == null:
+			i.set_item(_item)
+			save_inventory()
+			return
+	save_inventory()
+
+func get_hotbar_items() -> Array:
+	var a = []
+	for i in range(0, 7):
+		a.append($Panel/GridContainer.get_child(i).item)
+	return a
+
+func _enter_tree() -> void:
+	Globals.inventory = self
+
+func get_item_amount(_item):
+	var v = 0
+	for i in $Panel/GridContainer.get_children():
+		if i.item and i.item.item_name == _item:
+			v += i.item.item_amount
+	return v
+
+func _ready() -> void:
+	for i in $Panel/GridContainer.get_children():
+		i.item_modified.connect(update_hotbar)
+	if not Globals.world_data_dictionary.first_read:
+		load_inventory()
+	else:
+		add_item(load("res://itens/debug_material.tres"))
+
+func save_inventory():
+	for i in range(0, $Panel/GridContainer.get_child_count()-1):
+		var obj = $Panel/GridContainer.get_child(i)
+		if obj.item != null:
+			var aitem = obj.item.duplicate(true)
+			aitem.item_amount = obj.item.item_amount
+			Globals.world_data_dictionary.inventory_data[i] = aitem
+			Globals.world_data_dictionary.inventory_data_amounts[i] = aitem.item_amount
+	DataManagement.resave_world()
+
+func load_inventory():
+	print("LOAD")
+	var c = 0
+	for i in $Panel/GridContainer.get_children():
+		if Globals.world_data_dictionary.inventory_data[c] != null:
+			var ait = Globals.world_data_dictionary.inventory_data[c].duplicate(true)
+			ait.item_amount = Globals.world_data_dictionary.inventory_data_amounts[c]
+			i.set_item(ait)
+			print(ait.item_amount)
+		c += 1
+
+func update_hotbar():
+	Globals.hotbar.update_items(get_hotbar_items())

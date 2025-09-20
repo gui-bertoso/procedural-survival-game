@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6k61a51u1yw1"]
+
+[node name="GunCore" type="Node3D"]
+
+[node name="ComponentsSnaps" type="Node3D" parent="."]
+
+[node name="PipeSnap" type="Marker3D" parent="ComponentsSnaps"]
+
+[node name="HandleSnap" type="Marker3D" parent="ComponentsSnaps"]
+
+[node name="ButtSnap" type="Marker3D" parent="ComponentsSnaps"]

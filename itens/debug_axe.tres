@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=7 format=3 uid="uid://b2i2ajfkdxuqi"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_a5u8v"]
+[ext_resource type="Resource" uid="uid://cndvdj807e0li" path="res://itens/stone.tres" id="2_3nlaa"]
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="3_74s2h"]
+[ext_resource type="Resource" uid="uid://d3mgqwd50ltiw" path="res://itens/branch.tres" id="3_nh51q"]
+[ext_resource type="PackedScene" uid="uid://d4dd4jvhoe24o" path="res://assets/template_item_mesh/template_item_mesh.tscn" id="4_3nlaa"]
+[ext_resource type="Resource" uid="uid://dmybxla26516q" path="res://itens/rope.tres" id="4_k4eu0"]
+
+[resource]
+script = ExtResource("1_a5u8v")
+item_name = "DebugAxe"
+item_type = "weapon"
+item_craft_recipe = Dictionary[ExtResource("1_a5u8v"), int]({
+ExtResource("2_3nlaa"): 2,
+ExtResource("3_nh51q"): 1,
+ExtResource("4_k4eu0"): 1
+})

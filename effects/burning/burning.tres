@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="HungryEffect" load_steps=2 format=3 uid="uid://dev8c8qafync7"]
+
+[ext_resource type="Script" uid="uid://bxabit7jeergg" path="res://effects/burning/burning.gd" id="1_6wy4t"]
+
+[resource]
+script = ExtResource("1_6wy4t")

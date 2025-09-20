@@ -1,0 +1,293 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciw4dnhuleuqw"]
+
+[ext_resource type="Script" uid="uid://dh8gmtjs3ri7n" path="res://interface/debug_panel/debug_panel.gd" id="1_irpul"]
+[ext_resource type="Script" uid="uid://bi6r4stwx8o2q" path="res://map/sub_viewport_container.gd" id="2_57ump"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6yqf"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 0.815686)
+
+[sub_resource type="Environment" id="Environment_5qslj"]
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.33
+adjustment_enabled = true
+adjustment_brightness = 2.25
+adjustment_contrast = 8.0
+
+[node name="DebugPanel" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 947.0
+offset_bottom = -261.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(205, 0)
+mouse_filter = 1
+script = ExtResource("1_irpul")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 204.0
+offset_bottom = 256.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_c6yqf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 204.0
+offset_bottom = 97.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "DEBUG PANEL"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 7.915)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "FPS"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "99999999"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "FRAMETIME"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "0.9ms"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 7.915)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "CAN RISE"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "TRUE"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "RISE V0"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "TRUE"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "RISE V1"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "TRUE"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "RISE V2"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "TRUE"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Panel/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "RISE V3"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "TRUE"
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 266.0
+offset_right = 205.0
+offset_bottom = 383.0
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -50.5
+offset_right = 91.5
+offset_bottom = 295.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "wireframe"
+
+[node name="Button2" type="Button" parent="Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "overdraw"
+
+[node name="Button3" type="Button" parent="Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button4" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button5" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button6" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button7" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button8" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button9" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="Button10" type="Button" parent="Panel2/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "normal"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 398.0
+offset_right = 201.0
+offset_bottom = 598.0
+stretch = true
+script = ExtResource("2_57ump")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 186, 0)
+environment = SubResource("Environment_5qslj")
+
+[connection signal="button_up" from="Panel2/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button4" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button5" to="." method="_on_button_5_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button6" to="." method="_on_button_6_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button7" to="." method="_on_button_7_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button8" to="." method="_on_button_8_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button9" to="." method="_on_button_9_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/Button10" to="." method="_on_button_10_button_up"]

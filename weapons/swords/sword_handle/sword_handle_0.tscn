@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b17yii88urdmw"]
+
+[ext_resource type="PackedScene" uid="uid://xpitlmqwqyfi" path="res://weapons/swords/sword_handle/sword_handle.tscn" id="1_igxxh"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_twpf0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_860a6"]
+albedo_color = Color(1, 1, 0.0627451, 1)
+albedo_texture = ExtResource("2_twpf0")
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ofark"]
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.2
+radial_segments = 6
+
+[node name="SwordHandle" instance=ExtResource("1_igxxh")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+material_override = SubResource("StandardMaterial3D_860a6")
+mesh = SubResource("CylinderMesh_ofark")
