@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cxuhy2crd0ury"]
+[gd_scene load_steps=2 format=3 uid="uid://cxuhy2crd0ury"]
+
+[ext_resource type="Script" uid="uid://oucp7ehelvly" path="res://weapons/guns/gun_butt/gun_butt.gd" id="1_sfwpi"]
 
 [node name="GunButt" type="Node3D"]
+script = ExtResource("1_sfwpi")
