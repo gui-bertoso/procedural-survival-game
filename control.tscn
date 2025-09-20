@@ -1,19 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://bq3huk364skd3"]
+[gd_scene load_steps=9 format=3 uid="uid://bq3huk364skd3"]
 
 [ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://ckp4b53u6oy0k" path="res://control.gd" id="1_fj5cn"]
 [ext_resource type="PackedScene" uid="uid://jmggwfpl4530" path="res://weapons/guns/gun_core/gun_core_0.tscn" id="2_62e2m"]
 [ext_resource type="Script" uid="uid://cb4eam8v584o8" path="res://camera_3d.gd" id="2_iy58a"]
-[ext_resource type="PackedScene" uid="uid://decql1tp6y3i0" path="res://weapons/guns/gun_pipe/gun_pipe_0.tscn" id="3_kbped"]
-[ext_resource type="PackedScene" uid="uid://dg8t02kwxlpwe" path="res://weapons/guns/gun_handle/gun_handle_0.tscn" id="4_fj5cn"]
-[ext_resource type="PackedScene" uid="uid://cuqgrl1g7r78g" path="res://weapons/guns/gun_butt/gun_butt_0.tscn" id="5_iy58a"]
 [ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="8_6a6wx"]
 
 [sub_resource type="Environment" id="Environment_kbped"]
 tonemap_mode = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_62e2m"]
-albedo_color = Color(0.28313744, 0.27707037, 0.2649362, 1)
+albedo_color = Color(0.78763986, 0.7836179, 0.771498, 1)
 albedo_texture = ExtResource("1_0fbet")
 metallic_specular = 0.0
 uv1_scale = Vector3(10, 10, 10)
@@ -21,24 +18,6 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_qtu10"]
 size = Vector3(23, 11, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iy58a"]
-data = PackedVector3Array(-0.0475, 0.08, 0.16749999, 0.0475, 0.08, 0.16749999, -0.0475, -0.08, 0.16749999, 0.0475, 0.08, 0.16749999, 0.0475, -0.08, 0.16749999, -0.0475, -0.08, 0.16749999, 0.0475, 0.08, -0.16749999, -0.0475, 0.08, -0.16749999, 0.0475, -0.08, -0.16749999, -0.0475, 0.08, -0.16749999, -0.0475, -0.08, -0.16749999, 0.0475, -0.08, -0.16749999, 0.0475, 0.08, 0.16749999, 0.0475, 0.08, -0.16749999, 0.0475, -0.08, 0.16749999, 0.0475, 0.08, -0.16749999, 0.0475, -0.08, -0.16749999, 0.0475, -0.08, 0.16749999, -0.0475, 0.08, -0.16749999, -0.0475, 0.08, 0.16749999, -0.0475, -0.08, -0.16749999, -0.0475, 0.08, 0.16749999, -0.0475, -0.08, 0.16749999, -0.0475, -0.08, -0.16749999, 0.0475, 0.08, 0.16749999, -0.0475, 0.08, 0.16749999, 0.0475, 0.08, -0.16749999, -0.0475, 0.08, 0.16749999, -0.0475, 0.08, -0.16749999, 0.0475, 0.08, -0.16749999, -0.0475, -0.08, 0.16749999, 0.0475, -0.08, 0.16749999, -0.0475, -0.08, -0.16749999, 0.0475, -0.08, 0.16749999, 0.0475, -0.08, -0.16749999, -0.0475, -0.08, -0.16749999)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6a6wx"]
-data = PackedVector3Array(0, 0.0025, 0.03, 0.0235, 0.0025, 0.0187, 0, 0, 0.03, 0.0235, 0.0025, 0.0187, 0.0235, 0, 0.0187, 0, 0, 0.03, 0.0235, 0.0025, 0.0187, 0.029199999, 0.0025, -0.0067, 0.0235, 0, 0.0187, 0.029199999, 0.0025, -0.0067, 0.029199999, 0, -0.0067, 0.0235, 0, 0.0187, 0.029199999, 0.0025, -0.0067, 0.012999999, 0.0025, -0.026999999, 0.029199999, 0, -0.0067, 0.012999999, 0.0025, -0.026999999, 0.012999999, 0, -0.026999999, 0.029199999, 0, -0.0067, 0.012999999, 0.0025, -0.026999999, -0.012999999, 0.0025, -0.026999999, 0.012999999, 0, -0.026999999, -0.012999999, 0.0025, -0.026999999, -0.012999999, 0, -0.026999999, 0.012999999, 0, -0.026999999, -0.012999999, 0.0025, -0.026999999, -0.029199999, 0.0025, -0.0067, -0.012999999, 0, -0.026999999, -0.029199999, 0.0025, -0.0067, -0.029199999, 0, -0.0067, -0.012999999, 0, -0.026999999, -0.029199999, 0.0025, -0.0067, -0.0235, 0.0025, 0.0187, -0.029199999, 0, -0.0067, -0.0235, 0.0025, 0.0187, -0.0235, 0, 0.0187, -0.029199999, 0, -0.0067, -0.0235, 0.0025, 0.0187, 0, 0.0025, 0.03, -0.0235, 0, 0.0187, 0, 0.0025, 0.03, 0, 0, 0.03, -0.0235, 0, 0.0187, 0, 0, 0.03, 0.0235, 0, 0.0187, 0, -0.0025, 0.03, 0.0235, 0, 0.0187, 0.0235, -0.0025, 0.0187, 0, -0.0025, 0.03, 0.0235, 0, 0.0187, 0.029199999, 0, -0.0067, 0.0235, -0.0025, 0.0187, 0.029199999, 0, -0.0067, 0.029199999, -0.0025, -0.0067, 0.0235, -0.0025, 0.0187, 0.029199999, 0, -0.0067, 0.012999999, 0, -0.026999999, 0.029199999, -0.0025, -0.0067, 0.012999999, 0, -0.026999999, 0.012999999, -0.0025, -0.026999999, 0.029199999, -0.0025, -0.0067, 0.012999999, 0, -0.026999999, -0.012999999, 0, -0.026999999, 0.012999999, -0.0025, -0.026999999, -0.012999999, 0, -0.026999999, -0.012999999, -0.0025, -0.026999999, 0.012999999, -0.0025, -0.026999999, -0.012999999, 0, -0.026999999, -0.029199999, 0, -0.0067, -0.012999999, -0.0025, -0.026999999, -0.029199999, 0, -0.0067, -0.029199999, -0.0025, -0.0067, -0.012999999, -0.0025, -0.026999999, -0.029199999, 0, -0.0067, -0.0235, 0, 0.0187, -0.029199999, -0.0025, -0.0067, -0.0235, 0, 0.0187, -0.0235, -0.0025, 0.0187, -0.029199999, -0.0025, -0.0067, -0.0235, 0, 0.0187, 0, 0, 0.03, -0.0235, -0.0025, 0.0187, 0, 0, 0.03, 0, -0.0025, 0.03, -0.0235, -0.0025, 0.0187, 0, 0.0025, 0, 0.0235, 0.0025, 0.0187, 0, 0.0025, 0.03, 0, 0.0025, 0, 0.029199999, 0.0025, -0.0067, 0.0235, 0.0025, 0.0187, 0, 0.0025, 0, 0.012999999, 0.0025, -0.026999999, 0.029199999, 0.0025, -0.0067, 0, 0.0025, 0, -0.012999999, 0.0025, -0.026999999, 0.012999999, 0.0025, -0.026999999, 0, 0.0025, 0, -0.029199999, 0.0025, -0.0067, -0.012999999, 0.0025, -0.026999999, 0, 0.0025, 0, -0.0235, 0.0025, 0.0187, -0.029199999, 0.0025, -0.0067, 0, 0.0025, 0, 0, 0.0025, 0.03, -0.0235, 0.0025, 0.0187, 0, -0.0025, 0, 0, -0.0025, 0.03, 0.0235, -0.0025, 0.0187, 0, -0.0025, 0, 0.0235, -0.0025, 0.0187, 0.029199999, -0.0025, -0.0067, 0, -0.0025, 0, 0.029199999, -0.0025, -0.0067, 0.012999999, -0.0025, -0.026999999, 0, -0.0025, 0, 0.012999999, -0.0025, -0.026999999, -0.012999999, -0.0025, -0.026999999, 0, -0.0025, 0, -0.012999999, -0.0025, -0.026999999, -0.029199999, -0.0025, -0.0067, 0, -0.0025, 0, -0.029199999, -0.0025, -0.0067, -0.0235, -0.0025, 0.0187, 0, -0.0025, 0, -0.0235, -0.0025, 0.0187, 0, -0.0025, 0.03)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sky72"]
-data = PackedVector3Array(-0.022499999, 0.12, 0.0425, 0.022499999, 0.12, 0.0425, -0.022499999, -0.12, 0.0425, 0.022499999, 0.12, 0.0425, 0.022499999, -0.12, 0.0425, -0.022499999, -0.12, 0.0425, 0.022499999, 0.12, -0.0425, -0.022499999, 0.12, -0.0425, 0.022499999, -0.12, -0.0425, -0.022499999, 0.12, -0.0425, -0.022499999, -0.12, -0.0425, 0.022499999, -0.12, -0.0425, 0.022499999, 0.12, 0.0425, 0.022499999, 0.12, -0.0425, 0.022499999, -0.12, 0.0425, 0.022499999, 0.12, -0.0425, 0.022499999, -0.12, -0.0425, 0.022499999, -0.12, 0.0425, -0.022499999, 0.12, -0.0425, -0.022499999, 0.12, 0.0425, -0.022499999, -0.12, -0.0425, -0.022499999, 0.12, 0.0425, -0.022499999, -0.12, 0.0425, -0.022499999, -0.12, -0.0425, 0.022499999, 0.12, 0.0425, -0.022499999, 0.12, 0.0425, 0.022499999, 0.12, -0.0425, -0.022499999, 0.12, 0.0425, -0.022499999, 0.12, -0.0425, 0.022499999, 0.12, -0.0425, -0.022499999, -0.12, 0.0425, 0.022499999, -0.12, 0.0425, -0.022499999, -0.12, -0.0425, 0.022499999, -0.12, 0.0425, 0.022499999, -0.12, -0.0425, -0.022499999, -0.12, -0.0425)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0ytqx"]
-data = PackedVector3Array(-0.015, 0.024999999, 0.24, 0.015, 0.024999999, 0.24, -0.015, -0.024999999, 0.24, 0.015, 0.024999999, 0.24, 0.015, -0.024999999, 0.24, -0.015, -0.024999999, 0.24, 0.015, 0.024999999, -0.24, -0.015, 0.024999999, -0.24, 0.015, -0.024999999, -0.24, -0.015, 0.024999999, -0.24, -0.015, -0.024999999, -0.24, 0.015, -0.024999999, -0.24, 0.015, 0.024999999, 0.24, 0.015, 0.024999999, -0.24, 0.015, -0.024999999, 0.24, 0.015, 0.024999999, -0.24, 0.015, -0.024999999, -0.24, 0.015, -0.024999999, 0.24, -0.015, 0.024999999, -0.24, -0.015, 0.024999999, 0.24, -0.015, -0.024999999, -0.24, -0.015, 0.024999999, 0.24, -0.015, -0.024999999, 0.24, -0.015, -0.024999999, -0.24, 0.015, 0.024999999, 0.24, -0.015, 0.024999999, 0.24, 0.015, 0.024999999, -0.24, -0.015, 0.024999999, 0.24, -0.015, 0.024999999, -0.24, 0.015, 0.024999999, -0.24, -0.015, -0.024999999, 0.24, 0.015, -0.024999999, 0.24, -0.015, -0.024999999, -0.24, 0.015, -0.024999999, 0.24, 0.015, -0.024999999, -0.24, -0.015, -0.024999999, -0.24)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pxugv"]
-data = PackedVector3Array(-0.015, 0.005, 0.24, 0.015, 0.005, 0.24, -0.015, -0.005, 0.24, 0.015, 0.005, 0.24, 0.015, -0.005, 0.24, -0.015, -0.005, 0.24, 0.015, 0.005, -0.24, -0.015, 0.005, -0.24, 0.015, -0.005, -0.24, -0.015, 0.005, -0.24, -0.015, -0.005, -0.24, 0.015, -0.005, -0.24, 0.015, 0.005, 0.24, 0.015, 0.005, -0.24, 0.015, -0.005, 0.24, 0.015, 0.005, -0.24, 0.015, -0.005, -0.24, 0.015, -0.005, 0.24, -0.015, 0.005, -0.24, -0.015, 0.005, 0.24, -0.015, -0.005, -0.24, -0.015, 0.005, 0.24, -0.015, -0.005, 0.24, -0.015, -0.005, -0.24, 0.015, 0.005, 0.24, -0.015, 0.005, 0.24, 0.015, 0.005, -0.24, -0.015, 0.005, 0.24, -0.015, 0.005, -0.24, 0.015, 0.005, -0.24, -0.015, -0.005, 0.24, 0.015, -0.005, 0.24, -0.015, -0.005, -0.24, 0.015, -0.005, 0.24, 0.015, -0.005, -0.24, -0.015, -0.005, -0.24)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eh0v1"]
-data = PackedVector3Array(-0.02, 0.06, 0.08, 0.02, 0.06, 0.08, -0.02, -0.06, 0.08, 0.02, 0.06, 0.08, 0.02, -0.06, 0.08, -0.02, -0.06, 0.08, 0.02, 0.06, -0.08, -0.02, 0.06, -0.08, 0.02, -0.06, -0.08, -0.02, 0.06, -0.08, -0.02, -0.06, -0.08, 0.02, -0.06, -0.08, 0.02, 0.06, 0.08, 0.02, 0.06, -0.08, 0.02, -0.06, 0.08, 0.02, 0.06, -0.08, 0.02, -0.06, -0.08, 0.02, -0.06, 0.08, -0.02, 0.06, -0.08, -0.02, 0.06, 0.08, -0.02, -0.06, -0.08, -0.02, 0.06, 0.08, -0.02, -0.06, 0.08, -0.02, -0.06, -0.08, 0.02, 0.06, 0.08, -0.02, 0.06, 0.08, 0.02, 0.06, -0.08, -0.02, 0.06, 0.08, -0.02, 0.06, -0.08, 0.02, 0.06, -0.08, -0.02, -0.06, 0.08, 0.02, -0.06, 0.08, -0.02, -0.06, -0.08, 0.02, -0.06, 0.08, 0.02, -0.06, -0.08, -0.02, -0.06, -0.08)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -80,46 +59,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.038342)
 material_override = SubResource("StandardMaterial3D_62e2m")
 mesh = SubResource("BoxMesh_qtu10")
 
-[node name="Marker3D" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 1)
+[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D"]
 
-[node name="GunCore" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D" instance=ExtResource("2_62e2m")]
+[node name="CoreSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/MeshInstance3D" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_iy58a")
-
-[node name="GunPipe" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/PipeSnap" index="0" instance=ExtResource("3_kbped")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/PipeSnap/GunPipe/MeshInstance3D/MeshInstance3D" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/PipeSnap/GunPipe/MeshInstance3D/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_6a6wx")
-
-[node name="GunHandle" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/HandleSnap" index="0" instance=ExtResource("4_fj5cn")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/HandleSnap/GunHandle/MeshInstance3D" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/HandleSnap/GunHandle/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_sky72")
-
-[node name="GunButt" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap" index="0" instance=ExtResource("5_iy58a")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt/MeshInstance3D" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_0ytqx")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt/MeshInstance3D2" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt/MeshInstance3D2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_pxugv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt/MeshInstance3D3" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt/MeshInstance3D3/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_eh0v1")
+[node name="GunCore" parent="SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap" instance=ExtResource("2_62e2m")]
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -129,6 +74,15 @@ offset_right = 1126.0
 offset_bottom = 627.0
 theme_override_font_sizes/font_size = 24
 text = "READY"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 965.0
+offset_top = 498.0
+offset_right = 1126.0
+offset_bottom = 555.0
+theme_override_font_sizes/font_size = 24
+text = "RANDOMIZE"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -141,10 +95,10 @@ text = "GUNS BENCH"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 524.0
-offset_right = 221.0
-offset_bottom = 628.0
+offset_left = 26.0
+offset_top = 463.0
+offset_right = 229.0
+offset_bottom = 621.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -203,6 +157,36 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "9999.5"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "RECOID"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "9999.5"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "PRECISION"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer6"]
 layout_mode = 2
 text = "9999.5"
 
@@ -284,13 +268,9 @@ offset_right = 210.0
 offset_bottom = 161.0
 text = "Do You Not Have Parts"
 
+[connection signal="button_up" from="Button2" to="." method="_on_button_2_button_up"]
 [connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
 [connection signal="button_up" from="TextureButton2" to="." method="_on_texture_button_2_button_up"]
 [connection signal="button_up" from="TextureButton3" to="." method="_on_texture_button_3_button_up"]
 [connection signal="button_up" from="TextureButton4" to="." method="_on_texture_button_4_button_up"]
 [connection signal="button_up" from="TextureButton5" to="." method="_on_texture_button_5_button_up"]
-
-[editable path="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore"]
-[editable path="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/PipeSnap/GunPipe"]
-[editable path="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/HandleSnap/GunHandle"]
-[editable path="SubViewportContainer/SubViewport/Node3D/MeshInstance3D/Marker3D/GunCore/ComponentsSnaps/ButtSnap/GunButt"]
