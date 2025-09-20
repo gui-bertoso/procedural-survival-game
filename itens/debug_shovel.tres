@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://f4wvatxq0wk4"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_sqdvk"]
+
+[resource]
+script = ExtResource("1_sqdvk")
+item_name = "DebugShovel"

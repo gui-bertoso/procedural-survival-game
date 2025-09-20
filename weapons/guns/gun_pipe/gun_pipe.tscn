@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://c4f2wln8xi62w"]
+
+[node name="GunPipe" type="Node3D"]
+
+[node name="FireLocale" type="Marker3D" parent="."]

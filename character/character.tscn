@@ -1,0 +1,127 @@
+[gd_scene load_steps=14 format=3 uid="uid://ddc8k6gybq8ur"]
+
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="1_glpr6"]
+[ext_resource type="Script" uid="uid://cv3m1jlux8g8b" path="res://character/character.gd" id="1_pjt0s"]
+[ext_resource type="Script" uid="uid://cp6e6ejhykuro" path="res://character/ray_cast.gd" id="3_hx151"]
+[ext_resource type="Script" uid="uid://bnsd14hsq3cd3" path="res://character/stats.gd" id="3_wa5vi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjt0s"]
+albedo_color = Color(1, 1, 0, 1)
+albedo_texture = ExtResource("1_glpr6")
+uv1_triplanar = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wa5vi"]
+radius = 0.4
+height = 1.7
+radial_segments = 16
+rings = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glpr6"]
+albedo_color = Color(1, 0.227451, 0.0627451, 1)
+albedo_texture = ExtResource("1_glpr6")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_pjt0s"]
+size = Vector3(0.58, 0.165, 0.36)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wa5vi"]
+radius = 0.4638672
+height = 1.7033691
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ugqs2"]
+radius = 0.4638672
+height = 1.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx151"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_hx151"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rvpn"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Character" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_pjt0s")
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.850122, 0)
+material_override = SubResource("StandardMaterial3D_pjt0s")
+mesh = SubResource("CapsuleMesh_wa5vi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.567281, -0.260091)
+material_override = SubResource("StandardMaterial3D_glpr6")
+mesh = SubResource("BoxMesh_pjt0s")
+
+[node name="Hand" type="Marker3D" parent="Body"]
+
+[node name="CameraOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, -0.429)
+
+[node name="Camera" type="Camera3D" parent="CameraOffset"]
+current = true
+
+[node name="RayCast" type="RayCast3D" parent="CameraOffset/Camera"]
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 11
+collide_with_areas = true
+script = ExtResource("3_hx151")
+
+[node name="NormalCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855371, -0.06831646)
+shape = SubResource("CapsuleShape3D_wa5vi")
+
+[node name="CrouchedCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56673574, -0.06831646)
+shape = SubResource("CapsuleShape3D_ugqs2")
+disabled = true
+
+[node name="Stats" type="Node" parent="." groups=["players_stats"]]
+script = ExtResource("3_wa5vi")
+
+[node name="Verifiers" type="Node3D" parent="."]
+
+[node name="UncrouchVerifier" type="RayCast3D" parent="Verifiers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1075175, 0)
+enabled = false
+target_position = Vector3(0, 0.655, 0)
+collision_mask = 3
+
+[node name="JumpVerifier0" type="RayCast3D" parent="Verifiers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46978864, -0.74235237)
+target_position = Vector3(0, -0.37, 0)
+collision_mask = 3
+
+[node name="JumpVerifier1" type="RayCast3D" parent="Verifiers"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.962023, -0.49473965)
+target_position = Vector3(0, 0, -0.5)
+collision_mask = 3
+
+[node name="JumpVerifier2" type="RayCast3D" parent="Verifiers"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.4, -0.28034914)
+target_position = Vector3(0, 0, -0.8)
+collision_mask = 3
+
+[node name="JumpVerifier3" type="RayCast3D" parent="Verifiers"]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.3138402, -0.9505931)
+target_position = Vector3(0, -0.935, 0)
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.70710677, -0.70710677, -3.090862e-08, 0, -4.371139e-08, 1, -0.70710677, -0.70710677, -3.090862e-08, 0, 17.877476, 0)
+material_override = SubResource("StandardMaterial3D_hx151")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_hx151")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.39739448, -0.40274462, -3.0908616e-08, 0, -2.4896558e-08, 0.99999994, -0.39739448, -0.40274462, -3.0908616e-08, 0.089279175, 17.877476, 3.2140827)
+material_override = SubResource("StandardMaterial3D_0rvpn")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_hx151")

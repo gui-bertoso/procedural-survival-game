@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ec6w0kvbitf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gg3in"]
+sky_top_color = Color(0.250423, 0.432149, 0.789578, 1)
+sky_horizon_color = Color(0.491292, 0.676891, 0.837946, 1)
+
+[sub_resource type="Sky" id="Sky_xy7mn"]
+sky_material = SubResource("ProceduralSkyMaterial_gg3in")
+
+[sub_resource type="Environment" id="Environment_d6ekp"]
+background_mode = 2
+sky = SubResource("Sky_xy7mn")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+fog_density = 0.001
+volumetric_fog_enabled = true
+volumetric_fog_length = 3.6
+
+[node name="Envinroment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d6ekp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.85264, 0.522499, 0, -0.522499, 0.85264, 0, 0, 0)
+shadow_enabled = true

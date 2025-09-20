@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=3 uid="uid://c201kqm66rjry"]
+
+[ext_resource type="Script" uid="uid://cdwyisxkkn5kh" path="res://pause_menu/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="PackedScene" uid="uid://bvyujljyfjq5h" path="res://settings_screen/settings_screen.tscn" id="2_nwcfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x2hje"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -140.0
+offset_right = 217.5
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -128.0
+offset_right = 206.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "PAUSE MENU"
+
+[node name="Control" type="Control" parent="Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel2/VBoxContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "RESUME"
+
+[node name="Button2" type="Button" parent="Panel2/VBoxContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "SAVE"
+
+[node name="Button3" type="Button" parent="Panel2/VBoxContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "MENU"
+
+[node name="Button4" type="Button" parent="Panel2/VBoxContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+text = "QUIT"
+
+[node name="SettingsScreen" parent="." instance=ExtResource("2_nwcfo")]
+process_mode = 3
+visible = false
+layout_mode = 1
+
+[node name="Back" parent="SettingsScreen" index="1"]
+visible = false
+
+[node name="Back2" type="Button" parent="SettingsScreen"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 121.0
+offset_bottom = 58.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x2hje")
+text = "BACK"
+
+[connection signal="button_up" from="Panel2/VBoxContainer/VBoxContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/VBoxContainer/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Panel2/VBoxContainer/VBoxContainer/Button4" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="SettingsScreen/Back2" to="." method="_on_back_2_button_up"]
+
+[editable path="SettingsScreen"]

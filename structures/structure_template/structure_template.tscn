@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqt0flxktk083"]
+
+[ext_resource type="Script" uid="uid://bujmfrrpbish6" path="res://structures/structure_template/structure_template.gd" id="1_4xsld"]
+
+[node name="StructureTemplate" type="StaticBody3D"]
+script = ExtResource("1_4xsld")

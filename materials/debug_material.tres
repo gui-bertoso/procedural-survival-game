@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bpre0jasu"]
+
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="1_vecql"]
+
+[resource]
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = ExtResource("1_vecql")
+metallic_specular = 0.0
+uv1_triplanar = true

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuqgrl1g7r78g"]
+
+[ext_resource type="PackedScene" uid="uid://cxuhy2crd0ury" path="res://weapons/guns/gun_butt/gun_butt.tscn" id="1_0ll08"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_t4e4t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tyj51"]
+albedo_color = Color(1.973361e-06, 0.5590027, 0.01636176, 1)
+albedo_texture = ExtResource("2_t4e4t")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_726wm"]
+size = Vector3(0.03, 0.05, 0.48)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w3tap"]
+size = Vector3(0.03, 0.01, 0.48)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oii00"]
+albedo_color = Color(6.016344e-09, 0.34268397, 0.005768952, 1)
+albedo_texture = ExtResource("2_t4e4t")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_jxl4t"]
+size = Vector3(0.04, 0.12, 0.16)
+
+[node name="GunButt" instance=ExtResource("1_0ll08")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.039668083, 0.24)
+material_override = SubResource("StandardMaterial3D_tyj51")
+mesh = SubResource("BoxMesh_726wm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.010927055, 0.24)
+material_override = SubResource("StandardMaterial3D_tyj51")
+mesh = SubResource("BoxMesh_w3tap")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004701752, 0.44705963)
+material_override = SubResource("StandardMaterial3D_oii00")
+mesh = SubResource("BoxMesh_jxl4t")

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://qoqjfixkdnil"]
+
+[ext_resource type="PackedScene" uid="uid://dqt0flxktk083" path="res://structures/structure_template/structure_template.tscn" id="1_jgnl7"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_1xt7s"]
+[ext_resource type="Script" uid="uid://ba72yexysnmfw" path="res://structures/debug_item_giver/debug_item_giver.gd" id="2_vrsp7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xt7s"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_1xt7s")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_jgnl7"]
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1xt7s"]
+data = PackedVector3Array(-0.5, 0.099999994, 0.5, 0.5, 0.099999994, 0.5, -0.5, -0.099999994, 0.5, 0.5, 0.099999994, 0.5, 0.5, -0.099999994, 0.5, -0.5, -0.099999994, 0.5, 0.5, 0.099999994, -0.5, -0.5, 0.099999994, -0.5, 0.5, -0.099999994, -0.5, -0.5, 0.099999994, -0.5, -0.5, -0.099999994, -0.5, 0.5, -0.099999994, -0.5, 0.5, 0.099999994, 0.5, 0.5, 0.099999994, -0.5, 0.5, -0.099999994, 0.5, 0.5, 0.099999994, -0.5, 0.5, -0.099999994, -0.5, 0.5, -0.099999994, 0.5, -0.5, 0.099999994, -0.5, -0.5, 0.099999994, 0.5, -0.5, -0.099999994, -0.5, -0.5, 0.099999994, 0.5, -0.5, -0.099999994, 0.5, -0.5, -0.099999994, -0.5, 0.5, 0.099999994, 0.5, -0.5, 0.099999994, 0.5, 0.5, 0.099999994, -0.5, -0.5, 0.099999994, 0.5, -0.5, 0.099999994, -0.5, 0.5, 0.099999994, -0.5, -0.5, -0.099999994, 0.5, 0.5, -0.099999994, 0.5, -0.5, -0.099999994, -0.5, 0.5, -0.099999994, 0.5, 0.5, -0.099999994, -0.5, -0.5, -0.099999994, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrsp7"]
+albedo_color = Color(1, 0, 1, 1)
+albedo_texture = ExtResource("2_1xt7s")
+emission_enabled = true
+emission = Color(1, 0, 1, 1)
+emission_energy_multiplier = 1.61
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_3j4vr"]
+size = Vector3(0.6, 0.6, 0.6)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vrsp7"]
+data = PackedVector3Array(-0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, 0.29999998, 0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, 0.29999998, 0.29999998, -0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, 0.29999998, -0.29999998, 0.29999998, 0.29999998, -0.29999998, -0.29999998, -0.29999998, -0.29999998, -0.29999998)
+
+[node name="DebugItemGiver" instance=ExtResource("1_jgnl7")]
+collision_layer = 2
+script = ExtResource("2_vrsp7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+material_override = SubResource("StandardMaterial3D_1xt7s")
+mesh = SubResource("BoxMesh_jgnl7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("ConcavePolygonShape3D_1xt7s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.70863545, 0.7055748, 0, -0.5085308, 0.5107367, -0.69321316, -0.48911375, 0.49123544, 0.7207326, 0, 0.91810966, -0.0052776337)
+material_override = SubResource("StandardMaterial3D_vrsp7")
+mesh = SubResource("BoxMesh_3j4vr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(0.70863545, 0.7055748, 0, -0.5085308, 0.5107367, -0.69321316, -0.48911375, 0.49123544, 0.7207326, 0, 0.91810966, -0.0052776337)
+shape = SubResource("ConcavePolygonShape3D_vrsp7")

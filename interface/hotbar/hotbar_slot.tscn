@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2xchaac5hm0g"]
+
+[ext_resource type="Texture2D" uid="uid://x5q2s245mrk3" path="res://assets/Sprite-0002.png" id="1_1a228"]
+
+[node name="TextureRect" type="TextureRect"]
+modulate = Color(1, 1, 1, 0.69803923)
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("1_1a228")
+expand_mode = 1

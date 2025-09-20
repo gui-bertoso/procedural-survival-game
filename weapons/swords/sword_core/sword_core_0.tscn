@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://brxgbfngtrp7u"]
+
+[ext_resource type="PackedScene" uid="uid://cot118jtiwujf" path="res://weapons/swords/sword_core/sword_core.tscn" id="1_yicvw"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_wk1ye"]
+[ext_resource type="PackedScene" uid="uid://b17yii88urdmw" path="res://weapons/swords/sword_handle/sword_handle_0.tscn" id="3_nbccc"]
+[ext_resource type="PackedScene" uid="uid://4cjk4jg3cq0t" path="res://weapons/swords/sword_blades/sword_blade_0.tscn" id="4_14j15"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbccc"]
+albedo_color = Color(0, 1, 1, 1)
+albedo_texture = ExtResource("2_wk1ye")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_14j15"]
+size = Vector3(0.06, 0.025, 0.21)
+
+[node name="SwordCore" instance=ExtResource("1_yicvw")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_nbccc")
+mesh = SubResource("BoxMesh_14j15")
+
+[node name="ComponentsSnaps" type="Node3D" parent="." index="1"]
+
+[node name="HandleSnap" type="Marker3D" parent="ComponentsSnaps" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012733415, 0)
+
+[node name="SwordHandle" parent="ComponentsSnaps/HandleSnap" index="0" instance=ExtResource("3_nbccc")]
+
+[node name="BladeSnap" type="Marker3D" parent="ComponentsSnaps" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012733415, 0)
+
+[node name="SwordBlade" parent="ComponentsSnaps/BladeSnap" index="0" instance=ExtResource("4_14j15")]
