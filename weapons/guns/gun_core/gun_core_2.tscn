@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4aqnuf3108od"]
+
+[ext_resource type="PackedScene" uid="uid://b6k61a51u1yw1" path="res://weapons/guns/gun_core/gun_core.tscn" id="1_0stny"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_54glu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_egpkw"]
+albedo_color = Color(1, 0.22745098, 1, 1)
+albedo_texture = ExtResource("2_54glu")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqeo3"]
+size = Vector3(0.08, 0.16, 0.36)
+
+[node name="GunCore" instance=ExtResource("1_0stny")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_egpkw")
+mesh = SubResource("BoxMesh_oqeo3")
+
+[node name="PipeSnap" parent="ComponentsSnaps" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.018356431, -0.18170264)
+
+[node name="HandleSnap" parent="ComponentsSnaps" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07810623, 0.08885604)
+
+[node name="ButtSnap" parent="ComponentsSnaps" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024057366, 0.17995587)
+
+[node name="ScopeSnap" parent="ComponentsSnaps" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08192375, 0.0705683)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b30bgv6tysurh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gnju3"]
+albedo_color = Color(0.24031642, 0.085536785, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mi7w2"]
+size = Vector3(3.935, 1, 2.55)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kob2j"]
+albedo_color = Color(0.59465235, 0.42601463, 0.32570767, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_87o50"]
+size = Vector3(2.075, 1, 1.485)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d0dex"]
+size = Vector3(0.2, 1.095, 0.2)
+
+[node name="GunsBench" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_gnju3")
+mesh = SubResource("BoxMesh_mi7w2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.023828864, 0)
+material_override = SubResource("StandardMaterial3D_kob2j")
+mesh = SubResource("BoxMesh_87o50")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6600322, 0, -1.0310855)
+mesh = SubResource("BoxMesh_d0dex")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6600322, 0, 0.99048746)
+mesh = SubResource("BoxMesh_d0dex")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6183068, 0, -1.0310855)
+mesh = SubResource("BoxMesh_d0dex")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6183068, 0, 0.99048746)
+mesh = SubResource("BoxMesh_d0dex")
