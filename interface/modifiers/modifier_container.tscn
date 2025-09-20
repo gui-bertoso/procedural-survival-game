@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://jaf3rbsv30rw"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q7f58"]
+
+[node name="ColorRect" type="ColorRect"]
+custom_minimum_size = Vector2(192, 39)
+color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 36.0
+offset_bottom = 36.0
+texture = SubResource("NoiseTexture2D_q7f58")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 7.0
+offset_right = 187.0
+offset_bottom = 30.0
+text = "ASFASDFSDSDFDS"
