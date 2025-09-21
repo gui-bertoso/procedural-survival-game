@@ -26,6 +26,10 @@ func _process(delta: float) -> void:
 					interface.select_modification(self)
 					color = Color(0.6, 0.6, 0.2)
 
+func unselect():
+	selected = false
+	color = Color(0.1, 0.1, 0.1)
+
 func _on_mouse_entered() -> void:
 	print("ENTERED")
 	if selected:
