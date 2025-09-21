@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name GunModification
 
 @export var modification_name = "Modification"
