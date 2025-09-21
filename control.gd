@@ -36,6 +36,20 @@ var core_index = 0
 var pipe_index = 0
 var butt_index = 0
 
+var pipes_mod_list = [
+	preload("res://modifications/guns/debug_pipe_0.tres"),
+	preload("res://modifications/guns/debug_pipe_1.tres"),
+	preload("res://modifications/guns/debug_pipe_2.tres"),
+	preload("res://modifications/guns/debug_pipe_3.tres"),
+	preload("res://modifications/guns/debug_pipe_4.tres"),
+	preload("res://modifications/guns/debug_pipe_5.tres"),
+	preload("res://modifications/guns/debug_pipe_6.tres"),
+	preload("res://modifications/guns/debug_pipe_7.tres"),
+	preload("res://modifications/guns/debug_pipe_8.tres")
+]
+
+@onready var modifier_scene = preload("res://interface/modifiers/modifier_container.tscn")
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		$SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.y += (event.relative.y * 0.0001)
@@ -66,10 +80,20 @@ func _on_texture_button_5_button_up() -> void:
 	update_core()
 
 func _ready() -> void:
+	set_mods()
+	
 	update_core()
 	update_butt()
 	update_pipe()
 	update_handle()
+
+func set_mods():
+	for mod in pipes_mod_list:
+		var a = modifier_scene.instantiate()
+		a.set_mod(mod.duplicate(true))
+		a.mouse_entered.connect(mouse_interact.bind("entered", a))
+		a.mouse_exited.connect(mouse_interact.bind("exited", a))
+		$Panel2/ScrollContainer/VBoxContainer.add_child(a)
 
 func update_pipe():
 	for i in gun_core.pipe_snap.get_children():
