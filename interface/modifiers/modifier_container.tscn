@@ -25,3 +25,6 @@ offset_top = 7.0
 offset_right = 187.0
 offset_bottom = 30.0
 text = "ASFASDFSDSDFDS"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -272,6 +272,7 @@ offset_bottom = 161.0
 text = "Do You Not Have Parts"
 
 [node name="Panel2" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 22.0
 offset_top = 74.0
@@ -312,57 +313,44 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel3" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 245.0
 offset_top = 74.0
-offset_right = 443.0
-offset_bottom = 372.0
+offset_right = 455.0
+offset_bottom = 245.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kbped")
 
-[node name="Label" type="Label" parent="Panel3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel3"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 5.0
-offset_right = 100.0
-offset_bottom = 28.0
-text = "MOD_NAME"
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 156.0
 
-[node name="Label2" type="Label" parent="Panel3"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 38.0
-offset_right = 100.0
-offset_bottom = 61.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel3/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "MOD NAME:"
+
+[node name="Label2" type="Label" parent="Panel3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "AAAAAAAAAA"
+
+[node name="Label2" type="Label" parent="Panel3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "RECIPE"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel3"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 62.0
-offset_right = 192.0
-offset_bottom = 141.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel3/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel3/VBoxContainer"]
+custom_minimum_size = Vector2(188, 100)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
-[node name="Label3" type="Label" parent="Panel3"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 156.0
-offset_right = 113.0
-offset_bottom = 179.0
-text = "STATS BONUS"
-
-[node name="ScrollContainer2" type="ScrollContainer" parent="Panel3"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 180.0
-offset_right = 191.0
-offset_bottom = 293.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel3/ScrollContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel3/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
