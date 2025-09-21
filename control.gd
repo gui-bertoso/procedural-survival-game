@@ -7,8 +7,8 @@ class_name GunsBench
 var gun_core = null
 
 var core_index = 0
-var pipe_index = 0
-var butt_index = 0
+var pipe_snap = null
+var butt_snap = null
 
 var pipes_mod_list = [
 	preload("res://modifications/guns/debug_pipe_0.tres"),
@@ -53,11 +53,13 @@ func _on_texture_button_button_up() -> void:
 		deselect_modification()
 		on_pipe = false
 		on_butt = false
+		clear_preview()
 	else:
 		$Panel2.visible = true
 		set_mods_to_pipes()
 		on_pipe = true
 		on_butt = false
+		clear_preview()
 
 func _on_texture_button_2_button_up() -> void:
 	pass
@@ -70,13 +72,16 @@ func _on_texture_button_3_button_up() -> void:
 		deselect_modification()
 		on_butt = false
 		on_pipe = false
+		clear_preview()
 	else:
 		$Panel2.visible = true
 		set_mods_to_butts()
 		on_butt = true
 		on_pipe = false
+		clear_preview()
 
 func deselect_modification():
+	clear_preview()
 	$Panel3/VBoxContainer/HBoxContainer/Label2.text = ""
 	for i in $Panel3/VBoxContainer/ScrollContainer/VBoxContainer.get_children():
 		i.queue_free()
@@ -109,7 +114,6 @@ func set_mods_to_butts():
 		a.interface = self
 		$Panel2/ScrollContainer/VBoxContainer.add_child(a)
 
-
 func hide_mods():
 	for mod in $Panel2/ScrollContainer/VBoxContainer.get_children():
 		mod.queue_free()
@@ -117,7 +121,11 @@ func hide_mods():
 	$Panel3.hide()
 
 func select_modification(modification_recipe: ModificationRecipe):
+	if selected_modification:
+		if selected_modification != modification_recipe:
+			selected_modification.unselect()
 	selected_modification = modification_recipe
+	set_preview(modification_recipe.item)
 	$Panel3.show()
 	for i in $Panel3/VBoxContainer/ScrollContainer/VBoxContainer.get_children():
 		i.queue_free()
@@ -131,6 +139,28 @@ func select_modification(modification_recipe: ModificationRecipe):
 		b.set_item(item)
 		$Panel3/VBoxContainer/ScrollContainer/VBoxContainer.add_child(b)
 
+func set_preview(modification: GunModification):
+	for i in pipe_snap.get_children():
+		i.queue_free()
+	for i in butt_snap.get_children():
+		i.queue_free()
+	var a = modification.modification_scene.instantiate()
+	for i in a.get_children():
+		if i is MeshInstance3D:
+			i.material_override = load("res://materials/preview_material.tres")
+			i.transparency = 0.75
+	match modification.modification_type:
+		"pipe":
+			pipe_snap.add_child(a)
+		"butt":
+			butt_snap.add_child(a)
+
+func clear_preview():
+	for i in pipe_snap.get_children():
+		i.queue_free()
+	for i in butt_snap.get_children():
+		i.queue_free()
+
 func update_core():
 	for i in core_snap.get_children():
 		i.queue_free()
@@ -140,6 +170,9 @@ func update_core():
 	core.in_bench = true
 	core_snap.add_child(core)
 	gun_core = core
+	
+	pipe_snap = core.get_node("ComponentsSnaps/PipeSnap")
+	butt_snap = core.get_node("ComponentsSnaps/ButtSnap")
 
 func _on_button_2_button_up() -> void:
 	pass

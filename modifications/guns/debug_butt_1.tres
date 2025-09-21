@@ -9,6 +9,7 @@
 [resource]
 script = ExtResource("3_ypry7")
 modification_name = "DebugButt1"
+modification_type = "butt"
 modification_ingredients = Dictionary[ExtResource("2_ugg2o"), int]({
 ExtResource("3_ugg2o"): 2
 })
