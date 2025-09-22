@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://xd0gh2k0h52c"]
 
 [ext_resource type="Script" uid="uid://cf6llt8rjhige" path="res://interface/splash_screen/splash_screen.gd" id="1_el3v4"]
-[ext_resource type="Texture2D" uid="uid://c5adrcecwyw1f" path="res://assets/Sprite-0005.png" id="1_ty3ja"]
+[ext_resource type="Texture2D" uid="uid://c5adrcecwyw1f" path="res://assets/sprites/dev_icon.png" id="1_ty3ja"]
 
 [sub_resource type="Animation" id="Animation_ty3ja"]
 resource_name = "start"

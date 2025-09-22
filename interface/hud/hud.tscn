@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c201kqm66rjry" path="res://interface/pause_menu/pause_menu.tscn" id="5_a2258"]
 [ext_resource type="PackedScene" uid="uid://ba2anhl5rk5t5" path="res://interface/weapon_left_down_data/weapon_left_down_data.tscn" id="6_1xsix"]
 [ext_resource type="PackedScene" uid="uid://c5om5lbj6todv" path="res://interface/inventory/inventory.tscn" id="8_5ajw3"]
-[ext_resource type="PackedScene" uid="uid://dahrvvvj0jwkp" path="res://components/craft_interface_component.tscn" id="9_s78rs"]
-[ext_resource type="PackedScene" uid="uid://bq3huk364skd3" path="res://structures/guns_bench/control.tscn" id="10_80dsp"]
+[ext_resource type="PackedScene" uid="uid://dahrvvvj0jwkp" path="res://components/craft_interface_component/craft_interface_component.tscn" id="9_s78rs"]
+[ext_resource type="PackedScene" uid="uid://bq3huk364skd3" path="res://components/gun_bench_interface_component/gun_bench_interface_component.tscn" id="10_80dsp"]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -28,13 +28,6 @@ y_sort_enabled = true
 [node name="Inventory" parent="." instance=ExtResource("8_5ajw3")]
 visible = false
 y_sort_enabled = true
-
-[node name="Hotbar" parent="." instance=ExtResource("3_8sq4i")]
-y_sort_enabled = true
-offset_left = 27.0
-offset_top = 552.0
-offset_right = -653.0
-offset_bottom = -29.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_a2258")]
 visible = false
@@ -64,5 +57,12 @@ render_target_update_mode = 0
 
 [node name="Node3D" parent="GunBench/SubViewportContainer/SubViewport" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2000, 0)
+
+[node name="Hotbar" parent="." instance=ExtResource("3_8sq4i")]
+y_sort_enabled = true
+offset_left = 27.0
+offset_top = 552.0
+offset_right = -653.0
+offset_bottom = -29.0
 
 [editable path="GunBench"]

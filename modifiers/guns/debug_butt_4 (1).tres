@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunModification" load_steps=6 format=3 uid="uid://dr1gu21jjrxq2"]
+
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/sprites/null_texture.png" id="1_0pjwh"]
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="2_1yvp0"]
+[ext_resource type="Script" uid="uid://cbhe8v16bwq0i" path="res://modifiers/guns/gun_modifier/gun_modifier.gd" id="3_0m25j"]
+[ext_resource type="Resource" uid="uid://boludnx54khqq" path="res://itens/debug_material.tres" id="3_1yvp0"]
+[ext_resource type="PackedScene" uid="uid://dqav87ejsgulg" path="res://weapons/guns/gun_parts/gun_butts/gun_butt_4.tscn" id="4_0m25j"]
+
+[resource]
+script = ExtResource("3_0m25j")
+modification_name = "DebugButt4"
+modification_type = "butt"
+modification_ingredients = Dictionary[ExtResource("2_1yvp0"), int]({
+ExtResource("3_1yvp0"): 2
+})
+modification_scene = ExtResource("4_0m25j")

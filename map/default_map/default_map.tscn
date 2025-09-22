@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgyrrwv1qx147"]
+
+[ext_resource type="PackedScene" uid="uid://24nknqcg5stl" path="res://map_generation/map_generator/map_generator.tscn" id="1_7yvjg"]
+[ext_resource type="PackedScene" uid="uid://ddc8k6gybq8ur" path="res://character/character.tscn" id="2_dkf8j"]
+[ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="3_swb1k"]
+[ext_resource type="PackedScene" uid="uid://c4ec6w0kvbitf" path="res://envinroment/envinroment.tscn" id="4_xweh3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7yvjg"]
+fractal_weighted_strength = 0.65
+
+[node name="main" type="Node3D"]
+
+[node name="HUD" parent="." instance=ExtResource("3_swb1k")]
+
+[node name="TerrainChunksManager" parent="." node_paths=PackedStringArray("viewer") instance=ExtResource("1_7yvjg")]
+render_distance = 1600
+viewer = NodePath("../Character")
+noise = SubResource("FastNoiseLite_7yvjg")
+
+[node name="Character" parent="." instance=ExtResource("2_dkf8j")]
+
+[node name="Envinroment" parent="." instance=ExtResource("4_xweh3")]

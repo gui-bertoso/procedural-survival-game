@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="GunModification" load_steps=3 format=3 uid="uid://dymy8cp0trt4v"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_ebwte"]
+[ext_resource type="Script" uid="uid://cbhe8v16bwq0i" path="res://modifiers/guns/gun_modifier/gun_modifier.gd" id="2_xhtnb"]
+
+[resource]
+script = ExtResource("2_xhtnb")

@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4f2wln8xi62w"]
-
-[ext_resource type="Script" uid="uid://c5a0sww42vgqk" path="res://weapons/guns/gun_pipe/gun_pipe.gd" id="1_3w1qy"]
-
-[node name="GunPipe" type="Node3D"]
-script = ExtResource("1_3w1qy")
-
-[node name="FireLocale" type="Marker3D" parent="."]

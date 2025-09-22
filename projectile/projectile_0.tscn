@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://682q63w8i53p"]
 
 [ext_resource type="PackedScene" uid="uid://dc1h72qy67w3g" path="res://projectile/projectile.tscn" id="1_haqxh"]
-[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="2_dcun1"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="2_dcun1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qdgn"]
 albedo_color = Color(0, 1, 0.0627451, 1)

@@ -75,7 +75,6 @@ func show_gun_bench_interface() -> void:
 	$Inventory.visible = false
 	$DebugPanel.visible = false
 	$Target.visible = false
-	$Hotbar.visible = false
 	$GunBench.visible = true
 	$GunBench.init_camera_atributes()
 	Globals.show_mouse()
@@ -84,7 +83,6 @@ func hide_gun_bench_interface() -> void:
 	$Inventory.visible = false
 	$DebugPanel.visible = true
 	$Target.visible = true
-	$Hotbar.visible = true
 	$GunBench.visible = false
 	Globals.hide_mouse()
 

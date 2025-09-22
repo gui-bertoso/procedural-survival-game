@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://bo7r0f70qd8u8"]
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://bo7r0f70qd8u8"]
 
 [ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_ikfnx"]
-[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="2_mahqr"]
-[ext_resource type="PackedScene" uid="uid://d4dd4jvhoe24o" path="res://assets/template_item_mesh/template_item_mesh.tscn" id="3_8bv14"]
-[ext_resource type="PackedScene" uid="uid://c8ppnfp75dxyd" path="res://weapons/guns/gun_core/gun_core_1.tscn" id="4_mahqr"]
+[ext_resource type="Resource" uid="uid://boludnx54khqq" path="res://itens/debug_material.tres" id="2_8bv14"]
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/sprites/null_texture.png" id="2_mahqr"]
+[ext_resource type="PackedScene" uid="uid://d4dd4jvhoe24o" path="res://assets/meshs/template_item_mesh/template_item_mesh.tscn" id="3_8bv14"]
+[ext_resource type="PackedScene" uid="uid://c8ppnfp75dxyd" path="res://weapons/guns/gun_parts/gun_cores/gun_core_1.tscn" id="4_mahqr"]
 
 [resource]
 script = ExtResource("1_ikfnx")
@@ -12,3 +13,6 @@ item_descryption = "A gun core to mage your gun"
 item_type = "weapon"
 weapon_type = "gun"
 item_scene = ExtResource("4_mahqr")
+item_craft_recipe = Dictionary[ExtResource("1_ikfnx"), int]({
+ExtResource("2_8bv14"): 3
+})

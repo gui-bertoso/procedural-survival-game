@@ -1,8 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bs257xhtx0tj8"]
-
-[ext_resource type="Shader" uid="uid://bl71wshk156gu" path="res://a.tres" id="1_50bgh"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_50bgh")
-shader_parameter/Vector3Parameter = Vector3(1, 1, 1)

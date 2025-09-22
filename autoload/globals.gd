@@ -1,13 +1,13 @@
 extends Node
 
-var stats_container = null
-var player_stats = null
-var player = null
-var hotbar = null
-var inventory = null
-var hud = self
+var stats_container: StatsContainer = null
+var player_stats: CharacterStats = null
+var player: Character = null
+var hotbar: Hotbar = null
+var inventory: Inventory = null
+var hud: HUD = self
 
-var on_menu = false
+var on_menu: bool = false
 
 var game_data_dictionary: Dictionary = {
 	"window_mode": 0,
@@ -74,16 +74,14 @@ var world_data_dictionary: Dictionary = {
 	"selected_hotbar_slot": 0,
 }
 
-
-func hide_mouse() -> void:
-	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		on_menu = false
-
 func show_mouse() -> void:
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		on_menu = true
+func hide_mouse() -> void:
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		on_menu = false
 
 func apply_game_settings() -> void:
 	pass

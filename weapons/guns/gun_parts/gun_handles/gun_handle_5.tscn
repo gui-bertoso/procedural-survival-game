@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8tnsm2fqoasp"]
+
+[ext_resource type="PackedScene" uid="uid://c4n65x7rhk17f" path="res://weapons/guns/gun_parts/gun_handles/gun_handle/gun_handle.tscn" id="1_yh1fx"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="2_e46u8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chs56"]
+albedo_texture = ExtResource("2_e46u8")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_o68mm"]
+size = Vector3(0.02, 0.27, 0.09)
+
+[node name="GunHandle" instance=ExtResource("1_yh1fx")]
+precision = 20.0
+recoil = -6.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.7146557, 0.6994763, 0, -0.6994763, 0.7146557, 0, -0.079474695, 0.08210445)
+material_override = SubResource("StandardMaterial3D_chs56")
+mesh = SubResource("BoxMesh_o68mm")
