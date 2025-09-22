@@ -69,6 +69,24 @@ func show_craft_interface(craft_recipes:Array) -> void:
 	$CraftInterface.load_recipes()
 	$CraftInterface.visible = true
 	Globals.show_mouse()
+	
+func show_gun_bench_interface() -> void:
+	on_inventory = false
+	$Inventory.visible = false
+	$DebugPanel.visible = false
+	$Target.visible = false
+	$Hotbar.visible = false
+	$GunBench.visible = true
+	$GunBench.init_camera_atributes()
+	Globals.show_mouse()
+func hide_gun_bench_interface() -> void:
+	on_inventory = false
+	$Inventory.visible = false
+	$DebugPanel.visible = true
+	$Target.visible = true
+	$Hotbar.visible = true
+	$GunBench.visible = false
+	Globals.hide_mouse()
 
 func hide_craft_interface() -> void:
 	on_inventory = false

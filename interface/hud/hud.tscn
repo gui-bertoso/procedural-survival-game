@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvewtmm6d837k"]
+[gd_scene load_steps=11 format=3 uid="uid://dvewtmm6d837k"]
 
 [ext_resource type="PackedScene" uid="uid://ciw4dnhuleuqw" path="res://interface/debug_panel/debug_panel.tscn" id="1_37p78"]
 [ext_resource type="Script" uid="uid://d3xgmdujcke3m" path="res://interface/hud/hud.gd" id="1_rftc2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ba2anhl5rk5t5" path="res://interface/weapon_left_down_data/weapon_left_down_data.tscn" id="6_1xsix"]
 [ext_resource type="PackedScene" uid="uid://c5om5lbj6todv" path="res://interface/inventory/inventory.tscn" id="8_5ajw3"]
 [ext_resource type="PackedScene" uid="uid://dahrvvvj0jwkp" path="res://components/craft_interface_component.tscn" id="9_s78rs"]
+[ext_resource type="PackedScene" uid="uid://bq3huk364skd3" path="res://structures/guns_bench/control.tscn" id="10_80dsp"]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -53,3 +54,15 @@ grow_vertical = 1
 
 [node name="CraftInterface" parent="." instance=ExtResource("9_s78rs")]
 visible = false
+
+[node name="GunBench" parent="." instance=ExtResource("10_80dsp")]
+visible = false
+mouse_filter = 1
+
+[node name="SubViewport" parent="GunBench/SubViewportContainer" index="0"]
+render_target_update_mode = 0
+
+[node name="Node3D" parent="GunBench/SubViewportContainer/SubViewport" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2000, 0)
+
+[editable path="GunBench"]

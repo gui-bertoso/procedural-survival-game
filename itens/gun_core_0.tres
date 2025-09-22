@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://b2aumlbu2y3wo"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_jks2r"]
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="2_cnkf5"]
+[ext_resource type="PackedScene" uid="uid://d4dd4jvhoe24o" path="res://assets/template_item_mesh/template_item_mesh.tscn" id="3_tk6h8"]
+[ext_resource type="PackedScene" uid="uid://jmggwfpl4530" path="res://weapons/guns/gun_core/gun_core_0.tscn" id="4_cnkf5"]
+
+[resource]
+script = ExtResource("1_jks2r")
+item_name = "GunCore0"
+item_descryption = "A gun core to mage your gun"
+item_type = "weapon"
+weapon_type = "gun"
+item_scene = ExtResource("4_cnkf5")
