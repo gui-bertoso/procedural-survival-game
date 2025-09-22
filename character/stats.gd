@@ -1,4 +1,5 @@
 extends Node
+class_name CharacterStats
 
 var base_health = 100
 var addicional_health = 0
@@ -93,7 +94,7 @@ func _set_stats() -> void:
 	hunger = base_hunger + addicional_hunger
 	thirst = base_thirst + addicional_thirst
 	jump_force = base_jump_force + addicional_jump_force
-	
+
 func _set_max_stats() -> void:
 	max_movement_speed = base_movement_speed + addicional_movement_speed
 	max_health = base_health + addicional_health

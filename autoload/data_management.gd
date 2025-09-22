@@ -1,45 +1,45 @@
 extends Node
 
-var _game_save_path = "res://saves/game_save.txt"
-var current_save = ""
+var _game_save_path: String = "res://saves/game_save.txt"
+
+var current_save: String = ""
 
 func _enter_tree() -> void:
 	load_game_save()
 
 func save_game_save() -> void:
-	var _file = FileAccess.open(_game_save_path, FileAccess.WRITE)
+	if current_save == "": return
+	var _file := FileAccess.open(_game_save_path, FileAccess.WRITE)
 	_file.store_var(Globals.game_data_dictionary.duplicate(true), true)
 	_file.close()
-
 func load_game_save() -> void:
 	if FileAccess.file_exists(_game_save_path):
-		var _file = FileAccess.open(_game_save_path, FileAccess.READ)
+		var _file := FileAccess.open(_game_save_path, FileAccess.READ)
 		Globals.game_data_dictionary = _file.get_var(true)
 		_file.close()
 
 func world_save(save_path: String) -> void:
-	var _file = FileAccess.open(save_path, FileAccess.WRITE)
+	if current_save == "": return
+	var _file := FileAccess.open(save_path, FileAccess.WRITE)
 	_file.store_var(Globals.world_data_dictionary, true)
 	_file.close()
 	current_save = save_path
 	load_world_save(save_path)
-
 func load_world_save(save_path: String) -> void:
 	if FileAccess.file_exists(save_path):
-		var _file = FileAccess.open(save_path, FileAccess.READ)
+		var _file := FileAccess.open(save_path, FileAccess.READ)
 		Globals.world_data_dictionary = _file.get_var(true)
 		current_save = save_path
 		_file.close()
 
 func resave_world() -> void:
 	if current_save:
-		var _file = FileAccess.open(current_save, FileAccess.WRITE)
+		var _file := FileAccess.open(current_save, FileAccess.WRITE)
 		_file.store_var(Globals.world_data_dictionary.duplicate(true), true)
 		current_save = current_save
 		_file.close()
-
 func reload_world() -> void:
-	var _file = FileAccess.open(current_save, FileAccess.READ)
+	var _file := FileAccess.open(current_save, FileAccess.READ)
 	Globals.world_data_dictionary = _file.get_var(true)
 	current_save = current_save
 	_file.close()

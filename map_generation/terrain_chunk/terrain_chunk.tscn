@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://p3u00rljwmwy"]
+
+[ext_resource type="Script" uid="uid://c2ioa0rnvqoxw" path="res://map_generation/terrain_chunk/terrain_chunk.gd" id="1_s0o15"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="2_c0sna"]
+[ext_resource type="PackedScene" uid="uid://c85c2iytc4fq" path="res://map_generation/recources_chunk/recources_chunk.tscn" id="3_gtrl7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0sna"]
+albedo_color = Color(0, 0.31373364, 3.85046e-07, 1)
+albedo_texture = ExtResource("2_c0sna")
+metallic_specular = 0.0
+uv1_triplanar = true
+
+[node name="TerrainChunk" type="Node3D"]
+script = ExtResource("1_s0o15")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_c0sna")
+
+[node name="TreeChunk" parent="." instance=ExtResource("3_gtrl7")]
+collision_distance = 10.0

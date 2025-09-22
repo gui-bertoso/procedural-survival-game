@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dn3vk35mo8nvy"]
+
+[ext_resource type="PackedScene" uid="uid://c4f2wln8xi62w" path="res://weapons/guns/gun_parts/gun_pipes/gun_pipe/gun_pipe.tscn" id="1_d5qf3"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="2_rwvnm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxlak"]
+albedo_color = Color(0, 0.22745098, 1, 1)
+albedo_texture = ExtResource("2_rwvnm")
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5kjgt"]
+top_radius = 0.04
+bottom_radius = 0.04
+height = 1.0
+radial_segments = 7
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e1lgx"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_rwvnm")
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sr58l"]
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.005
+radial_segments = 7
+rings = 1
+
+[node name="GunPipe" instance=ExtResource("1_d5qf3")]
+precision = 15.0
+fire_range = 50.0
+
+[node name="FireLocale" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.000862)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -0.00541045, -0.99998534, 0, 0.99998534, -0.00541045, 0, 0, -0.49860227)
+material_override = SubResource("StandardMaterial3D_gxlak")
+mesh = SubResource("CylinderMesh_5kjgt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, -1.3969839e-09, 0, 1.3969839e-09, 1.0000012, 0, -0.500774, 0.0027094525)
+material_override = SubResource("StandardMaterial3D_e1lgx")
+mesh = SubResource("CylinderMesh_sr58l")

@@ -1,11 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://btx0w2vsahbvu"]
+[gd_scene load_steps=17 format=3 uid="uid://btx0w2vsahbvu"]
 
 [ext_resource type="PackedScene" uid="uid://dqt0flxktk083" path="res://structures/structure_template/structure_template.tscn" id="1_217pk"]
 [ext_resource type="Script" uid="uid://53ugvs3ar8fv" path="res://structures/debug_craft_station/debug_craft_station.gd" id="2_0aron"]
-[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/Sprite-0001.png" id="3_lnifq"]
-[ext_resource type="PackedScene" uid="uid://c1iqyiusrivxm" path="res://components/craft_data.tscn" id="4_lnifq"]
+[ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="3_lnifq"]
+[ext_resource type="PackedScene" uid="uid://c1iqyiusrivxm" path="res://components/craft_data_component/craft_data_component.tscn" id="4_lnifq"]
 [ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="4_mj7x3"]
 [ext_resource type="Resource" uid="uid://b2i2ajfkdxuqi" path="res://itens/debug_axe.tres" id="5_o1oy0"]
+[ext_resource type="Resource" uid="uid://b2aumlbu2y3wo" path="res://itens/gun_core_0.tres" id="7_iy2w0"]
+[ext_resource type="Resource" uid="uid://el13a033vhhh" path="res://itens/gun_core_1.tres" id="8_1567r"]
+[ext_resource type="Resource" uid="uid://bo7r0f70qd8u8" path="res://itens/gun_core_2.tres" id="9_d63br"]
+[ext_resource type="Resource" uid="uid://bcbk4a8osj6p7" path="res://itens/gun_core_3.tres" id="10_kpdxg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1oy0"]
 albedo_color = Color(0.103743516, 0.10374353, 0.103743516, 1)
@@ -42,7 +46,7 @@ data = PackedVector3Array(0, 0.25, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0.25, 0, 0.25, 
 script = ExtResource("2_0aron")
 
 [node name="CraftData" parent="." index="0" instance=ExtResource("4_lnifq")]
-craft_recipes = Array[ExtResource("4_mj7x3")]([ExtResource("5_o1oy0")])
+craft_recipes = Array[ExtResource("4_mj7x3")]([ExtResource("5_o1oy0"), ExtResource("7_iy2w0"), ExtResource("8_1567r"), ExtResource("9_d63br"), ExtResource("10_kpdxg")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3142488, 0)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1iqyiusrivxm"]
+
+[ext_resource type="Script" uid="uid://k88alsuv3kmv" path="res://components/craft_data_component/craft_data_component.gd" id="1_yfo0n"]
+
+[node name="CraftData" type="Node"]
+script = ExtResource("1_yfo0n")

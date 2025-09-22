@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ba2anhl5rk5t5"]
 
-[ext_resource type="Texture2D" uid="uid://dyv44x8qoq8p7" path="res://assets/Sprite-0003.png" id="1_7vs8b"]
+[ext_resource type="Texture2D" uid="uid://dyv44x8qoq8p7" path="res://assets/sprites/gun_interface_icon.png" id="1_7vs8b"]
 
 [node name="WeaponLeftDownData" type="Control"]
 layout_mode = 3

@@ -1,0 +1,183 @@
+[gd_scene load_steps=2 format=3 uid="uid://dahrvvvj0jwkp"]
+
+[ext_resource type="Script" uid="uid://djd3ijfcxdjdo" path="res://components/craft_interface_component/craft_interface_component.gd" id="1_l1uyk"]
+
+[node name="CraftInterfaceComponent" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_l1uyk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.0
+offset_top = -240.5
+offset_right = 463.0
+offset_bottom = 240.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/ColorRect"]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(0.15247649, 0.15247649, 0.15247646, 1)
+
+[node name="Label" type="Label" parent="HBoxContainer/ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -16.0
+offset_right = 44.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "RECIPES"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -188.0
+offset_right = 232.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(326, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "CRAFT_NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "CRAFT TYPE"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = ":"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "aaaaaaaa"
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "CRAFT QUANTITY"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = ":"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "aaaaaaa"
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "RECIPE"
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 183)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ColorRect2/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control4" type="Control" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "CRAFT"
+
+[node name="Control5" type="Control" parent="HBoxContainer/ColorRect2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 2
+
+[connection signal="button_up" from="HBoxContainer/ColorRect2/VBoxContainer/Button" to="." method="_on_button_button_up"]

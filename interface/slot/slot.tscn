@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://5b3ac6g27rj2"]
 
-[ext_resource type="Texture2D" uid="uid://x5q2s245mrk3" path="res://assets/Sprite-0002.png" id="1_d0q8x"]
+[ext_resource type="Texture2D" uid="uid://x5q2s245mrk3" path="res://assets/sprites/slot_background.png" id="1_d0q8x"]
 [ext_resource type="Script" uid="uid://ses1rq51tkkj" path="res://interface/slot/slot.gd" id="2_d0q8x"]
-[ext_resource type="Texture2D" uid="uid://dralemcrtyi8o" path="res://assets/Sprite-0008.png" id="3_fhqif"]
-[ext_resource type="Texture2D" uid="uid://cfq7np8n1a0r5" path="res://assets/Sprite-0007.png" id="4_f8rww"]
+[ext_resource type="Texture2D" uid="uid://dralemcrtyi8o" path="res://assets/sprites/green_bar_background.png" id="3_fhqif"]
+[ext_resource type="Texture2D" uid="uid://cfq7np8n1a0r5" path="res://assets/sprites/green_bar_fill.png" id="4_f8rww"]
 
 [node name="Slot" type="TextureRect"]
 modulate = Color(1, 1, 1, 0.69803923)

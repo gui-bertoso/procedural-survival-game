@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunModification" load_steps=6 format=3 uid="uid://usu2amraishc"]
+
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="1_2g7or"]
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/sprites/null_texture.png" id="1_r3kc2"]
+[ext_resource type="Resource" uid="uid://boludnx54khqq" path="res://itens/debug_material.tres" id="2_r3kc2"]
+[ext_resource type="Script" uid="uid://cbhe8v16bwq0i" path="res://modifiers/guns/gun_modifier/gun_modifier.gd" id="3_7o5gn"]
+[ext_resource type="PackedScene" uid="uid://m3at5j4dbgn5" path="res://weapons/guns/gun_parts/gun_pipes/gun_pipe_0.tscn" id="4_7o5gn"]
+
+[resource]
+script = ExtResource("3_7o5gn")
+modification_name = "DebugPipe0"
+modification_type = "pipe"
+modification_ingredients = Dictionary[ExtResource("1_2g7or"), int]({
+ExtResource("2_r3kc2"): 1
+})
+modification_scene = ExtResource("4_7o5gn")

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4n65x7rhk17f"]
-
-[ext_resource type="Script" uid="uid://ip38bnpkmk0s" path="res://weapons/guns/gun_handle/gun_handle.gd" id="1_nfc5k"]
-
-[node name="GunHandle" type="Node3D"]
-script = ExtResource("1_nfc5k")
