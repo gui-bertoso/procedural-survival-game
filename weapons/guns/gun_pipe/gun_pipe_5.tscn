@@ -28,6 +28,8 @@ radial_segments = 7
 rings = 1
 
 [node name="GunPipe" instance=ExtResource("1_xm437")]
+precision = 9.0
+fire_range = 21.0
 
 [node name="FireLocale" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7979846)

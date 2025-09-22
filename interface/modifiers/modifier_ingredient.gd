@@ -1,6 +1,7 @@
 extends ColorRect
 
 var item = null
+var can_craft = false
 
 func set_item(_item):
 	item = _item.duplicate(true)
@@ -18,6 +19,8 @@ func update_can_craft():
 	if Globals.inventory.get_item_amount(item.item_name) >= item.item_amount:
 		$HBoxContainer/Label2.modulate = Color(0, 1, 0)
 		$HBoxContainer/Label3.modulate = Color(0, 1, 0)
+		can_craft = true
 	else:
 		$HBoxContainer/Label2.modulate = Color(1, 0, 0)
 		$HBoxContainer/Label3.modulate = Color(1, 0, 0)
+		can_craft = false

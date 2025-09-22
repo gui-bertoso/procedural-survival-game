@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="GunModification" load_steps=6 format=3 uid="uid://b7vnw88ts6cek"]
+
+[ext_resource type="Texture2D" uid="uid://ri6oq4y3srj1" path="res://assets/Sprite-0006.png" id="1_egrto"]
+[ext_resource type="Script" uid="uid://bb4diqcysxilt" path="res://itens/item_template/item.gd" id="2_xekns"]
+[ext_resource type="Resource" uid="uid://boludnx54khqq" path="res://itens/debug_material.tres" id="3_oifqv"]
+[ext_resource type="PackedScene" uid="uid://blnhs3xd6wfty" path="res://weapons/guns/gun_handle/gun_handle_3.tscn" id="4_egrto"]
+[ext_resource type="Script" uid="uid://cbhe8v16bwq0i" path="res://modifications/guns/gun_modification.gd" id="5_dndeb"]
+
+[resource]
+script = ExtResource("5_dndeb")
+modification_name = "DebugHandle3"
+modification_type = "handle"
+modification_ingredients = Dictionary[ExtResource("2_xekns"), int]({
+ExtResource("3_oifqv"): 1
+})
+modification_scene = ExtResource("4_egrto")

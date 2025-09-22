@@ -12,6 +12,12 @@ uv1_triplanar = true
 size = Vector3(0.08, 0.16, 0.36)
 
 [node name="GunCore" instance=ExtResource("1_0stny")]
+precision = 50.0
+fire_cadense = 9
+recoil = 5.0
+max_ammo = 40
+fire_range = 90.0
+reload_time = 17.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_egpkw")

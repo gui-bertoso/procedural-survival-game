@@ -1,7 +1,5 @@
 extends Structure
 
-var a = false
-
 func _process(delta: float) -> void:
 	$MeshInstance3D2.global_rotation.y += delta
 	$CollisionShape3D2.global_rotation.y += delta

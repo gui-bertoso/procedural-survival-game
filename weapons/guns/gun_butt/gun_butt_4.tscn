@@ -20,6 +20,8 @@ uv1_triplanar = true
 size = Vector3(0.015, 0.23, 0.125)
 
 [node name="GunButt" instance=ExtResource("1_aqg4i")]
+precision = 18.0
+recoil = -9.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.07978822)

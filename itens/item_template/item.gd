@@ -24,4 +24,7 @@ class_name Item
 @export var item_craft_recipe: Dictionary[Item, int] = {}
 @export var item_craft_quantity: int = 1
 
+@export_category("Modifications")
+@export var modifications = {}
+
 var item_amount = 1

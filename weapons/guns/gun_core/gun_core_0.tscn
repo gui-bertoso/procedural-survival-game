@@ -12,6 +12,13 @@ uv1_triplanar = true
 size = Vector3(0.095, 0.16, 0.335)
 
 [node name="GunCore" instance=ExtResource("1_5af0r")]
+precision = 75.0
+damage = 6.0
+fire_cadense = 2
+recoil = 7.0
+max_ammo = 6
+fire_range = 150.0
+reload_time = 9.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_egpkw")
@@ -25,3 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07914135, 0.09218469)
 
 [node name="ButtSnap" parent="ComponentsSnaps" index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.16690853)
+
+[node name="ScopeSnap" parent="ComponentsSnaps" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08031162, -0.041883856)
