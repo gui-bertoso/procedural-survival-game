@@ -1,4 +1,5 @@
 extends Control
+class_name StatsContainer
 
 func _enter_tree() -> void:
 	Globals.stats_container = self

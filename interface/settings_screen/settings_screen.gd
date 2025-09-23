@@ -1,11 +1,13 @@
 extends Control
 class_name SettingsScreen
 
-func _on_back_button_up() -> void:
-	get_tree().change_scene_to_file("res://interface/main_menu/main_menu.tscn")
+@onready var main_menu_scene_path: String = "uid://crev2inf1u6xe"
 
-func _on_apply_button_up() -> void:
-	Globals.apply_game_settings()
+@onready var window_settings_container: VBoxContainer = $TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer
+@onready var graphics_settings_container: VBoxContainer = $TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer
+@onready var gameplay_settings_container: VBoxContainer = $TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer
+@onready var controls_settings_container: VBoxContainer = $TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer
+@onready var audio_settings_container: VBoxContainer = $TabContainer/Audio/ScrollContainer/VContainer/VContainer
 
 func _ready() -> void:
 	DataManagement.load_game_save()
@@ -14,23 +16,23 @@ func _ready() -> void:
 	connect_video_options()
 	connect_audio_options()
 
-func connect_audio_options() -> void:
-	for i in $TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer.get_children():
-		if i is HBoxContainer:
-			i.get_node("HScrollBar").value_changed.connect(volume_changed.bind(i.get_node("Label").text.to_snake_case(), i.get_node("Label2")))
-
 func connect_video_options() -> void:
-	for i in $TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer.get_children():
-		i.get_node("OptionButton").item_selected.connect(option_selected.bind(i.get_node("Label").text.to_snake_case()))
-	for i in $TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer.get_children():
-		i.get_node("OptionButton").item_selected.connect(option_selected.bind(i.get_node("Label").text.to_snake_case()))
-	for i in $TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer.get_children():
-		i.get_node("OptionButton").item_selected.connect(option_selected.bind(i.get_node("Label").text.to_snake_case()))
+	for i in window_settings_container.get_children():
+		i.get_node("OptionButton").item_selected.connect(option_selected.bind(i.get_node("Name").text.to_snake_case()))
+	for i in graphics_settings_container.get_children():
+		i.get_node("OptionButton").item_selected.connect(option_selected.bind(i.get_node("Name").text.to_snake_case()))
+	for i in gameplay_settings_container.get_children():
+		i.get_node("OptionButton").item_selected.connect(option_selected.bind(i.get_node("Name").text.to_snake_case()))
 
 func connect_controls_remap() -> void:
-	for i in $TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3.get_children():
+	for i in controls_settings_container.get_children():
 		i.mouse_entered.connect(control_key_interact.bind("entered", i))
 		i.mouse_exited.connect(control_key_interact.bind("exited", i))
+
+func connect_audio_options() -> void:
+	for i in audio_settings_container.get_children():
+		if i is HBoxContainer:
+			i.get_node("HScrollBar").value_changed.connect(volume_changed.bind(i.get_node("Name").text.to_snake_case(), i.get_node("Value")))
 
 func volume_changed(value: int, option_name: String, option_percentage_label: Label):
 	match option_name:
@@ -51,34 +53,34 @@ func volume_changed(value: int, option_name: String, option_percentage_label: La
 			option_percentage_label.text = str(value)
 
 func load_options():
-	for i in $TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer.get_children():
+	for i in audio_settings_container.get_children():
 		if i is HBoxContainer:
-			match i.get_node("Label").text.to_snake_case():
+			match i.get_node("Name").text.to_snake_case():
 				"general_volume":
 					i.get_node("HScrollBar").value = Globals.game_data_dictionary.general_volume
-					i.get_node("Label2").text = str(Globals.game_data_dictionary.general_volume)
+					i.get_node("Value").text = str(Globals.game_data_dictionary.general_volume)
 				"musics_volume":
 					i.get_node("HScrollBar").value = Globals.game_data_dictionary.musics_volume
-					i.get_node("Label2").text = str(Globals.game_data_dictionary.musics_volume)
+					i.get_node("Value").text = str(Globals.game_data_dictionary.musics_volume)
 				"vehicles_volume":
 					i.get_node("HScrollBar").value = Globals.game_data_dictionary.vehicles_volume
-					i.get_node("Label2").text = str(Globals.game_data_dictionary.vehicles_volume)
+					i.get_node("Value").text = str(Globals.game_data_dictionary.vehicles_volume)
 				"enemys_volume":
 					i.get_node("HScrollBar").value = Globals.game_data_dictionary.enemys_volume
-					i.get_node("Label2").text = str(Globals.game_data_dictionary.enemys_volume)
+					i.get_node("Value").text = str(Globals.game_data_dictionary.enemys_volume)
 				"effects_volume":
 					i.get_node("HScrollBar").value = Globals.game_data_dictionary.effects_volume
-					i.get_node("Label2").text = str(Globals.game_data_dictionary.effects_volume)
+					i.get_node("Value").text = str(Globals.game_data_dictionary.effects_volume)
 	var t_objs = []
-	for i in $TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer.get_children():
+	for i in window_settings_container.get_children():
 		t_objs.append(i)
-	for i in $TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer.get_children():
+	for i in graphics_settings_container.get_children():
 		t_objs.append(i)
-	for i in $TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer.get_children():
+	for i in gameplay_settings_container.get_children():
 		t_objs.append(i)
 	
 	for i in t_objs:
-		match i.get_node("Label").text.to_snake_case():
+		match i.get_node("Name").text.to_snake_case():
 			"window_mode":
 				i.get_node("OptionButton").select(Globals.game_data_dictionary.window_mode)
 			"window_size":
@@ -153,3 +155,9 @@ func control_key_interact(type: String, key: HBoxContainer) -> void:
 		key.get_node("LabelKey").modulate = Color(1.0, 1.0, 1.0, 1.0)
 		key.get_node("LabelKey2").modulate = Color(1.0, 1.0, 1.0, 1.0)
 		key.get_node("LabelKey3").modulate = Color(1.0, 1.0, 1.0, 1.0)
+
+func _on_back_button_up() -> void:
+	get_tree().change_scene_to_file(main_menu_scene_path)
+
+func _on_apply_button_up() -> void:
+	Globals.apply_game_settings()

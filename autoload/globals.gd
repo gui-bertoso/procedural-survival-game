@@ -5,7 +5,7 @@ var player_stats: CharacterStats = null
 var player: Character = null
 var hotbar: Hotbar = null
 var inventory: Inventory = null
-var hud: HUD = self
+var hud: HUD = null
 
 var on_menu: bool = false
 

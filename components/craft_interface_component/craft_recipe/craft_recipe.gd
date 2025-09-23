@@ -29,7 +29,7 @@ func set_item(_item: Item) -> void:
 	_item_texture.texture = item.item_image
 	_item_name_label.text = item.item_name.to_snake_case().replace("_", " ").capitalize()
 
-func unselect():
+func unselect() -> void:
 	selected = false
 	color = Color(0.1, 0.1, 0.1)
 	_on_mouse_exited()
