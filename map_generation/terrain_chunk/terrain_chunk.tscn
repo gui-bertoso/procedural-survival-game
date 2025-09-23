@@ -16,5 +16,5 @@ script = ExtResource("1_s0o15")
 [node name="Mesh" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_c0sna")
 
-[node name="TreeChunk" parent="." instance=ExtResource("3_gtrl7")]
+[node name="ResourcesChunk" parent="." instance=ExtResource("3_gtrl7")]
 collision_distance = 10.0

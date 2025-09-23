@@ -20,7 +20,7 @@ max_ammo = 3
 fire_range = 320.0
 reload_time = 21.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_egpkw")
 mesh = SubResource("BoxMesh_oqeo3")
 

@@ -72,7 +72,7 @@ bg_color = Color(0.083392, 0.08339202, 0.08339197, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hvebx"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("core_snap", "pipe_snap", "butt_snap", "handle_snap", "scope_snap")]
+[node name="GunBenchInterfaceComponent" type="Control" node_paths=PackedStringArray("core_snap", "pipe_snap", "butt_snap", "handle_snap", "scope_snap")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,11 +80,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fj5cn")
-core_snap = NodePath("SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap")
-pipe_snap = NodePath("SubViewportContainer/SubViewport/Node3D/Node3D/PipeSnap")
-butt_snap = NodePath("SubViewportContainer/SubViewport/Node3D/Node3D/ButtSnap")
-handle_snap = NodePath("SubViewportContainer/SubViewport/Node3D/Node3D/HandleSnap")
-scope_snap = NodePath("SubViewportContainer/SubViewport/Node3D/Node3D/ScopeSnap")
+core_snap = NodePath("SubViewportContainer/SubViewport/Scene/Snaps/CoreSnap")
+pipe_snap = NodePath("SubViewportContainer/SubViewport/Scene/Snaps/PipeSnap")
+butt_snap = NodePath("SubViewportContainer/SubViewport/Scene/Snaps/ButtSnap")
+handle_snap = NodePath("SubViewportContainer/SubViewport/Scene/Snaps/HandleSnap")
+scope_snap = NodePath("SubViewportContainer/SubViewport/Scene/Snaps/ScopeSnap")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
@@ -99,49 +99,39 @@ handle_input_locally = false
 size = Vector2i(1400, 1400)
 render_target_update_mode = 4
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport"]
+[node name="Scene" type="Node3D" parent="SubViewportContainer/SubViewport"]
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Node3D"]
+[node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.596824)
 fov = 85.5
 script = SubResource("GDScript_hvebx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Node3D"]
+[node name="Mesh" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.038342)
 material_override = SubResource("StandardMaterial3D_62e2m")
 mesh = SubResource("BoxMesh_qtu10")
 
-[node name="Node3D" type="Node3D" parent="SubViewportContainer/SubViewport/Node3D"]
+[node name="Snaps" type="Node3D" parent="SubViewportContainer/SubViewport/Scene"]
 
-[node name="CoreSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+[node name="CoreSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Scene/Snaps"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
 
-[node name="PipeSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+[node name="PipeSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Scene/Snaps"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
 
-[node name="ButtSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+[node name="ButtSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Scene/Snaps"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
 
-[node name="HandleSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+[node name="HandleSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Scene/Snaps"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
 
-[node name="ScopeSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Node3D/Node3D"]
+[node name="ScopeSnap" type="Marker3D" parent="SubViewportContainer/SubViewport/Scene/Snaps"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -0.038342)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Node3D"]
+[node name="DirectionalLight" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Scene"]
 transform = Transform3D(1, 0, 0, 0, 0.45101777, 0.89251494, 0, -0.89251494, 0.45101777, 0, 1.8287219, 1.2385986)
 
-[node name="Button" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 965.0
-offset_top = 570.0
-offset_right = 1126.0
-offset_bottom = 627.0
-theme_override_font_sizes/font_size = 24
-text = "READY"
-
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 18.0
@@ -150,189 +140,189 @@ offset_bottom = 53.0
 theme_override_font_sizes/font_size = 25
 text = "GUNS BENCH"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="GunData" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 29.0
 offset_top = 72.0
 offset_right = 314.0
 offset_bottom = 257.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Damage" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Name" type="Label" parent="GunData/Damage"]
 layout_mode = 2
 text = "DAMAGE"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="GunData/Damage"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Value0" type="Label" parent="GunData/Damage"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="ValueSufix" type="Label" parent="GunData/Damage"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Value1" type="Label" parent="GunData/Damage"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="FireCadense" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Name" type="Label" parent="GunData/FireCadense"]
 layout_mode = 2
 text = "FIRE CADENSE"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+[node name="Spacer" type="Control" parent="GunData/FireCadense"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Value0" type="Label" parent="GunData/FireCadense"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="ValueSufix" type="Label" parent="GunData/FireCadense"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer2"]
+[node name="Value1" type="Label" parent="GunData/FireCadense"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+[node name="ReloadTime" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="Name" type="Label" parent="GunData/ReloadTime"]
 layout_mode = 2
 text = "RELOAD TIME"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
+[node name="Spacer" type="Control" parent="GunData/ReloadTime"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="Value0" type="Label" parent="GunData/ReloadTime"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="ValueSufix" type="Label" parent="GunData/ReloadTime"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer3"]
+[node name="Value1" type="Label" parent="GunData/ReloadTime"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+[node name="MaxAmmo" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+[node name="Name" type="Label" parent="GunData/MaxAmmo"]
 layout_mode = 2
 text = "MAX AMMO"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer4"]
+[node name="Spacer" type="Control" parent="GunData/MaxAmmo"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
+[node name="Value0" type="Label" parent="GunData/MaxAmmo"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer4"]
+[node name="ValueSufix" type="Label" parent="GunData/MaxAmmo"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer4"]
+[node name="Value1" type="Label" parent="GunData/MaxAmmo"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Recoil" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+[node name="Name" type="Label" parent="GunData/Recoil"]
 layout_mode = 2
 text = "RECOIL"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer5"]
+[node name="Spacer" type="Control" parent="GunData/Recoil"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
+[node name="Value0" type="Label" parent="GunData/Recoil"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer5"]
+[node name="ValueSufix" type="Label" parent="GunData/Recoil"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer5"]
+[node name="Value1" type="Label" parent="GunData/Recoil"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Precision" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
+[node name="Name" type="Label" parent="GunData/Precision"]
 layout_mode = 2
 text = "PRECISION"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer6"]
+[node name="Spacer" type="Control" parent="GunData/Precision"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer6"]
+[node name="Value0" type="Label" parent="GunData/Precision"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer6"]
+[node name="ValueSufix" type="Label" parent="GunData/Precision"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer6"]
+[node name="Value1" type="Label" parent="GunData/Precision"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
+[node name="FireRange" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
+[node name="Name" type="Label" parent="GunData/FireRange"]
 layout_mode = 2
 text = "FIRE RANGE"
 
-[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer7"]
+[node name="Spacer" type="Control" parent="GunData/FireRange"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer7"]
+[node name="Value0" type="Label" parent="GunData/FireRange"]
 layout_mode = 2
 text = "9999.5"
 
-[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer7"]
+[node name="ValueSufix" type="Label" parent="GunData/FireRange"]
 visible = false
 layout_mode = 2
 text = "+"
 
-[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer7"]
+[node name="Value1" type="Label" parent="GunData/FireRange"]
 visible = false
 layout_mode = 2
 text = "9999.5"
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="PipeModifierButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1087.0
 offset_top = 77.0
@@ -344,7 +334,7 @@ texture_pressed = ExtResource("1_0fbet")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="ScopeModifierButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1030.0
 offset_top = 22.0
@@ -356,7 +346,7 @@ texture_pressed = ExtResource("1_0fbet")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton3" type="TextureButton" parent="."]
+[node name="ButtModifierButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 974.0
 offset_top = 75.0
@@ -368,7 +358,7 @@ texture_pressed = ExtResource("1_0fbet")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButton4" type="TextureButton" parent="."]
+[node name="HandleModifierButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1030.0
 offset_top = 137.0
@@ -380,31 +370,7 @@ texture_pressed = ExtResource("1_0fbet")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Panel" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 28.0
-offset_top = 69.0
-offset_right = 320.0
-offset_bottom = 459.0
-
-[node name="Panel" type="Panel" parent="Panel"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 38.0
-offset_right = 278.0
-offset_bottom = 369.0
-
-[node name="Label" type="Label" parent="Panel/Panel"]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 138.0
-offset_right = 210.0
-offset_bottom = 161.0
-text = "Do You Not Have Parts"
-
-[node name="Panel2" type="Panel" parent="."]
-visible = false
+[node name="ModifiersPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 74.0
@@ -412,7 +378,7 @@ offset_right = 241.0
 offset_bottom = 444.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
 
-[node name="Label" type="Label" parent="Panel2"]
+[node name="Title" type="Label" parent="ModifiersPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -425,7 +391,7 @@ text = "MODIFICATIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ModifiersPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -439,13 +405,12 @@ offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/ScrollContainer"]
+[node name="ModifiersContainer" type="VBoxContainer" parent="ModifiersPanel/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Panel3" type="Panel" parent="."]
-visible = false
+[node name="ModifierDataPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 245.0
 offset_top = 74.0
@@ -453,41 +418,41 @@ offset_right = 455.0
 offset_bottom = 245.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kbped")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel3"]
+[node name="VContainer" type="VBoxContainer" parent="ModifierDataPanel"]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 8.0
 offset_right = 200.0
 offset_bottom = 156.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel3/VBoxContainer"]
+[node name="HContainer" type="HBoxContainer" parent="ModifierDataPanel/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel3/VBoxContainer/HBoxContainer"]
+[node name="Name" type="Label" parent="ModifierDataPanel/VContainer/HContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOD NAME:"
 
-[node name="Label2" type="Label" parent="Panel3/VBoxContainer/HBoxContainer"]
+[node name="Value" type="Label" parent="ModifierDataPanel/VContainer/HContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "AAAAAAAAAA"
 
-[node name="Label2" type="Label" parent="Panel3/VBoxContainer"]
+[node name="Title" type="Label" parent="ModifierDataPanel/VContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "RECIPE"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel3/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ModifierDataPanel/VContainer"]
 custom_minimum_size = Vector2(188, 100)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel3/VBoxContainer/ScrollContainer"]
+[node name="IngredientsContainer" type="VBoxContainer" parent="ModifierDataPanel/VContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Modify" type="Button" parent="Panel3"]
+[node name="ModifyButton" type="Button" parent="ModifierDataPanel"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 184.0
@@ -521,8 +486,8 @@ offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="button_up" from="TextureButton" to="." method="_on_texture_button_button_up"]
-[connection signal="button_up" from="TextureButton2" to="." method="_on_texture_button_2_button_up"]
-[connection signal="button_up" from="TextureButton3" to="." method="_on_texture_button_3_button_up"]
-[connection signal="button_up" from="TextureButton4" to="." method="_on_texture_button_4_button_up"]
-[connection signal="button_up" from="Panel3/Modify" to="." method="_on_modify_button_up"]
+[connection signal="button_up" from="PipeModifierButton" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="ScopeModifierButton" to="." method="_on_texture_button_2_button_up"]
+[connection signal="button_up" from="ButtModifierButton" to="." method="_on_texture_button_3_button_up"]
+[connection signal="button_up" from="HandleModifierButton" to="." method="_on_texture_button_4_button_up"]
+[connection signal="button_up" from="ModifierDataPanel/ModifyButton" to="." method="_on_modify_button_up"]

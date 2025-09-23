@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x2hje")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Back" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
@@ -49,7 +49,7 @@ offset_bottom = 238.25
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_nkug2")
-current_tab = 2
+current_tab = 3
 
 [node name="Video" type="TabBar" parent="TabContainer"]
 visible = false
@@ -68,39 +68,39 @@ offset_bottom = -15.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer"]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3"]
+[node name="WindowSettings" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="Title" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "WINDOW"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings"]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="WindowMode" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowMode"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "WINDOW MODE"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowMode"]
 custom_minimum_size = Vector2(391, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowMode"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -113,19 +113,19 @@ popup/item_1/id = 1
 popup/item_2/text = "FULLSCREEN"
 popup/item_2/id = 2
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="WindowSize" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer8"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowSize"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "WINDOW SIZE"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer8"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowSize"]
 custom_minimum_size = Vector2(503, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer8"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowSize"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -140,19 +140,19 @@ popup/item_2/id = 2
 popup/item_3/text = "3840x2160"
 popup/item_3/id = 3
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="Framerate" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer9"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Framerate"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "FRAME RATE"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer9"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Framerate"]
 custom_minimum_size = Vector2(510, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer9"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Framerate"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -175,19 +175,19 @@ popup/item_6/id = 6
 popup/item_7/text = "UNLIMITED"
 popup/item_7/id = 7
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="VSync" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer10"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/VSync"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "V-SYNC"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer10"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/VSync"]
 custom_minimum_size = Vector2(554, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer10"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/VSync"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -198,19 +198,19 @@ popup/item_0/id = 0
 popup/item_1/text = "ENABLED"
 popup/item_1/id = 1
 
-[node name="HBoxContainer11" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="FSR" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer11"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FSR"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "FSR"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer11"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FSR"]
 custom_minimum_size = Vector2(543, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer11"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FSR"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -225,38 +225,38 @@ popup/item_2/id = 2
 popup/item_3/text = "QUALITY"
 popup/item_3/id = 3
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer"]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3"]
+[node name="GraphicsSettings" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2"]
+[node name="Title" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "GRAPHICS"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings"]
 layout_mode = 2
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="Preset" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Preset"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "PRESET"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Preset"]
 custom_minimum_size = Vector2(560, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer3"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Preset"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -271,19 +271,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="RenderDistance" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer5"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/RenderDistance"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "RENDER DISTANCE"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer5"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/RenderDistance"]
 custom_minimum_size = Vector2(484.11, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer5"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/RenderDistance"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -298,19 +298,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="TerrainQuality" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TerrainQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "TERRAIN QUALITY"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TerrainQuality"]
 custom_minimum_size = Vector2(489.265, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TerrainQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -325,19 +325,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="Envinroment" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer7"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Envinroment"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "ENVINROMENT QUALITY"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer7"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Envinroment"]
 custom_minimum_size = Vector2(445.06, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer7"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Envinroment"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -352,19 +352,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="VegetationQuality" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/VegetationQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "VEGETATION QUALITY"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/VegetationQuality"]
 custom_minimum_size = Vector2(461.59, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer2"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/VegetationQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -379,19 +379,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="TexturesQuality" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TexturesQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "TEXTURES QUALITY"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TexturesQuality"]
 custom_minimum_size = Vector2(481.89, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer4"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TexturesQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -406,19 +406,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="EffectsQuality" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer6"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/EffectsQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "EFFECTS QUALITY"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer6"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/EffectsQuality"]
 custom_minimum_size = Vector2(481.89, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer6"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/EffectsQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -433,19 +433,19 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer"]
+[node name="ParticlesQuality" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer8"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/ParticlesQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "PARTICLES QUALITY"
 
-[node name="Control" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer8"]
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/ParticlesQuality"]
 custom_minimum_size = Vector2(481.89, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VBoxContainer3/VBoxContainer2/VBoxContainer/HBoxContainer8"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/ParticlesQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -460,7 +460,7 @@ popup/item_2/id = 2
 popup/item_3/text = "EPIC"
 popup/item_3/id = 3
 
-[node name="Control2" type="Control" parent="TabContainer/Video/ScrollContainer/VBoxContainer3"]
+[node name="Spacer2" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer"]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 
@@ -481,39 +481,39 @@ offset_bottom = -15.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Gameplay/ScrollContainer"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Gameplay/ScrollContainer"]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3"]
+[node name="GeneralSettings" type="VBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="Title" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "GENERAL"
 
-[node name="Control" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings"]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="Autojump" type="HBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="Name" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/Autojump"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "AUTOJUMP"
 
-[node name="Control" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/Autojump"]
 custom_minimum_size = Vector2(549, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer7"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/Autojump"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -524,19 +524,19 @@ popup/item_0/id = 0
 popup/item_1/text = "ENABLED"
 popup/item_1/id = 1
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="CameraTrickness" type="HBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer8"]
+[node name="Name" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/CameraTrickness"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "CAMERA TRICKNESS"
 
-[node name="Control" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer8"]
+[node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/CameraTrickness"]
 custom_minimum_size = Vector2(490, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer8"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/CameraTrickness"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -549,19 +549,19 @@ popup/item_1/id = 1
 popup/item_2/text = "ENABLED"
 popup/item_2/id = 2
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer"]
+[node name="DynamicFov" type="HBoxContainer" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer9"]
+[node name="Name" type="Label" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/DynamicFov"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "DYNAMIC FOV"
 
-[node name="Control" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer9"]
+[node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/DynamicFov"]
 custom_minimum_size = Vector2(528, 0)
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3/VBoxContainer/VBoxContainer/HBoxContainer9"]
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/DynamicFov"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -574,11 +574,12 @@ popup/item_1/id = 1
 popup/item_2/text = "ENABLED"
 popup/item_2/id = 2
 
-[node name="Control2" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VBoxContainer3"]
+[node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer"]
 custom_minimum_size = Vector2(0, 18)
 layout_mode = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -594,180 +595,179 @@ offset_bottom = -15.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Audio/ScrollContainer"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Audio/ScrollContainer"]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Audio/ScrollContainer/VContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="GeneralVolume" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer7"]
+[node name="Name" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "GENERAL VOLUME"
 
-[node name="Control" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer7"]
+[node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer7"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 custom_minimum_size = Vector2(481, 19)
 layout_mode = 2
 value = 50.0
 
-[node name="Control2" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer7"]
+[node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer7"]
+[node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "100"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer7"]
+[node name="Sufix" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "%"
 
-[node name="Control" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="MusicsVolume" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer8"]
+[node name="Name" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MUSICS VOLUME"
 
-[node name="Control" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer8"]
+[node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer8"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 custom_minimum_size = Vector2(481, 19)
 layout_mode = 2
 value = 100.0
 
-[node name="Control2" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer8"]
+[node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer8"]
+[node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "100"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer8"]
+[node name="Sufix" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "%"
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="EnemysVolume" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer9"]
+[node name="Name" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "ENEMYS VOLUME"
 
-[node name="Control" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer9"]
+[node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 custom_minimum_size = Vector2(71, 0)
 layout_mode = 2
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer9"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 custom_minimum_size = Vector2(481, 19)
 layout_mode = 2
 value = 100.0
 
-[node name="Control2" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer9"]
+[node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer9"]
+[node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "100"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer9"]
+[node name="Sufix" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "%"
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="VehiclesVolume" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer10"]
+[node name="Name" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "VEHICLES VOLUME"
 
-[node name="Control" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer10"]
+[node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 custom_minimum_size = Vector2(63, 0)
 layout_mode = 2
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer10"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 custom_minimum_size = Vector2(481, 19)
 layout_mode = 2
 value = 100.0
 
-[node name="Control2" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer10"]
+[node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer10"]
+[node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "100"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer10"]
+[node name="Sufix" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "%"
 
-[node name="HBoxContainer11" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer"]
+[node name="EffectsVolume" type="HBoxContainer" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer11"]
+[node name="Name" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "EFFECTS VOLUME"
 
-[node name="Control" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer11"]
+[node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 custom_minimum_size = Vector2(71, 0)
 layout_mode = 2
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer11"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 custom_minimum_size = Vector2(481, 19)
 layout_mode = 2
 value = 100.0
 
-[node name="Control2" type="Control" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer11"]
+[node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer11"]
+[node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "100"
 horizontal_alignment = 2
 
-[node name="Label3" type="Label" parent="TabContainer/Audio/ScrollContainer/VBoxContainer3/VBoxContainer/HBoxContainer11"]
+[node name="Sufix" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "%"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 
@@ -783,519 +783,519 @@ offset_bottom = -15.25
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Controls/ScrollContainer"]
+[node name="VContainer" type="VBoxContainer" parent="TabContainer/Controls/ScrollContainer"]
 custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3"]
+[node name="ControlsContainer" type="VBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="MoveForward" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer7"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveForward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOVE FORWARD"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer7"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveForward"]
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer7"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveForward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer7"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveForward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "W"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer7"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveForward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer8" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="MoveBackward" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer8"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveBackward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOVE BACKWARD"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer8"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveBackward"]
 custom_minimum_size = Vector2(122, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer8"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveBackward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer8"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveBackward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "S"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer8"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveBackward"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer9" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="MoveLeft" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer9"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveLeft"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOVE LEFT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer9"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveLeft"]
 custom_minimum_size = Vector2(170, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer9"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveLeft"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer9"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveLeft"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "A"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer9"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveLeft"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="MoveRight" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer10"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveRight"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOVE RIGHT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer10"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveRight"]
 custom_minimum_size = Vector2(159, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer10"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveRight"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer10"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveRight"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "R"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer10"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveRight"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer11" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Jump" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer11"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Jump"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "JUMP"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer11"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Jump"]
 custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer11"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Jump"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer11"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Jump"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "SPACE"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer11"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Jump"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer12" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Spling" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer12"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Spling"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "SPLING"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer12"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Spling"]
 custom_minimum_size = Vector2(195, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer12"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Spling"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer12"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Spling"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "SHIFT"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer12"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Spling"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer13" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Crouch" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer13"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Crouch"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "CROUCH"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer13"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Crouch"]
 custom_minimum_size = Vector2(186, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer13"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Crouch"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer13"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Crouch"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "CTRL"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer13"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Crouch"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer24" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Rise" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer24"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Rise"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "RISE"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer24"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Rise"]
 custom_minimum_size = Vector2(186, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer24"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Rise"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer24"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Rise"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "SPACE"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer24"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Rise"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer14" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Collect" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer14"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Collect"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "COLLECT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer14"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Collect"]
 custom_minimum_size = Vector2(185, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer14"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Collect"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer14"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Collect"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "E"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer14"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Collect"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer15" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Interact" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer15"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Interact"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "INTERACT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer15"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Interact"]
 custom_minimum_size = Vector2(179, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer15"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Interact"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer15"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Interact"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "E"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer15"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Interact"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer16" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Action" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer16"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Action"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "ACTION"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer16"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Action"]
 custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer16"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Action"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer16"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Action"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOUSE BUTTON LEFT"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer16"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Action"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer17" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Defense" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer17"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Defense"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "DEFENSE"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer17"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Defense"]
 custom_minimum_size = Vector2(185, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer17"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Defense"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer17"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Defense"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOUSE BUTTON RIGHT"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer17"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Defense"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer18" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Aim" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer18"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Aim"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "AIM"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer18"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Aim"]
 custom_minimum_size = Vector2(218, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer18"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Aim"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer18"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Aim"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOUSE BUTTON RIGHT"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer18"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Aim"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer19" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="LeftHotbarSlot" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer19"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/LeftHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "LEFT HOTBAR SLOT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer19"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/LeftHotbarSlot"]
 custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer19"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/LeftHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer19"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/LeftHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOUSE SCROLL DOWN"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer19"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/LeftHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer20" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="NextHotbarSlot" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer20"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/NextHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "NEXT HOTBAR SLOT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer20"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/NextHotbarSlot"]
 custom_minimum_size = Vector2(111, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer20"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/NextHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer20"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/NextHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "MOUSE SCROLL UP"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer20"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/NextHotbarSlot"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer21" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Inventory" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer21"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Inventory"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "INVENTORY"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer21"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Inventory"]
 custom_minimum_size = Vector2(166, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer21"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Inventory"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer21"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Inventory"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "I"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer21"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Inventory"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer22" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Pause" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer22"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Pause"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "PAUSE"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer22"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Pause"]
 custom_minimum_size = Vector2(201, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer22"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Pause"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer22"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Pause"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "ESC"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer22"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Pause"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="HBoxContainer23" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3"]
+[node name="Chat" type="HBoxContainer" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer"]
 layout_mode = 2
 
-[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer23"]
+[node name="LabelName" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Chat"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "CHAT"
 
-[node name="Control" type="Control" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer23"]
+[node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Chat"]
 custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer23"]
+[node name="LabelKey" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Chat"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "["
 
-[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer23"]
+[node name="LabelKey2" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Chat"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "TAB"
 
-[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VBoxContainer3/VBoxContainer3/HBoxContainer23"]
+[node name="LabelKey3" type="Label" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Chat"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "]"
 
-[node name="Apply" type="Button" parent="."]
+[node name="ApplyButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 198.0
 offset_top = 572.0
@@ -1304,5 +1304,5 @@ offset_bottom = 615.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x2hje")
 text = "APPLY"
 
-[connection signal="button_up" from="Back" to="." method="_on_back_button_up"]
-[connection signal="button_up" from="Apply" to="." method="_on_apply_button_up"]
+[connection signal="button_up" from="BackButton" to="." method="_on_back_button_up"]
+[connection signal="button_up" from="ApplyButton" to="." method="_on_apply_button_up"]

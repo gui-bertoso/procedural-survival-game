@@ -5,23 +5,23 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no0df"]
 bg_color = Color(0.133333, 0.133333, 0.133333, 0.701961)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfdvt"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovxg8"]
-bg_color = Color(1, 0.427451, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22bqa"]
-bg_color = Color(0, 0.172549, 1, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gc0er"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr4i0"]
 bg_color = Color(1, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfdvt"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4m0e"]
 bg_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovxg8"]
+bg_color = Color(1, 0.427451, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22bqa"]
+bg_color = Color(0, 0.172549, 1, 1)
 
 [node name="StatsContainer" type="Control" groups=["stats_container"]]
 layout_mode = 3
@@ -33,7 +33,41 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_sr4i0")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="BigBar" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 286.0
+offset_bottom = 43.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_no0df")
+
+[node name="HealthBar" type="ProgressBar" parent="BigBar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 278.0
+offset_bottom = 17.0
+mouse_filter = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_gc0er")
+theme_override_styles/fill = SubResource("StyleBoxFlat_sr4i0")
+value = 100.0
+show_percentage = false
+
+[node name="StaminaBar" type="ProgressBar" parent="BigBar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 20.0
+offset_right = 226.0
+offset_bottom = 32.42
+mouse_filter = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_bfdvt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i4m0e")
+max_value = 150.0
+value = 150.0
+show_percentage = false
+
+[node name="LittleBars" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 44.0
@@ -42,7 +76,7 @@ offset_bottom = 66.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_no0df")
 
-[node name="HungerBar" type="ProgressBar" parent="Panel"]
+[node name="HungerBar" type="ProgressBar" parent="LittleBars"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -55,7 +89,7 @@ max_value = 150.0
 value = 150.0
 show_percentage = false
 
-[node name="ThirstBar" type="ProgressBar" parent="Panel"]
+[node name="ThirstBar" type="ProgressBar" parent="LittleBars"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 12.0
@@ -64,40 +98,6 @@ offset_bottom = 19.0
 mouse_filter = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_bfdvt")
 theme_override_styles/fill = SubResource("StyleBoxFlat_22bqa")
-max_value = 150.0
-value = 150.0
-show_percentage = false
-
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 7.0
-offset_right = 286.0
-offset_bottom = 43.0
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_no0df")
-
-[node name="HealthBar" type="ProgressBar" parent="Panel2"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 278.0
-offset_bottom = 17.0
-mouse_filter = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_gc0er")
-theme_override_styles/fill = SubResource("StyleBoxFlat_sr4i0")
-value = 100.0
-show_percentage = false
-
-[node name="StaminaBar" type="ProgressBar" parent="Panel2"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 20.0
-offset_right = 226.0
-offset_bottom = 32.42
-mouse_filter = 1
-theme_override_styles/background = SubResource("StyleBoxFlat_bfdvt")
-theme_override_styles/fill = SubResource("StyleBoxFlat_i4m0e")
 max_value = 150.0
 value = 150.0
 show_percentage = false

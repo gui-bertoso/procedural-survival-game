@@ -48,12 +48,12 @@ script = ExtResource("1_pjt0s")
 
 [node name="Body" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+[node name="Mesh" type="MeshInstance3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.850122, 0)
 material_override = SubResource("StandardMaterial3D_pjt0s")
 mesh = SubResource("CapsuleMesh_wa5vi")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Body/MeshInstance3D"]
+[node name="Mesh" type="MeshInstance3D" parent="Body/Mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.567281, -0.260091)
 material_override = SubResource("StandardMaterial3D_glpr6")
 mesh = SubResource("BoxMesh_pjt0s")
@@ -112,14 +112,14 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.313840
 target_position = Vector3(0, -0.935, 0)
 collision_mask = 3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MapIconMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.70710677, -0.70710677, -3.090862e-08, 0, -4.371139e-08, 1, -0.70710677, -0.70710677, -3.090862e-08, 0, 17.877476, 0)
 material_override = SubResource("StandardMaterial3D_hx151")
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_hx151")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MapIconMesh2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.39739448, -0.40274462, -3.0908616e-08, 0, -2.4896558e-08, 0.99999994, -0.39739448, -0.40274462, -3.0908616e-08, 0.089279175, 17.877476, 3.2140827)
 material_override = SubResource("StandardMaterial3D_0rvpn")
 cast_shadow = 0

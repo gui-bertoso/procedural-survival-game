@@ -14,7 +14,7 @@ size = Vector3(0.045, 0.24, 0.085)
 precision = 3.0
 recoil = -2.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.99083763, 0.13505845, 0, -0.13505845, 0.99083763, 0, -0.10557087, 0.015)
 material_override = SubResource("StandardMaterial3D_chs56")
 mesh = SubResource("BoxMesh_o68mm")

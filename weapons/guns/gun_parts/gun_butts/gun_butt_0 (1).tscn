@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuqgrl1g7r78g"]
+[gd_scene load_steps=8 format=3 uid="uid://ba2232ur5325c"]
 
 [ext_resource type="PackedScene" uid="uid://cxuhy2crd0ury" path="res://weapons/guns/gun_parts/gun_butts/gun_butt/gun_butt.tscn" id="1_0ll08"]
 [ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="2_t4e4t"]

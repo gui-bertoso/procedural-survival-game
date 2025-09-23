@@ -16,6 +16,6 @@ height = 0.5
 
 [node name="TemplateItemMesh" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_e2s8f")
 mesh = SubResource("SphereMesh_pwf3e")

@@ -55,9 +55,6 @@ mouse_filter = 1
 [node name="SubViewport" parent="GunBench/SubViewportContainer" index="0"]
 render_target_update_mode = 0
 
-[node name="Node3D" parent="GunBench/SubViewportContainer/SubViewport" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2000, 0)
-
 [node name="Hotbar" parent="." instance=ExtResource("3_8sq4i")]
 y_sort_enabled = true
 offset_left = 27.0

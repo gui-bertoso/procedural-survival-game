@@ -4,40 +4,40 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vcpk0"]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="ModifierIngredient" type="ColorRect"]
 custom_minimum_size = Vector2(0, 32)
 offset_right = 188.0
 offset_bottom = 32.0
 color = Color(0.13803378, 0.13803375, 0.13803375, 1)
 script = ExtResource("1_l7afu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 184.0
 offset_bottom = 27.0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="ImageTexture" type="TextureRect" parent="HContainer"]
 custom_minimum_size = Vector2(23, 0)
 layout_mode = 2
 texture = SubResource("NoiseTexture2D_vcpk0")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="ImageName" type="Label" parent="HContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 14
 text = "AAAAAAAAAAAaa"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="HBoxContainer"]
+[node name="Sufix" type="Label" parent="HContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "x"
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="HBoxContainer"]
+[node name="ItemAmount" type="Label" parent="HContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "99"

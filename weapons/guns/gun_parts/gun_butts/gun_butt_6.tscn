@@ -23,17 +23,17 @@ size = Vector3(0.015, 0.09, 0.175)
 precision = 3.0
 recoil = -15.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+[node name="Mesh3" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04649727, 0.178)
 material_override = SubResource("StandardMaterial3D_phkkd")
 mesh = SubResource("BoxMesh_36ix2")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+[node name="Mesh2" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.012947969, 0.178)
 material_override = SubResource("StandardMaterial3D_phkkd")
 mesh = SubResource("BoxMesh_36ix2")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, -0.3801827, 0.9249114, 0, -0.9249114, -0.3801827, 0, -0.0303092, 0.3504948)
 material_override = SubResource("StandardMaterial3D_4inmh")
 mesh = SubResource("BoxMesh_0s8n3")
