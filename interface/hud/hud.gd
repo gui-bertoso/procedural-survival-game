@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name HUD
 
 var on_pause_menu = false
 var on_inventory = false

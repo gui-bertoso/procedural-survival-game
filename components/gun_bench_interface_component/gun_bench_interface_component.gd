@@ -1,14 +1,14 @@
 extends Control
 class_name GunsBenchInterfaceComponent
 
-@onready var camera: Camera3D = 
-@onready var gun_damage_label: Label = $VBoxContainer/HBoxContainer/Label2
-@onready var gun_fire_cadense_label: Label = $VBoxContainer/HBoxContainer2/Label2
-@onready var gun_reload_time_label: Label = $VBoxContainer/HBoxContainer3/Label2
-@onready var gun_max_ammo_label: Label = $VBoxContainer/HBoxContainer4/Label2
-@onready var gun_recoil_label: Label = $VBoxContainer/HBoxContainer5/Label2
-@onready var gun_precision_label: Label = $VBoxContainer/HBoxContainer6/Label2
-@onready var gun_fire_range_label: Label = $VBoxContainer/HBoxContainer7/Label2
+@onready var camera: Camera3D = $SubViewportContainer/SubViewport/Scene/Camera
+@onready var gun_damage_label: Label = $GunData/Damage/Value0
+@onready var gun_fire_cadense_label: Label = $GunData/FireCadense/Value0
+@onready var gun_reload_time_label: Label = $GunData/ReloadTime/Value0
+@onready var gun_max_ammo_label: Label = $GunData/MaxAmmo/Value0
+@onready var gun_recoil_label: Label = $GunData/Recoil/Value0
+@onready var gun_precision_label: Label = $GunData/Precision/Value0
+@onready var gun_fire_range_label: Label = $GunData/FireRange/Value0
 
 @onready var modifier_scene: PackedScene = preload("uid://jaf3rbsv30rw")
 @onready var modifier_ingredient_scene: PackedScene = preload("uid://7es3whbhfdjl")

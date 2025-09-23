@@ -1,37 +1,37 @@
 extends Node
 class_name CharacterStats
 
-var base_health = 100
-var addicional_health = 0
+var base_health: float = 100
+var addicional_health: float = 0
 
-var base_stamina = 100
-var addicional_stamina = 0
+var base_stamina: float = 100
+var addicional_stamina: float = 0
 
-var base_hunger = 100
-var addicional_hunger = 0
+var base_hunger: float = 100
+var addicional_hunger: float = 0
 
-var base_thirst = 100
-var addicional_thirst = 0
+var base_thirst: float = 100
+var addicional_thirst: float = 0
 
-var base_movement_speed = 3
-var addicional_movement_speed = 0
+var base_movement_speed: float = 3
+var addicional_movement_speed: float = 0
 
-var base_jump_force = 10
-var addicional_jump_force = 0
+var base_jump_force: float = 10
+var addicional_jump_force: float = 0
 
-var movement_speed = 0
-var health = 0
-var stamina = 0
-var hunger = 0
-var thirst = 0
-var jump_force = 0
+var movement_speed: float = 0
+var health: float = 0
+var stamina: float = 0
+var hunger: float = 0
+var thirst: float = 0
+var jump_force: float = 0
 
-var max_movement_speed = 0
-var max_health = 0
-var max_stamina = 0
-var max_hunger = 0
-var max_thirst = 0
-var max_jump_force = 0
+var max_movement_speed: float = 0
+var max_health: float = 0
+var max_stamina: float = 0
+var max_hunger: float = 0
+var max_thirst: float = 0
+var max_jump_force: float = 0
 
 func _enter_tree() -> void:
 	Globals.player_stats = self
