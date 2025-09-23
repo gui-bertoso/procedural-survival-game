@@ -33,12 +33,12 @@ fire_range = -5.0
 [node name="FireLocale" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.39870197)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, -0.00541045, -0.99998534, 0, 0.99998534, -0.00541045, 0, 0, -0.19868964)
 material_override = SubResource("StandardMaterial3D_gxlak")
 mesh = SubResource("CylinderMesh_5kjgt")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" index="0"]
+[node name="Mesh" type="MeshInstance3D" parent="Mesh" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1.0000008, -9.313226e-10, 0, 9.313226e-10, 1.0000008, 0, -0.19936809, 0.0010786867)
 material_override = SubResource("StandardMaterial3D_e1lgx")
 mesh = SubResource("CylinderMesh_sr58l")

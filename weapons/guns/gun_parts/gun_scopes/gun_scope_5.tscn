@@ -24,32 +24,32 @@ uv1_triplanar = true
 
 [node name="GunScope" instance=ExtResource("1_r0drc")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 3.96082e-05, 0, -0.038774498)
 material_override = ExtResource("2_nk8f5")
 mesh = SubResource("BoxMesh_668lc")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+[node name="Mesh2" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 2.4289939e-05, 0.009771238, -0.028800417)
 material_override = ExtResource("2_nk8f5")
 mesh = SubResource("BoxMesh_gyl8o")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2"]
+[node name="Mesh3" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -2.8643121e-06, 0.016627196, -0.011119638)
 material_override = ExtResource("2_nk8f5")
 mesh = SubResource("BoxMesh_ksduh")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="3"]
+[node name="Mesh4" type="MeshInstance3D" parent="." index="3"]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -2.8643121e-06, 0.040708225, -0.011119638)
 material_override = ExtResource("2_nk8f5")
 mesh = SubResource("BoxMesh_ksduh")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." index="4"]
+[node name="Mesh5" type="MeshInstance3D" parent="." index="4"]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, 0.018982999, 0.028654436, -0.01109048)
 material_override = ExtResource("2_nk8f5")
 mesh = SubResource("BoxMesh_xcqmk")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="." index="5"]
+[node name="Mesh6" type="MeshInstance3D" parent="." index="5"]
 transform = Transform3D(-2, 0, -1.7484555e-07, 0, 2, 0, 1.7484555e-07, 0, -2, -0.019014949, 0.028654436, -0.011148836)
 material_override = SubResource("StandardMaterial3D_3sknh")
 mesh = SubResource("BoxMesh_xcqmk")

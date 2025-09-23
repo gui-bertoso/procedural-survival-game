@@ -21,22 +21,22 @@ size = Vector3(0.001, 0.01, 0.005)
 [node name="GunScope" instance=ExtResource("1_thaga")]
 precision = 7.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+[node name="Mesh4" type="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, -0.008550733)
 material_override = SubResource("StandardMaterial3D_q4di0")
 mesh = SubResource("BoxMesh_668lc")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+[node name="Mesh3" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.0030244028, 0, 0)
 material_override = SubResource("StandardMaterial3D_q4di0")
 mesh = SubResource("BoxMesh_6nnhr")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." index="2"]
+[node name="Mesh2" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.0011819974, 0)
 material_override = SubResource("StandardMaterial3D_q4di0")
 mesh = SubResource("BoxMesh_pcup6")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="3"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="3"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.003260806, 0, 0)
 material_override = SubResource("StandardMaterial3D_q4di0")
 mesh = SubResource("BoxMesh_6nnhr")

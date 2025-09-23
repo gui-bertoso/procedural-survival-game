@@ -18,39 +18,39 @@ size = Vector3(1.535, 0.03, 0.775)
 [sub_resource type="BoxMesh" id="BoxMesh_d0dex"]
 size = Vector3(0.2, 0.705, 0.2)
 
-[node name="GunsBench" type="Node3D"]
+[node name="GunsBenchMesh" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Mesh7" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, -0.0034724684, 0.48167813, -0.057256177)
 material_override = SubResource("StandardMaterial3D_gnju3")
 mesh = SubResource("BoxMesh_mi7w2")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+[node name="Mesh6" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, -0.011442812, 0.7503462, 0.31608772)
 material_override = SubResource("StandardMaterial3D_gnju3")
 mesh = SubResource("BoxMesh_gnju3")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Mesh5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, -0.01425196, 0.5402674, -0.13878745)
 material_override = SubResource("StandardMaterial3D_kob2j")
 mesh = SubResource("BoxMesh_87o50")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="Mesh4" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, 0.75739956, 0.27808225, 0.26092485)
 material_override = SubResource("StandardMaterial3D_gnju3")
 mesh = SubResource("BoxMesh_d0dex")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="Mesh3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, 0.7701549, 0.27808225, -0.336555)
 material_override = SubResource("StandardMaterial3D_gnju3")
 mesh = SubResource("BoxMesh_d0dex")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+[node name="Mesh2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, -0.76298636, 0.27808225, 0.21054357)
 material_override = SubResource("StandardMaterial3D_gnju3")
 mesh = SubResource("BoxMesh_d0dex")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.79999995, 0, 0, 0, 0.8, 0, 0, 0, 0.79999995, -0.7506135, 0.27808225, -0.36902118)
 material_override = SubResource("StandardMaterial3D_gnju3")
 mesh = SubResource("BoxMesh_d0dex")

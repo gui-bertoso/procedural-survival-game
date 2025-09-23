@@ -4,14 +4,14 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a1fwl"]
 
-[node name="ColorRect" type="ColorRect"]
+[node name="CraftIngredient" type="ColorRect"]
 custom_minimum_size = Vector2(274, 42)
 offset_right = 280.0
 offset_bottom = 42.0
 color = Color(0.3491902, 0.3491902, 0.3491902, 1)
 script = ExtResource("1_xgplu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -22,25 +22,25 @@ offset_right = 268.0
 offset_bottom = 18.0
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+[node name="ItemTexture" type="TextureRect" parent="HContainer"]
 custom_minimum_size = Vector2(36, 0)
 layout_mode = 2
 texture = SubResource("NoiseTexture2D_a1fwl")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="ItemName" type="Label" parent="HContainer"]
 custom_minimum_size = Vector2(220, 23)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "AAAAAAAAAAAAAAAAA"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="HBoxContainer"]
+[node name="ItemAmount" type="Label" parent="HContainer"]
 layout_mode = 2
 text = "999"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="HBoxContainer"]
+[node name="ItemSufix" type="Label" parent="HContainer"]
 layout_mode = 2
 text = "x"

@@ -19,7 +19,7 @@ recoil = 13.0
 fire_range = 195.0
 reload_time = 15.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="0"]
+[node name="Mesh" type="MeshInstance3D" parent="." index="0"]
 material_override = SubResource("StandardMaterial3D_egpkw")
 mesh = SubResource("BoxMesh_oqeo3")
 

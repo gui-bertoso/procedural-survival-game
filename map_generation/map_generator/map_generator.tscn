@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://coag5f4apj5ge" path="res://map_generation/map_generator/map_generator.gd" id="1_n74el"]
 
-[node name="TerrainChunksManager" type="Node3D"]
+[node name="MapGenerator" type="Node3D"]
 script = ExtResource("1_n74el")

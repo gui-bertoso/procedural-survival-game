@@ -13,7 +13,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_bqgh8")
 
-[node name="Panel" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -29,7 +29,7 @@ grow_vertical = 2
 mouse_filter = 1
 color = Color(0.11366529, 0.11366529, 0.113665275, 1)
 
-[node name="GridContainer" type="GridContainer" parent="Panel"]
+[node name="SlotsContainer" type="GridContainer" parent="Background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -44,10 +44,10 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 9
 
-[node name="Slot" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -57,10 +57,10 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H1"
 
-[node name="Slot2" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot2" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot2"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot2"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -70,10 +70,10 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H2"
 
-[node name="Slot3" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot3" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot3"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot3"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -83,10 +83,10 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H3"
 
-[node name="Slot4" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot4" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot4"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot4"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -96,10 +96,10 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H4"
 
-[node name="Slot5" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot5" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot5"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot5"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -109,10 +109,10 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H5"
 
-[node name="Slot6" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot6" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot6"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot6"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -122,10 +122,10 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H6"
 
-[node name="Slot7" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot7" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Slot7"]
+[node name="Label" type="Label" parent="Background/SlotsContainer/Slot7"]
 modulate = Color(0.2357954, 0.2357954, 0.2357954, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -135,94 +135,94 @@ offset_bottom = 67.0
 mouse_filter = 1
 text = "H7"
 
-[node name="Slot8" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot8" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot9" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot9" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot10" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot10" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot11" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot11" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot12" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot12" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot13" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot13" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot14" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot14" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot15" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot15" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot16" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot16" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot17" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot17" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot18" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot18" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot19" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot19" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot20" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot20" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot21" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot21" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot22" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot22" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot23" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot23" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot24" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot24" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot25" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot25" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot26" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot26" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot27" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot27" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot28" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot28" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot29" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot29" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot30" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot30" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot31" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot31" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot32" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot32" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot33" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot33" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot34" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot34" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot35" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot35" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="Slot36" parent="Panel/GridContainer" instance=ExtResource("2_bqgh8")]
+[node name="Slot36" parent="Background/SlotsContainer" instance=ExtResource("2_bqgh8")]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel"]
+[node name="TopBar" type="ColorRect" parent="Background"]
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 1
 anchors_preset = 10
@@ -231,7 +231,7 @@ grow_horizontal = 2
 mouse_filter = 1
 color = Color(0.07815645, 0.07815645, 0.07815645, 1)
 
-[node name="Label" type="Label" parent="Panel/ColorRect"]
+[node name="Title" type="Label" parent="Background/TopBar"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

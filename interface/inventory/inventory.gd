@@ -1,4 +1,5 @@
 extends Control
+class_name Inventory
 
 func add_item(_item: Item):
 	if _item.item_type == "consumable" or _item.item_type == "resource":

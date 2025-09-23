@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c44hbue67kwrs" path="res://map_generation/recources_chunk/recources_chunk.gd" id="1_cgcld"]
 
-[node name="TreeChunk" type="MultiMeshInstance3D"]
+[node name="ResourcesChunk" type="MultiMeshInstance3D"]
 script = ExtResource("1_cgcld")

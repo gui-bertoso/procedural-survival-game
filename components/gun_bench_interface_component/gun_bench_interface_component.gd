@@ -1,97 +1,88 @@
 extends Control
-class_name GunsBench
+class_name GunsBenchInterfaceComponent
+
+@onready var camera: Camera3D = 
+@onready var gun_damage_label: Label = $VBoxContainer/HBoxContainer/Label2
+@onready var gun_fire_cadense_label: Label = $VBoxContainer/HBoxContainer2/Label2
+@onready var gun_reload_time_label: Label = $VBoxContainer/HBoxContainer3/Label2
+@onready var gun_max_ammo_label: Label = $VBoxContainer/HBoxContainer4/Label2
+@onready var gun_recoil_label: Label = $VBoxContainer/HBoxContainer5/Label2
+@onready var gun_precision_label: Label = $VBoxContainer/HBoxContainer6/Label2
+@onready var gun_fire_range_label: Label = $VBoxContainer/HBoxContainer7/Label2
+
+@onready var modifier_scene: PackedScene = preload("uid://jaf3rbsv30rw")
+@onready var modifier_ingredient_scene: PackedScene = preload("uid://7es3whbhfdjl")
+
+@onready var pipes_modifications_list: Array[GunModification] = [
+	preload("res://modifiers/guns/debug_pipe_0.tres"),
+	preload("res://modifiers/guns/debug_pipe_1.tres"),
+	preload("res://modifiers/guns/debug_pipe_2.tres"),
+	preload("res://modifiers/guns/debug_pipe_3.tres"),
+	preload("res://modifiers/guns/debug_pipe_4.tres"),
+	preload("res://modifiers/guns/debug_pipe_5.tres"),
+	preload("res://modifiers/guns/debug_pipe_6.tres"),
+	preload("res://modifiers/guns/debug_pipe_7.tres"),
+	preload("res://modifiers/guns/debug_pipe_8.tres")
+]
+@onready var butts_modifications_list: Array[GunModification] = [
+	preload("res://modifiers/guns/debug_butt_0.tres"),
+	preload("res://modifiers/guns/debug_butt_1.tres"),
+	preload("res://modifiers/guns/debug_butt_2.tres"),
+	preload("res://modifiers/guns/debug_butt_3.tres"),
+	preload("res://modifiers/guns/debug_butt_4.tres"),
+	preload("res://modifiers/guns/debug_butt_5.tres"),
+	preload("res://modifiers/guns/debug_butt_6.tres")
+]
+@onready var handles_modifications_list: Array[GunModification] = [
+	preload("res://modifiers/guns/debug_handle_0.tres"),
+	preload("res://modifiers/guns/debug_handle_1.tres"),
+	preload("res://modifiers/guns/debug_handle_2.tres"),
+	preload("res://modifiers/guns/debug_handle_3.tres"),
+	preload("res://modifiers/guns/debug_handle_4.tres"),
+	preload("res://modifiers/guns/debug_handle_5.tres")
+]
+@onready var scopes_modifications_list: Array[GunModification] = [
+	preload("res://modifiers/guns/debug_scope_0.tres"),
+	preload("res://modifiers/guns/debug_scope_1.tres"),
+	preload("res://modifiers/guns/debug_scope_2.tres"),
+	preload("res://modifiers/guns/debug_scope_3.tres"),
+	preload("res://modifiers/guns/debug_scope_4.tres"),
+	preload("res://modifiers/guns/debug_scope_5.tres")
+]
 
 @export var core_snap: Marker3D = null
-@onready var modifier_scene = preload("res://interface/modifiers/modifier_container.tscn")
-
-var gun_core: GunCore = null
-
 @export var pipe_snap: Marker3D = null
 @export var butt_snap: Marker3D = null
 @export var handle_snap: Marker3D = null
 @export var scope_snap: Marker3D = null
 
+var gun_core: GunCore = null
+
+var selected_modification: ModificationRecipe = null
+var modification_ingredients: Array[CraftIngredient] = []
+
+var on_handle: bool = false
+var on_scope: bool = false
+var on_pipe: bool = false
+var on_butt: bool = false
+
 var item: Item = null
-
-var pipes_mod_list = [
-	preload("res://modifications/guns/debug_pipe_0.tres"),
-	preload("res://modifications/guns/debug_pipe_1.tres"),
-	preload("res://modifications/guns/debug_pipe_2.tres"),
-	preload("res://modifications/guns/debug_pipe_3.tres"),
-	preload("res://modifications/guns/debug_pipe_4.tres"),
-	preload("res://modifications/guns/debug_pipe_5.tres"),
-	preload("res://modifications/guns/debug_pipe_6.tres"),
-	preload("res://modifications/guns/debug_pipe_7.tres"),
-	preload("res://modifications/guns/debug_pipe_8.tres")
-]
-var butts_mod_list = [
-	preload("res://modifications/guns/debug_butt_0.tres"),
-	preload("res://modifications/guns/debug_butt_1.tres"),
-	preload("res://modifications/guns/debug_butt_2.tres"),
-	preload("res://modifications/guns/debug_butt_3.tres"),
-	preload("res://modifications/guns/debug_butt_4.tres"),
-	preload("res://modifications/guns/debug_butt_5.tres"),
-	preload("res://modifications/guns/debug_butt_6.tres")
-]
-var handles_mod_list = [
-	preload("res://modifications/guns/debug_handle_0.tres"),
-	preload("res://modifications/guns/debug_handle_1.tres"),
-	preload("res://modifications/guns/debug_handle_2.tres"),
-	preload("res://modifications/guns/debug_handle_3.tres"),
-	preload("res://modifications/guns/debug_handle_4.tres"),
-	preload("res://modifications/guns/debug_handle_5.tres")
-]
-var scopes_mod_list = [
-	preload("res://modifications/guns/debug_scope_0.tres"),
-	preload("res://modifications/guns/debug_scope_1.tres"),
-	preload("res://modifications/guns/debug_scope_2.tres"),
-	preload("res://modifications/guns/debug_scope_3.tres"),
-	preload("res://modifications/guns/debug_scope_4.tres"),
-	preload("res://modifications/guns/debug_scope_5.tres")
-]
-
-var selected_modification = null
-var modification_ingredients = []
-
-var on_handle = false
-var on_scope = false
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		$SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.y += (event.relative.y * 0.0001)
-		$SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.x += (event.relative.x * 0.0001)
-		$SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.x = clamp($SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.x, $SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position.x - 0.03,$SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position.x + 0.03)
-		$SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.y = clamp($SubViewportContainer/SubViewport/Node3D/Camera3D.global_position.y, $SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position.y - 0.03,$SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position.y + 0.03)
-
-
-var on_pipe = false
-func _on_texture_button_button_up() -> void:
-	if on_pipe:
-		$Panel2.visible = false
-		hide_mods()
-		deselect_modification()
-		on_pipe = false
-		on_handle = false
-		on_scope = false
-		on_butt = false
-		clear_preview()
-	else:
-		$Panel2.visible = true
-		set_mods_to_pipes()
-		on_pipe = true
-		on_handle = false
-		on_scope = false
-		on_butt = false
-		clear_preview()
+		camera.global_position.y += (event.relative.y * 0.0001)
+		camera.global_position.x += (event.relative.x * 0.0001)
+		camera.global_position.x = clamp(camera.global_position.x, core_snap.global_position.x - 0.03, core_snap.global_position.x + 0.03)
+		camera.global_position.y = clamp(camera.global_position.y, core_snap.global_position.y - 0.03, core_snap.global_position.y + 0.03)
 
 func update_stats_table():
-	$VBoxContainer/HBoxContainer/Label2.text = str(gun_core.damage)
-	$VBoxContainer/HBoxContainer2/Label2.text = str(gun_core.fire_cadense)
-	$VBoxContainer/HBoxContainer3/Label2.text = str(gun_core.reload_time)
-	$VBoxContainer/HBoxContainer4/Label2.text = str(gun_core.max_ammo)
-	$VBoxContainer/HBoxContainer5/Label2.text = str(gun_core.recoil)
-	$VBoxContainer/HBoxContainer6/Label2.text = str(gun_core.precision)
-	$VBoxContainer/HBoxContainer7/Label2.text = str(gun_core.fire_range)
+	gun_damage_label.text = str(gun_core.damage)
+	gun_fire_cadense_label.text = str(gun_core.fire_cadense)
+	gun_reload_time_label.text = str(gun_core.reload_time)
+	gun_max_ammo_label.text = str(gun_core.max_ammo)
+	gun_recoil_label.text = str(gun_core.recoil)
+	gun_precision_label.text = str(gun_core.precision)
+	gun_fire_range_label.text = str(gun_core.fire_range)
 
 func update_stats_preview():
 	if on_butt:
@@ -203,7 +194,7 @@ func clear_stats_preview():
 	$VBoxContainer/HBoxContainer5/Label4.visible = false
 
 func init_camera_atributes():
-	$SubViewportContainer/SubViewport/Node3D/Camera3D.global_position = $SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position + Vector3(0, 0, 1.6)
+	camera.global_position = $SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position + Vector3(0, 0, 1.6)
 
 func _on_texture_button_2_button_up() -> void:
 	if on_scope:
@@ -228,7 +219,6 @@ func set_item(_item: Item):
 	item = _item
 	update_core()
 
-var on_butt = false
 func _on_texture_button_3_button_up() -> void:
 	if on_butt:
 		$Panel2.visible = false
@@ -280,7 +270,7 @@ func _on_texture_button_5_button_up() -> void:
 func set_mods_to_pipes():
 	for mod in $Panel2/ScrollContainer/VBoxContainer.get_children():
 		mod.queue_free()
-	for mod in pipes_mod_list:
+	for mod in pipes_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
@@ -289,7 +279,7 @@ func set_mods_to_pipes():
 func set_mods_to_butts():
 	for mod in $Panel2/ScrollContainer/VBoxContainer.get_children():
 		mod.queue_free()
-	for mod in butts_mod_list:
+	for mod in butts_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
@@ -298,7 +288,7 @@ func set_mods_to_butts():
 func set_mods_to_handles():
 	for mod in $Panel2/ScrollContainer/VBoxContainer.get_children():
 		mod.queue_free()
-	for mod in handles_mod_list:
+	for mod in handles_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
@@ -307,7 +297,7 @@ func set_mods_to_handles():
 func set_mods_to_scopes():
 	for mod in $Panel2/ScrollContainer/VBoxContainer.get_children():
 		mod.queue_free()
-	for mod in scopes_mod_list:
+	for mod in scopes_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
@@ -333,7 +323,7 @@ func select_modification(modification_recipe: ModificationRecipe):
 	for i in $Panel3/VBoxContainer/ScrollContainer/VBoxContainer.get_children():
 		i.queue_free()
 	for ingredient in modification_recipe.item.modification_ingredients:
-		var b = preload("res://interface/modifiers/modifier_ingredient.tscn").instantiate()
+		var b = modifier_ingredient_scene.instantiate()
 		var aitem = ingredient.duplicate(true)
 		aitem.item_amount = modification_recipe.item.modification_ingredients[ingredient]
 		b.set_item(aitem)
@@ -475,3 +465,22 @@ func show_gun_data():
 	$TextureButton3.disabled = false
 	$TextureButton2.disabled = false
 	$TextureButton.disabled = false
+
+func _on_texture_button_button_up() -> void:
+	if on_pipe:
+		$Panel2.visible = false
+		hide_mods()
+		deselect_modification()
+		on_pipe = false
+		on_handle = false
+		on_scope = false
+		on_butt = false
+		clear_preview()
+	else:
+		$Panel2.visible = true
+		set_mods_to_pipes()
+		on_pipe = true
+		on_handle = false
+		on_scope = false
+		on_butt = false
+		clear_preview()
