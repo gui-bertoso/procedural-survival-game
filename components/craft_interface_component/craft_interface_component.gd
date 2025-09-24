@@ -1,13 +1,13 @@
 extends Control
 class_name CraftInterfaceComponent
 
-@onready var _recipes_container: VBoxContainer = $HBoxContainer/ColorRect/ScrollContainer/VBoxContainer
-@onready var _ingredients_container: VBoxContainer = $HBoxContainer/ColorRect2/VBoxContainer/ScrollContainer/VBoxContainer
-@onready var _craft_menu: ColorRect = $HBoxContainer/ColorRect2
-@onready var _craft_button: Button = $HBoxContainer/ColorRect2/VBoxContainer/Button
-@onready var _craft_name_label: Label = $HBoxContainer/ColorRect2/VBoxContainer/Label
-@onready var _craft_type_label: Label = $HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer/Label4
-@onready var _craft_quantity_label: Label = $HBoxContainer/ColorRect2/VBoxContainer/HBoxContainer2/Label4
+@onready var _recipes_container: VBoxContainer = $HContainer/Background/ScrollContainer/RecipesContainer
+@onready var _ingredients_container: VBoxContainer = $HContainer/Background2/VContainer/ScrollContainer/IngredientsContainer
+@onready var _craft_menu: ColorRect = $HContainer/CraftMenu
+@onready var _craft_button: Button = $HContainer/CraftMenu/VContainer/CraftButton
+@onready var _craft_name_label: Label = $HContainer/CraftMenu/VContainer/CraftName
+@onready var _craft_type_label: Label = $HContainer/CraftMenu/VContainer/CraftType/Value
+@onready var _craft_quantity_label: Label = $HContainer/CraftMenu/VContainer/CraftQuantity/Value
 
 @onready var craft_recipe_scene: PackedScene = preload("uid://4t4hdhigv82e")
 @onready var craft_ingredient_scene: PackedScene = preload("uid://d3cf6gb4ldt7y")
