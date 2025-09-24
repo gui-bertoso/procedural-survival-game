@@ -73,7 +73,7 @@ func generate_collision():
 func update_chunk(view_position: Vector2, max_view_distance: float):
 	var viewer_distance = position_coordinades.distance_to(view_position)
 	set_chunk_visible(viewer_distance <= max_view_distance)
-	$TreeChunk.update_collision()
+	$ResourcesChunk.update_collision()
 
 func should_remode(view_position: Vector2, max_view_distance: float):
 	return position_coordinades.distance_to(view_position) > max_view_distance
@@ -93,13 +93,12 @@ func update_lod(view_position: Vector2):
 	
 	if noise:
 		if new_lod >= 18:
-			if not $TreeChunk.has_meta("generated"):
-				$TreeChunk.noise = noise
-				$TreeChunk.terrain_ref = self
-				$TreeChunk.generate_trees()
-				$TreeChunk.set_meta("generated", true)
+			if not $ResourcesChunk.has_meta("generated"):
+				$ResourcesChunk.noise = noise
+				$ResourcesChunk.terrain_ref = self
+				$ResourcesChunk.generate_trees()
+				$ResourcesChunk.set_meta("generated", true)
 			
-	
 	if terrain_resolution != new_lod:
 		terrain_resolution = new_lod
 		return true

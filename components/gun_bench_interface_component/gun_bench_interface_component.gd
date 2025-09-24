@@ -194,7 +194,7 @@ func clear_stats_preview():
 	$VBoxContainer/HBoxContainer5/Label4.visible = false
 
 func init_camera_atributes():
-	camera.global_position = $SubViewportContainer/SubViewport/Node3D/Node3D/CoreSnap.global_position + Vector3(0, 0, 1.6)
+	camera.global_position = $SubViewportContainer/SubViewport/Scene/Snaps/CoreSnap.global_position + Vector3(0, 0, 1.6)
 
 func _on_texture_button_2_button_up() -> void:
 	if on_scope:
