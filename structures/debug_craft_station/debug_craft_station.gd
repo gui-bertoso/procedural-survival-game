@@ -1,8 +1,9 @@
 extends Structure
+class_name DebugCraftStation
 
 func _process(delta: float) -> void:
-	$MeshInstance3D2.global_rotation.y += delta
-	$CollisionShape3D2.global_rotation.y += delta
+	$Body/Mesh2.global_rotation.y += delta
+	$Collision2.global_rotation.y += delta
 	if interacting:
 		if Input.is_action_just_pressed("ui_interact"):
 			if not a:

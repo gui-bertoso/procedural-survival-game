@@ -1,15 +1,23 @@
 extends Control
 
+@onready var fps_label: Label = $DataPanel/VContainer/VContainer/FPS/Value
+@onready var frametime_label: Label = $DataPanel/VContainer/VContainer/Frametime/Value
+@onready var can_rise_label: Label = $DataPanel/VContainer/VContainer/CanRise/Value
+@onready var rise_v0_label: Label = $DataPanel/VContainer/VContainer/RiseV0/Value
+@onready var rise_v1_label: Label = $DataPanel/VContainer/VContainer/RiseV1/Value
+@onready var rise_v2_label: Label = $DataPanel/VContainer/VContainer/RiseV2/Value
+@onready var rise_v3_label: Label = $DataPanel/VContainer/VContainer/RiseV3/Value
+
 func _process(_delta: float) -> void:
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer/Label3.text = str(int(Engine.get_frames_per_second()))
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer2/Label3.text = str("%.1f" % _delta) + "ms"
+	fps_label.text = str(int(Engine.get_frames_per_second()))
+	frametime_label.text = str("%.1f" % _delta) + "ms"
 	
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer3/Label3.text = str(Globals.player.can_rise).to_upper()
+	can_rise_label.text = str(Globals.player.can_rise).to_upper()
 	
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer4/Label3.text = str(Globals.player.climb_0).to_upper()
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer5/Label3.text = str(Globals.player.climb_1).to_upper()
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer6/Label3.text = str(Globals.player.climb_2).to_upper()
-	$Panel/VBoxContainer/VBoxContainer/HBoxContainer7/Label3.text = str(Globals.player.climb_3).to_upper()
+	rise_v0_label.text = str(Globals.player.rise_0).to_upper()
+	rise_v1_label.text = str(Globals.player.rise_1).to_upper()
+	rise_v2_label.text = str(Globals.player.rise_2).to_upper()
+	rise_v3_label.text = str(Globals.player.rise_3).to_upper()
 
 
 func _on_button_button_up() -> void:

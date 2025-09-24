@@ -4,7 +4,7 @@ class_name TerrainChunkManager
 @export var terrain_height_multiplier = 20
 @export var render_distance = 2000
 @export var viewer: Node3D
-@export var chunk_mesh_scene = preload("res://terrain_generation/terrain_chunk.tscn")
+@export var chunk_mesh_scene: PackedScene = preload("uid://p3u00rljwmwy")
 @export var thread_count = 10
 @export var noise: FastNoiseLite
 

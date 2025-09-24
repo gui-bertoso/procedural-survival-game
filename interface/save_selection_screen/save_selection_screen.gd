@@ -1,14 +1,20 @@
 extends Control
 class_name SaveSelectionScreen
 
+@onready var main_menu_scene_path: String = "uid://crev2inf1u6xe"
+@onready var default_map_scene_path: String = "uid://cgyrrwv1qx147"
+
 @onready var save_name_editor: TextEdit = $Panel/HContainer/SaveCreation/VContainer/SaveName/TextEditor
 @onready var save_seed_editor: TextEdit = $Panel/HContainer/SaveCreation/VContainer/SaveSeed/TextEditor
 @onready var map_size_selector: OptionButton = $Panel/HContainer/SaveCreation/VContainer/MapSize/OptionButton
 @onready var save_difficulty_selector: OptionButton = $Panel/HContainer/SaveCreation/VContainer/SaveDifficulty/OptionButton
 @onready var saves_list: ItemList = $Panel/HContainer/SavesSelector/HContainer/SavesList
 
-#Parei aqui de trabalhar
+@onready var play_save_button: Button = $PlaySaveButton
+@onready var create_save_button: Button = $Panel/HContainer/SaveCreation/ButtonsContainer/CreateButton
+@onready var delete_save_button: Button = $DeleteSaveButton
 
+@onready var save_creation_container: Panel = $Panel/HContainer/SaveCreation
 
 @onready var first_names_list: Array[String] = [
 	"The",
@@ -131,54 +137,54 @@ func _randomize_save_seed() -> int:
 
 func _update_saves_list() -> void:
 	saves_list.clear()
-	var saves_list = Globals.game_data_dictionary.saves
-	for save in saves_list:
+	var saves_array = Globals.game_data_dictionary.saves
+	for save in saves_array:
 		saves_list.add_item(save)
 
 func _on_item_list_item_selected(index: int) -> void:
-	$PlaySave.disabled = false
+	play_save_button.disabled = false
 	_selected_save_index = index
-	DataManagement.current_save = $Panel/HBoxContainer/SavesSelector/HBoxContainer/ItemList.get_item_text(_selected_save_index)
-	$DeleteSave.disabled = false
+	DataManagement.current_save = saves_list.get_item_text(_selected_save_index)
+	delete_save_button.disabled = false
 
 func _on_back_button_up() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file(main_menu_scene_path)
 
 func _on_create_save_button_up() -> void:
-	$Panel/HBoxContainer/SaveCreation.show()
-	$CreateSave.disabled = true
+	save_creation_container.show()
+	create_save_button.disabled = false
 
 func _on_create_button_up() -> void:
-	DataManagement.world_save("res://" + "saves/" + $Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveName/TextEdit.text + ".txt")
-	Globals.game_data_dictionary.saves.append($Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveName/TextEdit.text)
-	$Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveName/TextEdit.text = _randomize_save_name()
-	$Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveSeed/TextEdit.text = str(_randomize_save_seed())
-	$Panel/HBoxContainer/SaveCreation.hide()
-	$CreateSave.disabled = false
+	DataManagement.world_save("res://" + "saves/" + save_name_editor.text + ".txt")
+	Globals.game_data_dictionary.saves.append(save_name_editor.text)
+	save_name_editor.text = _randomize_save_name()
+	save_seed_editor.text = str(_randomize_save_seed())
+	save_creation_container.hide()
+	create_save_button.disabled = false
 	DataManagement.load_world_save(DataManagement.current_save)
 	DataManagement.save_game_save()
 	_update_saves_list()
 
 func _on_randomize_button_up() -> void:
-	$Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveName/TextEdit.text = _randomize_save_name()
-	$Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveSeed/TextEdit.text = str(_randomize_save_seed())
+	save_name_editor.text = _randomize_save_name()
+	save_seed_editor.text = str(_randomize_save_seed())
 
 func _on_cancel_button_up() -> void:
-	$Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveName/TextEdit.text = _randomize_save_name()
-	$Panel/HBoxContainer/SaveCreation/VBoxContainer/SaveSeed/TextEdit.text = str(_randomize_save_seed())
-	$Panel/HBoxContainer/SaveCreation.hide()
-	$CreateSave.disabled = false
+	save_name_editor.text = _randomize_save_name()
+	save_seed_editor.text = str(_randomize_save_seed())
+	save_creation_container.hide()
+	create_save_button.disabled = false
 
 func _on_play_save_button_up() -> void:
-	DataManagement.load_world_save("res://" + "save/" + $Panel/HBoxContainer/SavesSelector/HBoxContainer/ItemList.get_item_text(_selected_save_index) + ".txt")
-	get_tree().change_scene_to_file("res://map/main.tscn")
+	DataManagement.load_world_save("res://" + "save/" + saves_list.get_item_text(_selected_save_index) + ".txt")
+	get_tree().change_scene_to_file(default_map_scene_path)
 
 func _on_delete_save_button_up() -> void:
 	DirAccess.remove_absolute("res://" + "save/" + DataManagement.current_save + ".txt")
 	Globals.game_data_dictionary.saves.erase(DataManagement.current_save)
 	DataManagement.current_save = ""
-	$Panel/HBoxContainer/SavesSelector/HBoxContainer/ItemList.deselect(_selected_save_index)
+	saves_list.deselect(_selected_save_index)
 	_selected_save_index = -1
 	_update_saves_list()
 	DataManagement.save_game_save()
-	$DeleteSave.disabled = true
+	delete_save_button.disabled = true
