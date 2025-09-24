@@ -1,8 +1,8 @@
 extends ColorRect
 class_name CraftRecipe
 
-@onready var _item_texture: TextureRect = $HBoxContainer/TextureRect
-@onready var _item_name_label: Label = $HBoxContainer/Label
+@onready var _item_texture: TextureRect = $HContainer/ItemTexture
+@onready var _item_name_label: Label = $HContainer/ItemName
 
 var craft_interface: CraftInterfaceComponent = null
 

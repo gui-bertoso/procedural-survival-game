@@ -75,12 +75,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Background2" type="ColorRect" parent="HContainer"]
+[node name="CraftMenu" type="ColorRect" parent="HContainer"]
 custom_minimum_size = Vector2(326, 0)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VContainer" type="VBoxContainer" parent="HContainer/Background2"]
+[node name="VContainer" type="VBoxContainer" parent="HContainer/CraftMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,93 +90,93 @@ offset_right = -14.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Spacer" type="Control" parent="HContainer/Background2/VContainer"]
+[node name="Spacer" type="Control" parent="HContainer/CraftMenu/VContainer"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="CraftName" type="Label" parent="HContainer/Background2/VContainer"]
+[node name="CraftName" type="Label" parent="HContainer/CraftMenu/VContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "CRAFT_NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spacer2" type="Control" parent="HContainer/Background2/VContainer"]
+[node name="Spacer2" type="Control" parent="HContainer/CraftMenu/VContainer"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="CraftType" type="HBoxContainer" parent="HContainer/Background2/VContainer"]
+[node name="CraftType" type="HBoxContainer" parent="HContainer/CraftMenu/VContainer"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="HContainer/Background2/VContainer/CraftType"]
+[node name="Name" type="Label" parent="HContainer/CraftMenu/VContainer/CraftType"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "CRAFT TYPE"
 vertical_alignment = 1
 
-[node name="Spacer" type="Label" parent="HContainer/Background2/VContainer/CraftType"]
+[node name="Spacer" type="Label" parent="HContainer/CraftMenu/VContainer/CraftType"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = ":"
 vertical_alignment = 1
 
-[node name="Value" type="Label" parent="HContainer/Background2/VContainer/CraftType"]
+[node name="Value" type="Label" parent="HContainer/CraftMenu/VContainer/CraftType"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "aaaaaaaa"
 vertical_alignment = 1
 
-[node name="CraftQuantity" type="HBoxContainer" parent="HContainer/Background2/VContainer"]
+[node name="CraftQuantity" type="HBoxContainer" parent="HContainer/CraftMenu/VContainer"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="HContainer/Background2/VContainer/CraftQuantity"]
+[node name="Name" type="Label" parent="HContainer/CraftMenu/VContainer/CraftQuantity"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "CRAFT QUANTITY"
 vertical_alignment = 1
 
-[node name="Spacer" type="Label" parent="HContainer/Background2/VContainer/CraftQuantity"]
+[node name="Spacer" type="Label" parent="HContainer/CraftMenu/VContainer/CraftQuantity"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = ":"
 vertical_alignment = 1
 
-[node name="Value" type="Label" parent="HContainer/Background2/VContainer/CraftQuantity"]
+[node name="Value" type="Label" parent="HContainer/CraftMenu/VContainer/CraftQuantity"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "aaaaaaa"
 vertical_alignment = 1
 
-[node name="Spacer3" type="Control" parent="HContainer/Background2/VContainer"]
+[node name="Spacer3" type="Control" parent="HContainer/CraftMenu/VContainer"]
 custom_minimum_size = Vector2(0, 6)
 layout_mode = 2
 
-[node name="Title" type="Label" parent="HContainer/Background2/VContainer"]
+[node name="Title" type="Label" parent="HContainer/CraftMenu/VContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "RECIPE"
 vertical_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HContainer/Background2/VContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HContainer/CraftMenu/VContainer"]
 custom_minimum_size = Vector2(0, 183)
 layout_mode = 2
 
-[node name="IngredientsContainer" type="VBoxContainer" parent="HContainer/Background2/VContainer/ScrollContainer"]
+[node name="IngredientsContainer" type="VBoxContainer" parent="HContainer/CraftMenu/VContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Spacer4" type="Control" parent="HContainer/Background2/VContainer"]
+[node name="Spacer4" type="Control" parent="HContainer/CraftMenu/VContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="CraftButton" type="Button" parent="HContainer/Background2/VContainer"]
+[node name="CraftButton" type="Button" parent="HContainer/CraftMenu/VContainer"]
 custom_minimum_size = Vector2(0, 56)
 layout_mode = 2
 text = "CRAFT"
 
-[node name="Spacer5" type="Control" parent="HContainer/Background2/VContainer"]
+[node name="Spacer5" type="Control" parent="HContainer/CraftMenu/VContainer"]
 custom_minimum_size = Vector2(0, 7)
 layout_mode = 2
 
-[connection signal="button_up" from="HContainer/Background2/VContainer/CraftButton" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="HContainer/CraftMenu/VContainer/CraftButton" to="." method="_on_button_button_up"]
