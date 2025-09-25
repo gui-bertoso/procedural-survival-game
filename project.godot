@@ -32,6 +32,10 @@ window/vsync/vsync_mode=0
 stats_container=""
 players_stats=""
 
+[gui]
+
+theme/custom_font="uid://cqq5jare7g2m4"
+
 [input]
 
 ui_select={
