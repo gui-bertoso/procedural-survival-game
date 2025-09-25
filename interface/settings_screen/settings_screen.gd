@@ -111,6 +111,8 @@ func load_options() -> void:
 				i.get_node("OptionButton").select(Globals.game_data_dictionary.autojump)
 			"dynamic_fov":
 				i.get_node("OptionButton").select(Globals.game_data_dictionary.dynamic_fov)
+			"language":
+				i.get_node("OptionButton").select(Globals.game_data_dictionary.language)
 
 func option_selected(option_index: int, option_name: String) -> void:
 	match option_name:
@@ -144,6 +146,8 @@ func option_selected(option_index: int, option_name: String) -> void:
 			Globals.game_data_dictionary.autojump = option_index
 		"dynamic_fov":
 			Globals.game_data_dictionary.dynamic_fov = option_index
+		"language":
+			Globals.game_data_dictionary.language = option_index
 	DataManagement.save_game_save()
 
 func control_key_interact(type: String, key: HBoxContainer) -> void:
