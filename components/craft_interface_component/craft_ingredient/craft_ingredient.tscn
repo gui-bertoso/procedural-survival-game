@@ -4,12 +4,16 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a1fwl"]
 
-[node name="CraftIngredient" type="ColorRect"]
+[node name="CraftIngredient" type="ColorRect" node_paths=PackedStringArray("_item_texture", "_item_name_label", "_item_amount_label", "_item_amount_sufix_label")]
 custom_minimum_size = Vector2(274, 42)
 offset_right = 280.0
 offset_bottom = 42.0
 color = Color(0.3491902, 0.3491902, 0.3491902, 1)
 script = ExtResource("1_xgplu")
+_item_texture = NodePath("HContainer/ItemTexture")
+_item_name_label = NodePath("HContainer/ItemName")
+_item_amount_label = NodePath("HContainer/ItemAmount")
+_item_amount_sufix_label = NodePath("HContainer/ItemSufix")
 
 [node name="HContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

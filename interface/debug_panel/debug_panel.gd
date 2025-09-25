@@ -1,4 +1,5 @@
 extends Control
+class_name DebugPanel
 
 @onready var fps_label: Label = $DataPanel/VContainer/VContainer/FPS/Value
 @onready var frametime_label: Label = $DataPanel/VContainer/VContainer/Frametime/Value
@@ -30,31 +31,3 @@ func _on_button_2_button_up() -> void:
 func _on_button_3_button_up() -> void:
 	RenderingServer.set_debug_generate_wireframes(false)
 	get_viewport().debug_draw = Viewport.DEBUG_DRAW_DISABLED
-
-
-func _on_button_4_button_up() -> void:
-	pass
-
-
-func _on_button_5_button_up() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_6_button_up() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_7_button_up() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_8_button_up() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_9_button_up() -> void:
-	pass # Replace with function body.
-
-
-func _on_button_10_button_up() -> void:
-	pass # Replace with function body.

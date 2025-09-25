@@ -1,10 +1,10 @@
 extends ColorRect
 class_name CraftIngredient
 
-@onready var _item_texture: TextureRect = $HBoxContainer/TextureRect
-@onready var _item_name_label: Label = $HBoxContainer/Label
-@onready var _item_amount_label: Label = $HBoxContainer/Label2
-@onready var _item_amount_sufix_label: Label = $HBoxContainer/Label3
+@export var _item_texture: TextureRect = null
+@export var _item_name_label: Label = null
+@export var _item_amount_label: Label = null
+@export var _item_amount_sufix_label: Label = null
 
 var can_craft: bool = false
 

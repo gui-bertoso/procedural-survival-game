@@ -4,13 +4,15 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g38c5"]
 
-[node name="CraftRecipe" type="ColorRect"]
+[node name="CraftRecipe" type="ColorRect" node_paths=PackedStringArray("_item_texture", "_item_name_label")]
 custom_minimum_size = Vector2(0, 55)
 offset_right = 466.0
 offset_bottom = 55.0
 mouse_filter = 1
 color = Color(0.103743516, 0.10374353, 0.103743516, 1)
 script = ExtResource("1_7u47h")
+_item_texture = NodePath("HContainer/ItemTexture")
+_item_name_label = NodePath("HContainer/ItemName")
 
 [node name="HContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(56, 47)

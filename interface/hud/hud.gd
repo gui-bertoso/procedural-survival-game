@@ -1,24 +1,33 @@
 extends CanvasLayer
 class_name HUD
 
-var on_pause_menu = false
-var on_inventory = false
+@onready var target: Target = $Target
+@onready var stats_container: StatsContainer = $StatsContainer
+@onready var inventory: Inventory = $Inventory
+@onready var pause_menu: PauseMenu = $PauseMenu
+@onready var debug_panel: DebugPanel = $DebugPanel
+@onready var craft_interface: CraftInterfaceComponent = $CraftInterface
+@onready var gun_bench_interface: GunsBenchInterfaceComponent = $GunBench
+@onready var hotbar: Hotbar = $Hotbar
+
+var on_pause_menu: bool = false
+var on_inventory: bool = false
 
 func _enter_tree() -> void:
 	Globals.hud = self
 
 func _process(_delta: float) -> void:
-	pause_menu()
-	inventory()
+	pause_menu_behavior()
+	inventory_behavior()
 
-func pause_menu() -> void:
+func pause_menu_behavior() -> void:
 	if Input.is_action_just_pressed("ui_pause"):
 		if on_pause_menu:
 			hide_pause_menu()
 		else:
 			show_pause_menu()
 
-func inventory() -> void:
+func inventory_behavior() -> void:
 	if on_pause_menu: return
 	if Input.is_action_just_pressed("ui_inventory"):
 		if on_inventory:
@@ -29,69 +38,69 @@ func inventory() -> void:
 func show_pause_menu() -> void:
 	on_pause_menu = true
 	on_inventory = false
-	$PauseMenu.visible = true
-	$Inventory.visible = false
-	$DebugPanel.visible = false
-	$Hotbar.visible = false
+	pause_menu.visible = true
+	inventory.visible = false
+	debug_panel.visible = false
+	hotbar.visible = false
 	Globals.show_mouse()
 	get_tree().paused = true
 
 func hide_pause_menu() -> void:
 	on_pause_menu = false
 	on_inventory = false
-	$PauseMenu.visible = false
-	$Inventory.visible = false
-	$DebugPanel.visible = true
-	$Hotbar.visible = true
+	pause_menu.visible = false
+	inventory.visible = false
+	debug_panel.visible = true
+	hotbar.visible = true
 	Globals.hide_mouse()
 	get_tree().paused = false
 
 func show_inventory() -> void:
 	on_inventory = true
-	$Inventory.visible = true
-	$DebugPanel.visible = false
-	$Hotbar.visible = false
+	inventory.visible = true
+	debug_panel.visible = false
+	hotbar.visible = false
 	Globals.show_mouse()
 
 func hide_inventory() -> void:
 	on_inventory = false
-	$Inventory.visible = false
-	$DebugPanel.visible = true
-	$Hotbar.visible = true
+	inventory.visible = false
+	debug_panel.visible = true
+	hotbar.visible = true
 	Globals.hide_mouse()
 
 func show_craft_interface(craft_recipes:Array) -> void:
 	on_inventory = false
-	$Inventory.visible = false
-	$DebugPanel.visible = false
-	$Target.visible = false
-	$Hotbar.visible = false
-	$CraftInterface.crafts = craft_recipes
-	$CraftInterface.load_recipes()
-	$CraftInterface.visible = true
+	inventory.visible = false
+	debug_panel.visible = false
+	target.visible = false
+	hotbar.visible = false
+	craft_interface.crafts = craft_recipes
+	craft_interface.load_recipes()
+	craft_interface.visible = true
 	Globals.show_mouse()
 	
 func show_gun_bench_interface() -> void:
 	on_inventory = false
-	$Inventory.visible = false
-	$DebugPanel.visible = false
-	$Target.visible = false
-	$GunBench.visible = true
-	$GunBench.init_camera_atributes()
+	inventory.visible = false
+	debug_panel.visible = false
+	target.visible = false
+	gun_bench_interface.visible = true
+	gun_bench_interface.init_camera_atributes()
 	Globals.show_mouse()
 func hide_gun_bench_interface() -> void:
 	on_inventory = false
-	$Inventory.visible = false
-	$DebugPanel.visible = true
-	$Target.visible = true
-	$GunBench.visible = false
+	inventory.visible = false
+	debug_panel.visible = true
+	target.visible = true
+	gun_bench_interface.visible = false
 	Globals.hide_mouse()
 
 func hide_craft_interface() -> void:
 	on_inventory = false
-	$Inventory.visible = false
-	$DebugPanel.visible = true
-	$Target.visible = true
-	$Hotbar.visible = true
-	$CraftInterface.visible = false
+	inventory.visible = false
+	debug_panel.visible = true
+	target.visible = true
+	hotbar.visible = true
+	craft_interface.visible = false
 	Globals.hide_mouse()

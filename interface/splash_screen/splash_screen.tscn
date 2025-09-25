@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xd0gh2k0h52c"]
+[gd_scene load_steps=7 format=3 uid="uid://xd0gh2k0h52c"]
 
 [ext_resource type="Script" uid="uid://cf6llt8rjhige" path="res://interface/splash_screen/splash_screen.gd" id="1_el3v4"]
 [ext_resource type="Texture2D" uid="uid://c5adrcecwyw1f" path="res://assets/sprites/dev_icon.png" id="1_ty3ja"]
+[ext_resource type="Texture2D" uid="uid://depgyu03vo0p6" path="res://assets/sprites/engine_icon.png" id="3_pbn3n"]
 
 [sub_resource type="Animation" id="Animation_el3v4"]
 length = 0.001
@@ -20,31 +21,31 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DevIcon:modulate")
+tracks/1/path = NodePath("EngineIcon:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CredtisLabel:visible")
+tracks/2/path = NodePath("DevIcon:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CredtisLabel:modulate")
+tracks/3/path = NodePath("EngineIcon:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -56,6 +57,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_ty3ja"]
 resource_name = "start"
+length = 1.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -64,46 +66,46 @@ tracks/0/path = NodePath("DevIcon:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("DevIcon:modulate")
+tracks/1/path = NodePath("EngineIcon:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.8),
+"times": PackedFloat32Array(0, 0.7, 1.2),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CredtisLabel:visible")
+tracks/2/path = NodePath("DevIcon:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("CredtisLabel:modulate")
+tracks/3/path = NodePath("EngineIcon:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/4/type = "method"
 tracks/4/imported = false
@@ -112,7 +114,7 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1),
+"times": PackedFloat32Array(1.4),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -153,23 +155,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ty3ja")
+expand_mode = 1
 
-[node name="CredtisLabel" type="Label" parent="."]
+[node name="EngineIcon" type="TextureRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 11.0
-offset_top = 618.0
-offset_right = 165.0
-offset_bottom = 641.0
-text = "Created by patoLizo"
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pbn3n")
+expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

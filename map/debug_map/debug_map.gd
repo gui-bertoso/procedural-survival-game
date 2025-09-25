@@ -1,4 +1,5 @@
 extends Node3D
+class_name DebugMap
 
 func _enter_tree() -> void:
 	DataManagement.load_world_save(DataManagement.current_save)

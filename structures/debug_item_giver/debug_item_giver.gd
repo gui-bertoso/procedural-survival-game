@@ -1,13 +1,16 @@
 extends Structure
 class_name DebugItemGiver
 
+@onready var collision: CollisionShape3D = $Collision2
+@onready var mesh: MeshInstance3D = $Body/Mesh2
+
 func _process(delta: float) -> void:
-	$Body/Mesh2.rotation.y += delta
-	$Collision2.rotation.y += delta
+	mesh.rotation.y += delta
+	collision.rotation.y += delta
 	if randi_range(0, 1) == 1:
-		$Body/Mesh2.global_position.y += delta/10
+		mesh.global_position.y += delta/10
 	else:
-		$Body/Mesh2.global_position.y -= delta/10
+		mesh.global_position.y -= delta/10
 	if interacting:
 		if Input.is_action_just_pressed("ui_collect"):
 			for i in randi_range(1, 3):

@@ -18,13 +18,13 @@ offset_top = 4.0
 offset_right = 184.0
 offset_bottom = 27.0
 
-[node name="ImageTexture" type="TextureRect" parent="HContainer"]
+[node name="ItemTexture" type="TextureRect" parent="HContainer"]
 custom_minimum_size = Vector2(23, 0)
 layout_mode = 2
 texture = SubResource("NoiseTexture2D_vcpk0")
 expand_mode = 1
 
-[node name="ImageName" type="Label" parent="HContainer"]
+[node name="ItemName" type="Label" parent="HContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 14

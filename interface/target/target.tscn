@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://hwkql520awev"]
+[gd_scene load_steps=2 format=3 uid="uid://hwkql520awev"]
+
+[ext_resource type="Script" uid="uid://c75fbqey0gjwb" path="res://interface/target/target.gd" id="1_t3lrs"]
 
 [node name="Target" type="Control"]
 layout_mode = 3
@@ -8,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_t3lrs")
 
 [node name="Point" type="ColorRect" parent="."]
 layout_mode = 1

@@ -3,7 +3,13 @@ class_name Inventory
 
 @onready var slots_container: GridContainer = $Background/SlotsContainer
 
-func add_item(_item: Item):
+func _ready() -> void:
+	for i in slots_container.get_children():
+		i.item_modified.connect(update_hotbar)
+	if not Globals.world_data_dictionary.first_read:
+		load_inventory()
+
+func add_item(_item: Item) -> void:
 	if _item.item_type == "consumable" or _item.item_type == "resource":
 		for i in slots_container.get_children():
 			if i.item != null and i.item.item_name == _item.item_name and i.item.item_amount < i.item.item_stack:
@@ -26,22 +32,14 @@ func get_hotbar_items() -> Array:
 func _enter_tree() -> void:
 	Globals.inventory = self
 
-func get_item_amount(_item):
+func get_item_amount(_item_name: String) -> int:
 	var v = 0
 	for i in slots_container.get_children():
-		if i.item and i.item.item_name == _item:
+		if i.item and i.item.item_name == _item_name:
 			v += i.item.item_amount
 	return v
 
-func _ready() -> void:
-	for i in slots_container.get_children():
-		i.item_modified.connect(update_hotbar)
-	if not Globals.world_data_dictionary.first_read:
-		load_inventory()
-	else:
-		add_item(load("res://itens/debug_material.tres"))
-
-func save_inventory():
+func save_inventory() -> void:
 	for i in range(0, slots_container.get_child_count()-1):
 		var obj = slots_container.get_child(i)
 		if obj.item != null:
@@ -51,7 +49,7 @@ func save_inventory():
 			Globals.world_data_dictionary.inventory_data_amounts[i] = aitem.item_amount
 	DataManagement.resave_world()
 
-func load_inventory():
+func load_inventory() -> void:
 	var c = 0
 	for i in slots_container.get_children():
 		if Globals.world_data_dictionary.inventory_data[c] != null:
@@ -61,5 +59,5 @@ func load_inventory():
 			print(ait.item_amount)
 		c += 1
 
-func update_hotbar():
+func update_hotbar() -> void:
 	Globals.hotbar.update_items(get_hotbar_items())
