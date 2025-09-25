@@ -1,13 +1,13 @@
 extends Control
 class_name CraftInterfaceComponent
 
-@onready var _recipes_container: VBoxContainer = $HContainer/Background/ScrollContainer/RecipesContainer
-@onready var _ingredients_container: VBoxContainer = $HContainer/Background2/VContainer/ScrollContainer/IngredientsContainer
-@onready var _craft_menu: ColorRect = $HContainer/CraftMenu
-@onready var _craft_button: Button = $HContainer/CraftMenu/VContainer/CraftButton
-@onready var _craft_name_label: Label = $HContainer/CraftMenu/VContainer/CraftName
-@onready var _craft_type_label: Label = $HContainer/CraftMenu/VContainer/CraftType/Value
-@onready var _craft_quantity_label: Label = $HContainer/CraftMenu/VContainer/CraftQuantity/Value
+@export var _recipes_container: VBoxContainer = null
+@export var _ingredients_container: VBoxContainer = null
+@export var _craft_menu: ColorRect = null
+@export var _craft_button: Button = null
+@export var _craft_name_label: Label = null
+@export var _craft_type_label: Label = null
+@export var _craft_quantity_label: Label = null
 
 @onready var craft_recipe_scene: PackedScene = preload("uid://4t4hdhigv82e")
 @onready var craft_ingredient_scene: PackedScene = preload("uid://d3cf6gb4ldt7y")

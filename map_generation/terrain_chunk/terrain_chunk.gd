@@ -1,29 +1,32 @@
 extends Node3D
 class_name TerrainChunk
 
-@export_range(20, 400, 1) var terrain_size = 200
-@export_range(1, 100, 1) var terrain_resolution = 20
+@onready var mesh: MeshInstance3D = $Mesh
 
-@export var terrain_height_multiplier = 5
+@export_range(20, 400, 1) var terrain_size: int = 200
+@export_range(1, 100, 1) var terrain_resolution: int = 20
+
+@export var terrain_height_multiplier: int = 5
 @export var chunk_lods: Array[int] = [2, 4, 8, 15, 20, 50]
 @export var LOD_distances: Array[int] = [2000, 1500, 1050, 900, 790, 550]
 
-var position_coordinades = Vector2()
-var grid_coordinades = Vector2()
-var mutex = Mutex.new()
-var vertices = PackedVector3Array()
-var UVs = PackedVector2Array()
+var position_coordinades: Vector2 = Vector2()
+var grid_coordinades: Vector2 = Vector2()
+var mutex: Mutex = Mutex.new()
+var vertices: PackedVector3Array = PackedVector3Array()
+var UVs: PackedVector2Array = PackedVector2Array()
 
-const center_offset = 0.5
-var set_collision = false
-var request_generation = false
-var generating = false
-var completed = false
+const center_offset: float = 0.5
+
+var set_collision: bool = false
+var request_generation: bool = false
+var generating: bool = false
+var completed: bool = false
+var can_create_collision: bool = false
 
 var noise: FastNoiseLite
 
-var can_create_collision = false
-func generate_terrain(_noise: FastNoiseLite, coordinades: Vector2, size: float, initially_visible: bool, thread = null):
+func generate_terrain(_noise: FastNoiseLite, coordinades: Vector2, size: float, initially_visible: bool, thread = null) -> void:
 	terrain_size = size
 	noise = _noise
 	grid_coordinades = coordinades
@@ -53,34 +56,32 @@ func generate_terrain(_noise: FastNoiseLite, coordinades: Vector2, size: float, 
 		vert += 1
 	
 	surftool.generate_normals()
-	$Mesh.mesh = surftool.commit()
+	mesh.mesh = surftool.commit()
 	set_chunk_visible(initially_visible)
 	call_deferred("thread_complete", thread)
 
-func thread_complete(thread):
+func thread_complete(thread: Thread) -> void:
 	if thread:
 		thread.wait_to_finish()
 	if set_collision:
 		generate_collision()
 		can_create_collision = true
 	
-func generate_collision():
-	if $Mesh.get_child_count() > 0:
-		$Mesh.get_child(0).queue_free()
+func generate_collision() -> void:
+	if mesh.get_child_count() > 0:
+		mesh.get_child(0).queue_free()
 	if terrain_resolution == 50:
-		$Mesh.create_trimesh_collision()
+		mesh.create_trimesh_collision()
 
-func update_chunk(view_position: Vector2, max_view_distance: float):
+func update_chunk(view_position: Vector2, max_view_distance: float) -> void:
 	var viewer_distance = position_coordinades.distance_to(view_position)
 	set_chunk_visible(viewer_distance <= max_view_distance)
-	$ResourcesChunk.update_collision()
 
-func should_remode(view_position: Vector2, max_view_distance: float):
+func should_remode(view_position: Vector2, max_view_distance: float) -> bool:
 	return position_coordinades.distance_to(view_position) > max_view_distance
 
 func update_lod(view_position: Vector2):
 	if chunk_lods.size() != LOD_distances.size():
-		print("LOD and DISTANCES mistake")
 		return false
 	var viewer_distance = position_coordinades.distance_to(view_position)
 	var new_lod = chunk_lods[0]
@@ -90,25 +91,17 @@ func update_lod(view_position: Vector2):
 			new_lod = chunk_lods[i]
 	
 	set_collision = new_lod >= chunk_lods.back()
-	
-	if noise:
-		if new_lod >= 18:
-			if not $ResourcesChunk.has_meta("generated"):
-				$ResourcesChunk.noise = noise
-				$ResourcesChunk.terrain_ref = self
-				$ResourcesChunk.generate_trees()
-				$ResourcesChunk.set_meta("generated", true)
 			
 	if terrain_resolution != new_lod:
 		terrain_resolution = new_lod
 		return true
 	return false
 
-func free_chunk():
+func free_chunk() -> void:
 	queue_free()
 
-func set_chunk_visible(_is_visible: bool):
+func set_chunk_visible(_is_visible: bool) -> void:
 	visible = _is_visible
 
-func get_chunk_visible():
+func get_chunk_visible() -> bool:
 	return visible

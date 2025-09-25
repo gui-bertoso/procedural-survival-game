@@ -34,7 +34,7 @@ func connect_audio_options() -> void:
 		if i is HBoxContainer:
 			i.get_node("HScrollBar").value_changed.connect(volume_changed.bind(i.get_node("Name").text.to_snake_case(), i.get_node("Value")))
 
-func volume_changed(value: int, option_name: String, option_percentage_label: Label):
+func volume_changed(value: int, option_name: String, option_percentage_label: Label) -> void:
 	match option_name:
 		"general_volume":
 			Globals.game_data_dictionary.general_volume = value
@@ -52,7 +52,7 @@ func volume_changed(value: int, option_name: String, option_percentage_label: La
 			Globals.game_data_dictionary.effects_volume = value
 			option_percentage_label.text = str(value)
 
-func load_options():
+func load_options() -> void:
 	for i in audio_settings_container.get_children():
 		if i is HBoxContainer:
 			match i.get_node("Name").text.to_snake_case():

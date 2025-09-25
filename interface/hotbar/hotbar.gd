@@ -6,7 +6,7 @@ class_name Hotbar
 func _enter_tree() -> void:
 	Globals.hotbar = self
 
-func update_items(items_array: Array):
+func update_items(items_array: Array) -> void:
 	if not slots_container: return
 	var c = 0
 	for i in slots_container.get_child_count():

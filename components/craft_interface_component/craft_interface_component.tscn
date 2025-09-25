@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djd3ijfcxdjdo" path="res://components/craft_interface_component/craft_interface_component.gd" id="1_l1uyk"]
 
-[node name="CraftInterfaceComponent" type="Control"]
+[node name="CraftInterfaceComponent" type="Control" node_paths=PackedStringArray("_recipes_container", "_ingredients_container", "_craft_menu", "_craft_button", "_craft_name_label", "_craft_type_label", "_craft_quantity_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_l1uyk")
+_recipes_container = NodePath("HContainer/Background/ScrollContainer/RecipesContainer")
+_ingredients_container = NodePath("HContainer/CraftMenu/VContainer/ScrollContainer/IngredientsContainer")
+_craft_menu = NodePath("HContainer/CraftMenu")
+_craft_button = NodePath("HContainer/CraftMenu/VContainer/CraftButton")
+_craft_name_label = NodePath("HContainer/CraftMenu/VContainer/CraftName")
+_craft_type_label = NodePath("HContainer/CraftMenu/VContainer/CraftType/Value")
+_craft_quantity_label = NodePath("HContainer/CraftMenu/VContainer/CraftQuantity/Value")
 
 [node name="HContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

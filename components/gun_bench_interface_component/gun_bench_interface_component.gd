@@ -4,6 +4,10 @@ class_name GunsBenchInterfaceComponent
 @onready var modifier_data_panel: Panel = $ModifierDataPanel
 @onready var modifiers_panel: Panel = $ModifiersPanel
 
+@onready var gun_data_panel: VBoxContainer = $GunData
+
+@onready var gun_slot: BenchGunSlot = $GunSlot
+
 @onready var ingredients_container: VBoxContainer = $ModifierDataPanel/VContainer/ScrollContainer/IngredientsContainer
 
 @onready var camera: Camera3D = $SubViewportContainer/SubViewport/Scene/Camera
@@ -26,6 +30,15 @@ class_name GunsBenchInterfaceComponent
 
 @onready var modifier_scene: PackedScene = preload("uid://jaf3rbsv30rw")
 @onready var modifier_ingredient_scene: PackedScene = preload("uid://7es3whbhfdjl")
+
+@onready var modify_button: Button = $ModifierDataPanel/ModifyButton
+
+@onready var modify_handle_button: TextureButton = $HandleModifierButton
+@onready var modify_pipe_button: TextureButton = $PipeModifierButton
+@onready var modify_butt_button: TextureButton = $ButtModifierButton
+@onready var modify_scope_button: TextureButton = $ScopeModifierButton
+
+@onready var modification_name_label: Label = $ModifierDataPanel/VContainer/HContainer/Value
 
 @onready var pipes_modifications_list: Array[GunModification] = [
 	preload("res://modifiers/guns/debug_pipe_0.tres"),
@@ -89,7 +102,10 @@ func _input(event: InputEvent) -> void:
 		camera.global_position.x = clamp(camera.global_position.x, core_snap.global_position.x - 0.03, core_snap.global_position.x + 0.03)
 		camera.global_position.y = clamp(camera.global_position.y, core_snap.global_position.y - 0.03, core_snap.global_position.y + 0.03)
 
-func update_stats_table():
+func init_camera_atributes() -> void:
+	camera.global_position = core_snap.global_position + Vector3(0, 0, 1.6)
+
+func update_stats_table() -> void:
 	gun_damage_label.text = str(gun_core.damage)
 	gun_fire_cadense_label.text = str(gun_core.fire_cadense)
 	gun_reload_time_label.text = str(gun_core.reload_time)
@@ -98,7 +114,7 @@ func update_stats_table():
 	gun_precision_label.text = str(gun_core.precision)
 	gun_fire_range_label.text = str(gun_core.fire_range)
 
-func update_stats_preview():
+func update_stats_preview() -> void:
 	if on_butt:
 		var butt: GunButt = butt_snap.get_child(0)
 		gun_recoil_sufix_label.visible = true
@@ -199,7 +215,7 @@ func update_stats_preview():
 		gun_recoil_label.visible = false
 		gun_recoil_label.visible = false
 
-func clear_stats_preview():
+func clear_stats_preview() -> void:
 	gun_precision_sufix_label.visible = false
 	gun_fire_range_sufix_label.visible = false
 	gun_precision_label.visible = false
@@ -207,81 +223,18 @@ func clear_stats_preview():
 	gun_recoil_sufix_label.visible = false
 	gun_recoil_label.visible = false
 
-func init_camera_atributes():
-	camera.global_position = core_snap.global_position + Vector3(0, 0, 1.6)
-
-func _on_texture_button_2_button_up() -> void:
-	if on_scope:
-		modifier_data_panel.visible = false
-		hide_mods()
-		deselect_modification()
-		on_butt = false
-		on_pipe = false
-		on_handle = false
-		on_scope = false
-		clear_preview()
-	else:
-		modifier_data_panel.visible = true
-		set_mods_to_scopes()
-		on_scope = true
-		on_butt = false
-		on_pipe = false
-		on_handle = false
-		clear_preview()
-
-func set_item(_item: Item):
+func set_item(_item: Item) -> void:
 	item = _item
 	update_core()
 
-func _on_texture_button_3_button_up() -> void:
-	if on_butt:
-		modifier_data_panel.visible = false
-		hide_mods()
-		deselect_modification()
-		on_butt = false
-		on_pipe = false
-		on_handle = false
-		on_scope = false
-		clear_preview()
-	else:
-		modifier_data_panel.visible = true
-		set_mods_to_butts()
-		on_butt = true
-		on_pipe = false
-		on_handle = false
-		on_scope = false
-		clear_preview()
-
-func deselect_modification():
+func deselect_modification() -> void:
 	clear_preview()
-	$Panel3/VBoxContainer/HBoxContainer/Label2.text = ""
-	for i in $Panel3/VBoxContainer/ScrollContainer/VBoxContainer.get_children():
+	modification_name_label.text = ""
+	for i in ingredients_container.get_children():
 		i.queue_free()
-	$Panel3.hide()
-	
-func _on_texture_button_4_button_up() -> void:
-	if on_handle:
-		modifier_data_panel.visible = false
-		hide_mods()
-		deselect_modification()
-		on_butt = false
-		on_pipe = false
-		on_handle = false
-		on_scope = false
-		clear_preview()
-	else:
-		modifier_data_panel.visible = true
-		set_mods_to_handles()
-		on_butt = false
-		on_pipe = false
-		on_handle = true
-		on_scope = false
-		clear_preview()
-	
-func _on_texture_button_5_button_up() -> void:
-	pass
+	modifier_data_panel.hide()
 
-func set_mods_to_pipes():
+func set_mods_to_pipes() -> void:
 	for mod in ingredients_container.get_children():
 		mod.queue_free()
 	for mod in pipes_modifications_list:
@@ -290,7 +243,7 @@ func set_mods_to_pipes():
 		a.interface = self
 		ingredients_container.add_child(a)
 
-func set_mods_to_butts():
+func set_mods_to_butts() -> void:
 	for mod in ingredients_container.get_children():
 		mod.queue_free()
 	for mod in butts_modifications_list:
@@ -299,7 +252,7 @@ func set_mods_to_butts():
 		a.interface = self
 		ingredients_container.add_child(a)
 
-func set_mods_to_handles():
+func set_mods_to_handles() -> void:
 	for mod in ingredients_container.get_children():
 		mod.queue_free()
 	for mod in handles_modifications_list:
@@ -308,7 +261,7 @@ func set_mods_to_handles():
 		a.interface = self
 		ingredients_container.add_child(a)
 
-func set_mods_to_scopes():
+func set_mods_to_scopes() -> void:
 	for mod in ingredients_container.get_children():
 		mod.queue_free()
 	for mod in scopes_modifications_list:
@@ -317,24 +270,24 @@ func set_mods_to_scopes():
 		a.interface = self
 		ingredients_container.add_child(a)
 
-func hide_mods():
+func hide_mods() -> void:
 	for mod in ingredients_container.get_children():
 		mod.queue_free()
 	modifier_data_panel.hide()
-	$Panel3.hide()
+	modifier_data_panel.hide()
 
-func select_modification(modification_recipe: ModificationRecipe):
+func select_modification(modification_recipe: ModificationRecipe) -> void:
 	if selected_modification:
 		if selected_modification != modification_recipe:
 			selected_modification.unselect()
 	selected_modification = modification_recipe
 	set_preview(modification_recipe.item)
 	modification_ingredients.clear()
-	$Panel3.show()
-	for i in $Panel3/VBoxContainer/ScrollContainer/VBoxContainer.get_children():
+	modifier_data_panel.show()
+	for i in ingredients_container.get_children():
 		i.queue_free()
-	$Panel3/VBoxContainer/HBoxContainer/Label2.text = modification_recipe.item.modification_name.to_snake_case().replace("_", " ").capitalize()
-	for i in $Panel3/VBoxContainer/ScrollContainer/VBoxContainer.get_children():
+	modification_name_label.text = modification_recipe.item.modification_name.to_snake_case().replace("_", " ").capitalize()
+	for i in ingredients_container.get_children():
 		i.queue_free()
 	for ingredient in modification_recipe.item.modification_ingredients:
 		var b = modifier_ingredient_scene.instantiate()
@@ -342,23 +295,23 @@ func select_modification(modification_recipe: ModificationRecipe):
 		aitem.item_amount = modification_recipe.item.modification_ingredients[ingredient]
 		b.set_item(aitem)
 		modification_ingredients.append(b)
-		$Panel3/VBoxContainer/ScrollContainer/VBoxContainer.add_child(b)
+		ingredients_container.add_child(b)
 	can_apply_modification()
 
-func can_apply_modification():
+func can_apply_modification() -> void:
 	if Globals.inventory:
 		var can_craft_itens = 0
 		for ingredient in modification_ingredients:
 			if ingredient.can_craft:
 				can_craft_itens += 1
 		if can_craft_itens == modification_ingredients.size():
-			$Panel3/Modify.disabled = false
+			modify_button.disabled = false
 		else:
-			$Panel3/Modify.disabled = true
+			modify_button.disabled = true
 	else:
-		$Panel3/Modify.disabled = false
+		modify_button.disabled = false
 
-func set_preview(modification: GunModification):
+func set_preview(modification: GunModification) -> void:
 	if on_butt:
 		for i in gun_core.get_node("ComponentsSnaps/ButtSnap").get_children():
 			i.visible = false
@@ -395,7 +348,7 @@ func set_preview(modification: GunModification):
 			scope_snap.add_child(a)
 	update_stats_preview()
 
-func clear_preview():
+func clear_preview() -> void:
 	if on_butt:
 		for i in gun_core.get_node("ComponentsSnaps/ButtSnap").get_children():
 			i.visible = true
@@ -418,7 +371,7 @@ func clear_preview():
 		i.queue_free()
 	clear_stats_preview()
 
-func update_core():
+func update_core() -> void:
 	for i in core_snap.get_children():
 		i.queue_free()
 	
@@ -437,33 +390,14 @@ func update_core():
 		update_stats_table()
 		clear_preview()
 
-func _on_modify_button_up() -> void:
-	var new_item: Item = item.duplicate(true)
-	if on_pipe:
-		new_item.modifications["pipe"] = selected_modification.item
-	if on_butt:
-		new_item.modifications["butt"] = selected_modification.item
-	if on_handle:
-		new_item.modifications["handle"] = selected_modification.item
-	if on_scope:
-		new_item.modifications["scope"] = selected_modification.item
-	var old_name = new_item.item_name
-	new_item.item_name = "Modified" + old_name
-	$GunSlot.set_item(new_item)
-	update_core()
-	hide_mods()
-	clear_stats_preview()
-	update_stats_table()
-	$Panel3/Modify.disabled = true
-
-func clear_gun_data():
+func clear_gun_data() -> void:
 	modifier_data_panel.visible = false
-	$Panel3.visible = false
-	$VBoxContainer.visible = false
-	$TextureButton4.disabled = true
-	$TextureButton3.disabled = true
-	$TextureButton2.disabled = true
-	$TextureButton.disabled = true
+	modifier_data_panel.visible = false
+	gun_data_panel.visible = false
+	modify_handle_button.disabled = true
+	modify_butt_button.disabled = true
+	modify_scope_button.disabled = true
+	modify_pipe_button.disabled = true
 	item = null
 	selected_modification = null
 	
@@ -473,14 +407,71 @@ func clear_gun_data():
 	for i in core_snap.get_children():
 		i.queue_free()
 
-func show_gun_data():
-	$VBoxContainer.visible = true
-	$TextureButton4.disabled = false
-	$TextureButton3.disabled = false
-	$TextureButton2.disabled = false
-	$TextureButton.disabled = false
+func show_gun_data() -> void:
+	gun_data_panel.visible = true
+	modify_handle_button.disabled = false
+	modify_butt_button.disabled = false
+	modify_scope_button.disabled = false
+	modify_pipe_button.disabled = false
 
-func _on_texture_button_button_up() -> void:
+func _on_modify_handle_button_up() -> void:
+	if on_handle:
+		modifier_data_panel.visible = false
+		hide_mods()
+		deselect_modification()
+		on_butt = false
+		on_pipe = false
+		on_handle = false
+		on_scope = false
+		clear_preview()
+	else:
+		modifier_data_panel.visible = true
+		set_mods_to_handles()
+		on_butt = false
+		on_pipe = false
+		on_handle = true
+		on_scope = false
+		clear_preview()
+
+func _on_modify_butt_button_up() -> void:
+	if on_butt:
+		modifier_data_panel.visible = false
+		hide_mods()
+		deselect_modification()
+		on_butt = false
+		on_pipe = false
+		on_handle = false
+		on_scope = false
+		clear_preview()
+	else:
+		modifier_data_panel.visible = true
+		set_mods_to_butts()
+		on_butt = true
+		on_pipe = false
+		on_handle = false
+		on_scope = false
+		clear_preview()
+
+func _on_modify_scope_button_up() -> void:
+	if on_scope:
+		modifier_data_panel.visible = false
+		hide_mods()
+		deselect_modification()
+		on_butt = false
+		on_pipe = false
+		on_handle = false
+		on_scope = false
+		clear_preview()
+	else:
+		modifier_data_panel.visible = true
+		set_mods_to_scopes()
+		on_scope = true
+		on_butt = false
+		on_pipe = false
+		on_handle = false
+		clear_preview()
+
+func _on_modify_pipe_button_up() -> void:
 	if on_pipe:
 		modifier_data_panel.visible = false
 		hide_mods()
@@ -498,3 +489,22 @@ func _on_texture_button_button_up() -> void:
 		on_scope = false
 		on_butt = false
 		clear_preview()
+
+func _on_modify_button_up() -> void:
+	var new_item: Item = item.duplicate(true)
+	if on_pipe:
+		new_item.modifications["pipe"] = selected_modification.item
+	if on_butt:
+		new_item.modifications["butt"] = selected_modification.item
+	if on_handle:
+		new_item.modifications["handle"] = selected_modification.item
+	if on_scope:
+		new_item.modifications["scope"] = selected_modification.item
+	var old_name = new_item.item_name
+	new_item.item_name = "Modified" + old_name
+	gun_slot.set_item(new_item)
+	update_core()
+	hide_mods()
+	clear_stats_preview()
+	update_stats_table()
+	modify_button.disabled = true

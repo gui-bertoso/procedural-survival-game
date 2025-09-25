@@ -104,9 +104,6 @@ visible = false
 layout_mode = 1
 mouse_filter = 1
 
-[node name="Back" parent="SettingsScreen" index="1"]
-visible = false
-
 [node name="Back2" type="Button" parent="SettingsScreen"]
 layout_mode = 0
 offset_left = 15.0
@@ -116,10 +113,11 @@ offset_bottom = 58.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x2hje")
 text = "BACK"
 
-[connection signal="button_up" from="Background/VContainer/VContainer/ResumeButton" to="." method="_on_button_button_up"]
-[connection signal="button_up" from="Background/VContainer/VContainer/SaveButton" to="." method="_on_button_2_button_up"]
-[connection signal="button_up" from="Background/VContainer/VContainer/MenuButton" to="." method="_on_button_3_button_up"]
-[connection signal="button_up" from="Background/VContainer/VContainer/QuitButton" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="Background/VContainer/VContainer/ResumeButton" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="Background/VContainer/VContainer/SaveButton" to="." method="_on_save_button_up"]
+[connection signal="button_up" from="Background/VContainer/VContainer/MenuButton" to="." method="_on_menu_button_up"]
+[connection signal="button_up" from="Background/VContainer/VContainer/QuitButton" to="." method="_on_quit_button_up"]
+[connection signal="button_up" from="SettingsScreen/BackButton" to="." method="_on_settings_back_button_up"]
 [connection signal="button_up" from="SettingsScreen/Back2" to="." method="_on_back_2_button_up"]
 
 [editable path="SettingsScreen"]
