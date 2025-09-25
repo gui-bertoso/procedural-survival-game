@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://e851xkxi41a2"]
+[gd_scene load_steps=12 format=3 uid="uid://e851xkxi41a2"]
 
 [ext_resource type="Script" uid="uid://bkx0jgmj81thq" path="res://interface/save_selection_screen/save_selection_screen.gd" id="1_8au6k"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_15svy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crqn1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rov0n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1wk2s"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_behy8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8oa1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u3ulu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1e65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6u18x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_behy8"]
 bg_color = Color(0.03238219, 0.03238219, 0.03238219, 1)
@@ -30,7 +46,16 @@ layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 121.0
-offset_bottom = 58.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0.6392157, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxEmpty_15svy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_crqn1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rov0n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1wk2s")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_behy8")
 text = "BACK"
 
@@ -40,6 +65,16 @@ offset_left = 828.0
 offset_top = 16.0
 offset_right = 961.0
 offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.63529414, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.39181867, 0.39181864, 0.39181864, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8oa1l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u3ulu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v1e65")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u18x")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_behy8")
 disabled = true
 text = "DELETE SAVE"
@@ -50,6 +85,16 @@ offset_left = 682.0
 offset_top = 16.0
 offset_right = 815.0
 offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.63529414, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.39181867, 0.39181864, 0.39181864, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8oa1l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u3ulu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v1e65")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u18x")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_behy8")
 disabled = true
 text = "PLAY"
@@ -60,6 +105,16 @@ offset_left = 984.0
 offset_top = 15.0
 offset_right = 1117.0
 offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0.63529414, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.39181867, 0.39181864, 0.39181864, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8oa1l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u3ulu")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v1e65")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6u18x")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_behy8")
 text = "CREATE SAVE"
 
@@ -71,8 +126,9 @@ anchor_right = 0.5
 offset_left = -284.0
 offset_top = 14.0
 offset_right = -23.0
-offset_bottom = 59.0
+offset_bottom = 54.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "SAVES MANAGER"
 
@@ -131,6 +187,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_behy8")
 layout_mode = 2
 
 [node name="SaveCreation" type="Panel" parent="Panel/HContainer"]
+visible = false
 custom_minimum_size = Vector2(370, 0)
 layout_mode = 2
 

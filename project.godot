@@ -134,6 +134,10 @@ divide_item_drag={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation/translate_v1.de.translation", "res://translation/translate_v1.en.translation", "res://translation/translate_v1.fr.translation", "res://translation/translate_v1.pt.translation", "res://translation/translate_v1.pt_BR.translation", "res://translation/translate_v1.ru.translation", "res://translation/translate_v1.zh.translation")
+
 [rendering]
 
 anti_aliasing/quality/msaa_2d=2

@@ -33,6 +33,8 @@ var game_data_dictionary: Dictionary = {
 	"musics_volume": 100.0,
 	"effects_volume": 100.0,
 	
+	"language": 0,
+	
 	"saves": []
 }
 
@@ -84,4 +86,18 @@ func hide_mouse() -> void:
 		on_menu = false
 
 func apply_game_settings() -> void:
-	pass
+	match game_data_dictionary.language:
+		0:
+			TranslationServer.set_locale("en")
+		1:
+			TranslationServer.set_locale("pt")
+		2:
+			TranslationServer.set_locale("pt_BR")
+		3:
+			TranslationServer.set_locale("fr")
+		4:
+			TranslationServer.set_locale("de")
+		5:
+			TranslationServer.set_locale("zh")
+		6:
+			TranslationServer.set_locale("ru")
