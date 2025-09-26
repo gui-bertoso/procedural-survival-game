@@ -14,7 +14,8 @@ var game_data_dictionary: Dictionary = {
 	"window_size": 0,
 	"frame_rate": 0,
 	"v_sync": 0,
-	"fsr": 0,
+	"fsr_enabled": 0,
+	"fsr_quality": 0,
 	"preset": 0,
 	"terrain_quality": 0,
 	"textures_quality": 0,
@@ -86,6 +87,64 @@ func hide_mouse() -> void:
 		on_menu = false
 
 func apply_game_settings() -> void:
+	match game_data_dictionary.window_mode:
+		0:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		1:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		2:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+	match game_data_dictionary.window_size:
+		0:
+			DisplayServer.window_set_size(Vector2(1280, 720))
+		1:
+			DisplayServer.window_set_size(Vector2(1920, 1080))
+		2:
+			DisplayServer.window_set_size(Vector2(2560, 1440))
+		3:
+			DisplayServer.window_set_size(Vector2(3840, 2160))
+	match game_data_dictionary.frame_rate:
+		0:
+			Engine.max_fps = 30
+		1:
+			Engine.max_fps = 45
+		2:
+			Engine.max_fps = 60
+		3:
+			Engine.max_fps = 75
+		4:
+			Engine.max_fps = 90
+		5:
+			Engine.max_fps = 120
+		6:
+			Engine.max_fps = 144
+		7:
+			Engine.max_fps = 0
+	match game_data_dictionary.v_sync:
+		0:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+		1:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+	match game_data_dictionary.fsr_enabled:
+		0:
+			ProjectSettings.set_setting("rendering/scaling_3d/mode", "bilinear")
+		1:
+			ProjectSettings.set_setting("rendering/scaling_3d/mode", "fsr")
+		2:
+			ProjectSettings.set_setting("rendering/scaling_3d/mode", "fsr_2")
+	if game_data_dictionary.fsr_enabled > 0:
+		match game_data_dictionary.fsr_quality:
+			0:
+				ProjectSettings.set_setting("rendering/scaling_3d/scale", 0.5)
+			1:
+				ProjectSettings.set_setting("rendering/scaling_3d/scale", 0.75)
+			2:
+				ProjectSettings.set_setting("rendering/scaling_3d/scale", 0.90)
+	else:
+		ProjectSettings.set_setting("rendering/scaling_3d/scale", 1.0)
 	match game_data_dictionary.language:
 		0:
 			TranslationServer.set_locale("en")

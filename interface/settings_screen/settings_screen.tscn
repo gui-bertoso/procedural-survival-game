@@ -115,8 +115,8 @@ theme_override_font_sizes/font_size = 14
 text = "WINDOW MODE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowMode"]
-custom_minimum_size = Vector2(391, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowMode"]
 layout_mode = 2
@@ -140,8 +140,8 @@ theme_override_font_sizes/font_size = 14
 text = "WINDOW SIZE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowSize"]
-custom_minimum_size = Vector2(503, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/WindowSize"]
 layout_mode = 2
@@ -167,8 +167,8 @@ theme_override_font_sizes/font_size = 14
 text = "FRAME RATE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Framerate"]
-custom_minimum_size = Vector2(510, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Framerate"]
 layout_mode = 2
@@ -202,8 +202,8 @@ theme_override_font_sizes/font_size = 14
 text = "V-SYNC"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/VSync"]
-custom_minimum_size = Vector2(554, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/VSync"]
 layout_mode = 2
@@ -216,19 +216,44 @@ popup/item_0/id = 0
 popup/item_1/text = "ENABLED"
 popup/item_1/id = 1
 
-[node name="FSR" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
+[node name="FsrEnabled" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FSR"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FsrEnabled"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "FSR"
 
-[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FSR"]
-custom_minimum_size = Vector2(543, 0)
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FsrEnabled"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FsrEnabled"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
+selected = 0
+item_count = 3
+popup/item_0/text = "DISABLED"
+popup/item_0/id = 0
+popup/item_1/text = "FSR 1.0"
+popup/item_1/id = 1
+popup/item_2/text = "FSR 2.2"
+popup/item_2/id = 2
+
+[node name="FsrQuality" type="HBoxContainer" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer"]
 layout_mode = 2
 
-[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FSR"]
+[node name="Name" type="Label" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FsrQuality"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "FSR QUALITY"
+
+[node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FsrQuality"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/FsrQuality"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3ykye")
@@ -252,8 +277,8 @@ theme_override_font_sizes/font_size = 14
 text = "LANGUAGE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Language"]
-custom_minimum_size = Vector2(516, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/WindowSettings/VContainer/Language"]
 layout_mode = 2
@@ -304,8 +329,8 @@ theme_override_font_sizes/font_size = 14
 text = "PRESET"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Preset"]
-custom_minimum_size = Vector2(560, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Preset"]
 layout_mode = 2
@@ -331,8 +356,8 @@ theme_override_font_sizes/font_size = 14
 text = "RENDER DISTANCE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/RenderDistance"]
-custom_minimum_size = Vector2(484.11, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/RenderDistance"]
 layout_mode = 2
@@ -358,8 +383,8 @@ theme_override_font_sizes/font_size = 14
 text = "TERRAIN QUALITY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TerrainQuality"]
-custom_minimum_size = Vector2(489.265, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TerrainQuality"]
 layout_mode = 2
@@ -385,8 +410,8 @@ theme_override_font_sizes/font_size = 14
 text = "ENVINROMENT QUALITY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Envinroment"]
-custom_minimum_size = Vector2(445.06, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/Envinroment"]
 layout_mode = 2
@@ -412,8 +437,8 @@ theme_override_font_sizes/font_size = 14
 text = "VEGETATION QUALITY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/VegetationQuality"]
-custom_minimum_size = Vector2(461.59, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/VegetationQuality"]
 layout_mode = 2
@@ -439,8 +464,8 @@ theme_override_font_sizes/font_size = 14
 text = "TEXTURES QUALITY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TexturesQuality"]
-custom_minimum_size = Vector2(481.89, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/TexturesQuality"]
 layout_mode = 2
@@ -466,8 +491,8 @@ theme_override_font_sizes/font_size = 14
 text = "EFFECTS QUALITY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/EffectsQuality"]
-custom_minimum_size = Vector2(481.89, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/EffectsQuality"]
 layout_mode = 2
@@ -493,8 +518,8 @@ theme_override_font_sizes/font_size = 14
 text = "PARTICLES QUALITY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/ParticlesQuality"]
-custom_minimum_size = Vector2(481.89, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer/ParticlesQuality"]
 layout_mode = 2
@@ -561,8 +586,8 @@ theme_override_font_sizes/font_size = 14
 text = "AUTOJUMP"
 
 [node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/Autojump"]
-custom_minimum_size = Vector2(549, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/Autojump"]
 layout_mode = 2
@@ -584,8 +609,8 @@ theme_override_font_sizes/font_size = 14
 text = "CAMERA TRICKNESS"
 
 [node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/CameraTrickness"]
-custom_minimum_size = Vector2(490, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/CameraTrickness"]
 layout_mode = 2
@@ -609,8 +634,8 @@ theme_override_font_sizes/font_size = 14
 text = "DYNAMIC FOV"
 
 [node name="Spacer" type="Control" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/DynamicFov"]
-custom_minimum_size = Vector2(528, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OptionButton" type="OptionButton" parent="TabContainer/Gameplay/ScrollContainer/VContainer/GeneralSettings/VContainer/DynamicFov"]
 layout_mode = 2
@@ -663,8 +688,8 @@ theme_override_font_sizes/font_size = 14
 text = "GENERAL VOLUME"
 
 [node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
-custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
 custom_minimum_size = Vector2(481, 19)
@@ -672,7 +697,6 @@ layout_mode = 2
 value = 50.0
 
 [node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
-custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
 [node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/GeneralVolume"]
@@ -699,8 +723,8 @@ theme_override_font_sizes/font_size = 14
 text = "MUSICS VOLUME"
 
 [node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
-custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
 custom_minimum_size = Vector2(481, 19)
@@ -708,7 +732,6 @@ layout_mode = 2
 value = 100.0
 
 [node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
-custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
 [node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/MusicsVolume"]
@@ -731,8 +754,8 @@ theme_override_font_sizes/font_size = 14
 text = "ENEMYS VOLUME"
 
 [node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
-custom_minimum_size = Vector2(71, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
 custom_minimum_size = Vector2(481, 19)
@@ -740,7 +763,6 @@ layout_mode = 2
 value = 100.0
 
 [node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
-custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
 [node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EnemysVolume"]
@@ -763,8 +785,8 @@ theme_override_font_sizes/font_size = 14
 text = "VEHICLES VOLUME"
 
 [node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
-custom_minimum_size = Vector2(63, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
 custom_minimum_size = Vector2(481, 19)
@@ -772,7 +794,6 @@ layout_mode = 2
 value = 100.0
 
 [node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
-custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
 [node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/VehiclesVolume"]
@@ -795,8 +816,8 @@ theme_override_font_sizes/font_size = 14
 text = "EFFECTS VOLUME"
 
 [node name="Spacer" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
-custom_minimum_size = Vector2(71, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
 custom_minimum_size = Vector2(481, 19)
@@ -804,7 +825,6 @@ layout_mode = 2
 value = 100.0
 
 [node name="Spacer2" type="Control" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
-custom_minimum_size = Vector2(3, 0)
 layout_mode = 2
 
 [node name="Value" type="Label" parent="TabContainer/Audio/ScrollContainer/VContainer/VContainer/EffectsVolume"]
@@ -852,7 +872,6 @@ theme_override_font_sizes/font_size = 14
 text = "MOVE FORWARD"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveForward"]
-custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -880,7 +899,6 @@ theme_override_font_sizes/font_size = 14
 text = "MOVE BACKWARD"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveBackward"]
-custom_minimum_size = Vector2(122, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -908,7 +926,6 @@ theme_override_font_sizes/font_size = 14
 text = "MOVE LEFT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveLeft"]
-custom_minimum_size = Vector2(170, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -936,7 +953,6 @@ theme_override_font_sizes/font_size = 14
 text = "MOVE RIGHT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/MoveRight"]
-custom_minimum_size = Vector2(159, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -964,7 +980,6 @@ theme_override_font_sizes/font_size = 14
 text = "JUMP"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Jump"]
-custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -992,7 +1007,6 @@ theme_override_font_sizes/font_size = 14
 text = "SPRING"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Spling"]
-custom_minimum_size = Vector2(195, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1020,7 +1034,6 @@ theme_override_font_sizes/font_size = 14
 text = "CROUCH"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Crouch"]
-custom_minimum_size = Vector2(186, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1048,7 +1061,6 @@ theme_override_font_sizes/font_size = 14
 text = "RISE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Rise"]
-custom_minimum_size = Vector2(186, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1076,7 +1088,6 @@ theme_override_font_sizes/font_size = 14
 text = "COLLECT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Collect"]
-custom_minimum_size = Vector2(185, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1104,7 +1115,6 @@ theme_override_font_sizes/font_size = 14
 text = "INTERACT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Interact"]
-custom_minimum_size = Vector2(179, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1132,7 +1142,6 @@ theme_override_font_sizes/font_size = 14
 text = "ACTION"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Action"]
-custom_minimum_size = Vector2(192, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1160,7 +1169,6 @@ theme_override_font_sizes/font_size = 14
 text = "DEFENSE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Defense"]
-custom_minimum_size = Vector2(185, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1188,7 +1196,6 @@ theme_override_font_sizes/font_size = 14
 text = "AIM"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Aim"]
-custom_minimum_size = Vector2(218, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1216,7 +1223,6 @@ theme_override_font_sizes/font_size = 14
 text = "LEFT HOTBAR SLOT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/LeftHotbarSlot"]
-custom_minimum_size = Vector2(115, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1244,7 +1250,6 @@ theme_override_font_sizes/font_size = 14
 text = "NEXT HOTBAR SLOT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/NextHotbarSlot"]
-custom_minimum_size = Vector2(111, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1272,7 +1277,6 @@ theme_override_font_sizes/font_size = 14
 text = "INVENTORY"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Inventory"]
-custom_minimum_size = Vector2(166, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1300,7 +1304,6 @@ theme_override_font_sizes/font_size = 14
 text = "PAUSE"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Pause"]
-custom_minimum_size = Vector2(201, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1328,7 +1331,6 @@ theme_override_font_sizes/font_size = 14
 text = "CHAT"
 
 [node name="Spacer" type="Control" parent="TabContainer/Controls/ScrollContainer/VContainer/ControlsContainer/Chat"]
-custom_minimum_size = Vector2(208, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -1348,11 +1350,18 @@ theme_override_font_sizes/font_size = 14
 text = "]"
 
 [node name="ApplyButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 198.0
-offset_top = 572.0
-offset_right = 404.0
-offset_bottom = 615.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -67.0
+offset_right = 103.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_x2hje")
 text = "APPLY"
 
