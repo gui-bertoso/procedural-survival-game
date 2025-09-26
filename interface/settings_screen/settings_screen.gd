@@ -89,8 +89,10 @@ func load_options() -> void:
 				i.get_node("OptionButton").select(Globals.game_data_dictionary.frame_rate)
 			"v_sync":
 				i.get_node("OptionButton").select(Globals.game_data_dictionary.v_sync)
-			"fsr":
-				i.get_node("OptionButton").select(Globals.game_data_dictionary.fsr)
+			"fsr_enabled":
+				i.get_node("OptionButton").select(Globals.game_data_dictionary.fsr_enabled)
+			"fsr_quality":
+				i.get_node("OptionButton").select(Globals.game_data_dictionary.fsr_quality)
 			"preset":
 				i.get_node("OptionButton").select(Globals.game_data_dictionary.preset)
 			"render_distance":
@@ -124,8 +126,10 @@ func option_selected(option_index: int, option_name: String) -> void:
 			Globals.game_data_dictionary.framerate = option_index
 		"v_sync":
 			Globals.game_data_dictionary.v_sync = option_index
-		"fsr":
-			Globals.game_data_dictionary.fsr = option_index
+		"fsr_enabled":
+			Globals.game_data_dictionary.fsr_enabled = option_index
+		"fsr_quality":
+			Globals.game_data_dictionary.fsr_quality = option_index
 		"preset":
 			Globals.game_data_dictionary.preset = option_index
 		"render_distance":
