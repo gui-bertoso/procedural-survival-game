@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 class_name LoadingScreen
 
 @onready var tip_label: Label = $Background/Tip
@@ -14,4 +14,6 @@ class_name LoadingScreen
 ]
 
 func _ready() -> void:
+	if tip_label == null:
+		tip_label = $Background/Tip
 	tip_label.text = tips_list[randi_range(0, tips_list.size()-1)]

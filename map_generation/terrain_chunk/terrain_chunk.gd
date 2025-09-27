@@ -26,6 +26,17 @@ var can_create_collision: bool = false
 
 var noise: FastNoiseLite
 
+func _ready() -> void:
+	match Globals.game_data_dictionary.terrain_quality:
+		0:
+			chunk_lods = [2, 4, 8, 10, 15, 35]
+		1:
+			chunk_lods = [3, 5, 10, 15, 20, 50]
+		2:
+			chunk_lods = [4, 7, 15, 25, 50, 80]
+		3:
+			chunk_lods = [5, 10, 20, 30, 60, 100]
+
 func generate_terrain(_noise: FastNoiseLite, coordinades: Vector2, size: float, initially_visible: bool, thread = null) -> void:
 	terrain_size = size
 	noise = _noise
@@ -68,16 +79,16 @@ func thread_complete(thread: Thread) -> void:
 		can_create_collision = true
 	
 func generate_collision() -> void:
-	if mesh.get_child_count() > 0:
-		mesh.get_child(0).queue_free()
-	if terrain_resolution == 50:
+	for i in mesh.get_children():
+		i.queue_free()
+	if set_collision:
 		mesh.create_trimesh_collision()
 
 func update_chunk(view_position: Vector2, max_view_distance: float) -> void:
 	var viewer_distance = position_coordinades.distance_to(view_position)
 	set_chunk_visible(viewer_distance <= max_view_distance)
 
-func should_remode(view_position: Vector2, max_view_distance: float) -> bool:
+func should_remove(view_position: Vector2, max_view_distance: float) -> bool:
 	return position_coordinades.distance_to(view_position) > max_view_distance
 
 func update_lod(view_position: Vector2):
@@ -102,6 +113,12 @@ func free_chunk() -> void:
 	queue_free()
 
 func set_chunk_visible(_is_visible: bool) -> void:
+	if _is_visible == false:
+		if mesh.get_child_count() > 0:
+			mesh.get_child(0).get_child(0).disabled = true
+	else:
+		if mesh.get_child_count() > 0:
+			mesh.get_child(0).get_child(0).disabled = false
 	visible = _is_visible
 
 func get_chunk_visible() -> bool:

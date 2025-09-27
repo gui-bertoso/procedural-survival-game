@@ -115,6 +115,9 @@ mouse_filter = 1
 [node name="BackButton" parent="SettingsScreen" index="1"]
 visible = false
 
+[node name="Envinroment" parent="SettingsScreen/TabContainer/Video/ScrollContainer/VContainer/GraphicsSettings/VContainer" index="3"]
+visible = false
+
 [node name="Button" type="Button" parent="SettingsScreen"]
 layout_mode = 0
 offset_left = 29.0

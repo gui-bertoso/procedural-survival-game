@@ -22,7 +22,7 @@ script = ExtResource("1_irpul")
 [node name="DataPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 204.0
-offset_bottom = 256.0
+offset_bottom = 273.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_c6yqf")
 
@@ -175,11 +175,33 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "TRUE"
 
+[node name="Spacer2" type="Control" parent="DataPanel/VContainer/VContainer"]
+custom_minimum_size = Vector2(0, 7.915)
+layout_mode = 2
+
+[node name="CurrentItemClass" type="HBoxContainer" parent="DataPanel/VContainer/VContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="DataPanel/VContainer/VContainer/CurrentItemClass"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "CIC"
+
+[node name="Sufix" type="Label" parent="DataPanel/VContainer/VContainer/CurrentItemClass"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = ": "
+
+[node name="Value" type="Label" parent="DataPanel/VContainer/VContainer/CurrentItemClass"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "NONE"
+
 [node name="ControlPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 266.0
+offset_top = 286.0
 offset_right = 205.0
-offset_bottom = 383.0
+offset_bottom = 403.0
 mouse_filter = 1
 
 [node name="VContainer" type="VBoxContainer" parent="ControlPanel"]
@@ -213,10 +235,10 @@ text = "normal"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 398.0
-offset_right = 201.0
-offset_bottom = 598.0
+offset_left = 3.0
+offset_top = 413.0
+offset_right = 203.0
+offset_bottom = 613.0
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]

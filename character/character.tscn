@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddc8k6gybq8ur"]
+[gd_scene load_steps=13 format=3 uid="uid://ddc8k6gybq8ur"]
 
 [ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="1_glpr6"]
 [ext_resource type="Script" uid="uid://cv3m1jlux8g8b" path="res://character/character.gd" id="1_pjt0s"]
 [ext_resource type="Script" uid="uid://cp6e6ejhykuro" path="res://character/camera.gd" id="3_hx151"]
+[ext_resource type="Script" uid="uid://bqm8uxr5o40n6" path="res://character/hand.gd" id="3_o6jyn"]
 [ext_resource type="Script" uid="uid://bnsd14hsq3cd3" path="res://character/stats.gd" id="3_wa5vi"]
+[ext_resource type="Texture2D" uid="uid://d2klja3wfg8m7" path="res://assets/sprites/player_map_icon.png" id="5_0rvpn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjt0s"]
 albedo_color = Color(1, 1, 0, 1)
@@ -32,15 +34,6 @@ height = 1.7033691
 radius = 0.4638672
 height = 1.1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hx151"]
-albedo_color = Color(0, 1, 0, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_hx151"]
-size = Vector2(10, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rvpn"]
-albedo_color = Color(0, 0, 0, 1)
-
 [node name="Character" type="CharacterBody3D"]
 collision_layer = 4
 collision_mask = 3
@@ -59,6 +52,8 @@ material_override = SubResource("StandardMaterial3D_glpr6")
 mesh = SubResource("BoxMesh_pjt0s")
 
 [node name="Hand" type="Marker3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43700117, 0.89322114, -0.44124937)
+script = ExtResource("3_o6jyn")
 
 [node name="CameraOffset" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, -0.429)
@@ -113,16 +108,10 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.313840
 target_position = Vector3(0, -0.935, 0)
 collision_mask = 3
 
-[node name="MapIconMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.70710677, -0.70710677, -3.090862e-08, 0, -4.371139e-08, 1, -0.70710677, -0.70710677, -3.090862e-08, 0, 17.877476, 0)
-material_override = SubResource("StandardMaterial3D_hx151")
-cast_shadow = 0
-gi_mode = 0
-mesh = SubResource("QuadMesh_hx151")
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
 
-[node name="MapIconMesh2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.39739448, -0.40274462, -3.0908616e-08, 0, -2.4896558e-08, 0.99999994, -0.39739448, -0.40274462, -3.0908616e-08, 0.089279175, 17.877476, 3.2140827)
-material_override = SubResource("StandardMaterial3D_0rvpn")
-cast_shadow = 0
-gi_mode = 0
-mesh = SubResource("QuadMesh_hx151")
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-5, -4.3711321e-07, 7.629325e-10, 0, -0.00872693, -4.9999924, 4.371139e-07, -4.9999924, 0.00872693, 0, 5.6129937, 0)
+layers = 524288
+texture = ExtResource("5_0rvpn")

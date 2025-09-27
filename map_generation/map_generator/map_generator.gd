@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	update_visible_chunks()
 
 func load_settings() -> void:
-	render_distance = int(600 * (Globals.game_data_dictionary.render_distance+1)*2)
+	render_distance = int(200 * (Globals.game_data_dictionary.render_distance+1)*2)
 	#match Globals.game_data_dictionary.terrain_quality:
 		#0:
 			#chunk_lods = [2, 4, 8, 15, 20, 40]
@@ -82,3 +82,8 @@ func get_active_threads() -> int:
 		if thread.is_alive():
 			active_threads += 1
 	return active_threads
+
+func is_map_ready() -> bool:
+	if active_threads > 0:
+		return false
+	return true
