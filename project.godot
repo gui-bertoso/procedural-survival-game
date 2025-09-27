@@ -22,6 +22,7 @@ config/icon="uid://b8vcf8hijtbds"
 
 DataManagement="*res://autoload/data_management.gd"
 Globals="*res://autoload/globals.gd"
+LoadingScreen="*res://interface/loading_screen/loading_screen.tscn"
 
 [display]
 

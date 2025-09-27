@@ -178,7 +178,7 @@ func _stamina_behavior(_delta: float) -> void:
 			is_spling = false
 	else:
 		if Input.is_action_pressed("ui_spling"):
-			speed_multiplier = 1.5
+			speed_multiplier = 2.0
 			if not is_spling:
 				is_spling = true
 		else:

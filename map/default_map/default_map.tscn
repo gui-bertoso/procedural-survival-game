@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgyrrwv1qx147"]
+[gd_scene load_steps=7 format=3 uid="uid://cgyrrwv1qx147"]
 
 [ext_resource type="PackedScene" uid="uid://24nknqcg5stl" path="res://map_generation/map_generator/map_generator.tscn" id="1_7yvjg"]
 [ext_resource type="Script" uid="uid://b38ws7mnhe62l" path="res://map/default_map/default_map.gd" id="1_l3m3u"]
 [ext_resource type="PackedScene" uid="uid://ddc8k6gybq8ur" path="res://character/character.tscn" id="2_dkf8j"]
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="3_swb1k"]
 [ext_resource type="PackedScene" uid="uid://c4ec6w0kvbitf" path="res://envinroment/envinroment.tscn" id="4_xweh3"]
-[ext_resource type="PackedScene" uid="uid://bo16rbuklv2le" path="res://interface/loading_screen/loading_screen.tscn" id="6_pqyhp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7yvjg"]
 fractal_weighted_strength = 0.65
@@ -24,5 +23,3 @@ noise = SubResource("FastNoiseLite_7yvjg")
 
 [node name="Character" parent="." instance=ExtResource("2_dkf8j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
-
-[node name="LoadingScreen" parent="." instance=ExtResource("6_pqyhp")]

@@ -177,7 +177,7 @@ func _on_cancel_button_up() -> void:
 
 func _on_play_save_button_up() -> void:
 	DataManagement.load_world_save("res://" + "save/" + saves_list.get_item_text(_selected_save_index) + ".txt")
-	get_tree().change_scene_to_file(default_map_scene_path)
+	LoadingScreen.load_default_map()
 
 func _on_delete_save_button_up() -> void:
 	DirAccess.remove_absolute("res://" + "save/" + DataManagement.current_save + ".txt")
