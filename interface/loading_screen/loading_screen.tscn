@@ -50,6 +50,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="LoadingIcon" type="TextureRect" parent="Background"]
 layout_mode = 1
@@ -67,11 +68,9 @@ grow_vertical = 0
 pivot_offset = Vector2(20, 20)
 texture = ExtResource("1_25cd3")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Animation" type="AnimationPlayer" parent="Background/LoadingIcon"]
-process_thread_group = 2
-process_thread_group_order = 0
-process_thread_messages = 0
 root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_11rmj")
@@ -93,6 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 text = "Tip"
+metadata/_edit_use_anchors_ = true
 
 [node name="Tip" type="Label" parent="Background"]
 layout_mode = 1
@@ -109,3 +109,4 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 autowrap_mode = 3
+metadata/_edit_use_anchors_ = true

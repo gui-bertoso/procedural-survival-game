@@ -6,5 +6,7 @@ extends Node3D
 func _process(_delta: float) -> void:
 	if loading_screen:
 		if map_generator.is_map_ready():
-			loading_screen.queue_free()
-			loading_screen = null
+			await get_tree().create_timer(5.0).timeout
+			if loading_screen:
+				loading_screen.queue_free()
+				loading_screen = null
