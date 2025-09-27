@@ -12,6 +12,9 @@ class_name HUD
 
 var on_pause_menu: bool = false
 var on_inventory: bool = false
+var on_gun_bench: bool = false
+var on_craft_interface: bool = false
+
 
 func _enter_tree() -> void:
 	Globals.hud = self
@@ -28,7 +31,7 @@ func pause_menu_behavior() -> void:
 			show_pause_menu()
 
 func inventory_behavior() -> void:
-	if on_pause_menu: return
+	if on_pause_menu or on_craft_interface or on_gun_bench: return
 	if Input.is_action_just_pressed("ui_inventory"):
 		if on_inventory:
 			hide_inventory()
@@ -68,6 +71,24 @@ func hide_inventory() -> void:
 	debug_panel.visible = true
 	hotbar.visible = true
 	Globals.hide_mouse()
+	
+func show_gun_bench_interface() -> void:
+	on_inventory = false
+	inventory.visible = false
+	debug_panel.visible = false
+	target.visible = false
+	gun_bench_interface.visible = true
+	gun_bench_interface.init_camera_atributes()
+	Globals.show_mouse()
+	on_gun_bench = true
+func hide_gun_bench_interface() -> void:
+	on_inventory = false
+	inventory.visible = false
+	debug_panel.visible = true
+	target.visible = true
+	gun_bench_interface.visible = false
+	Globals.hide_mouse()
+	on_gun_bench = false
 
 func show_craft_interface(craft_recipes:Array) -> void:
 	on_inventory = false
@@ -79,23 +100,7 @@ func show_craft_interface(craft_recipes:Array) -> void:
 	craft_interface.load_recipes()
 	craft_interface.visible = true
 	Globals.show_mouse()
-	
-func show_gun_bench_interface() -> void:
-	on_inventory = false
-	inventory.visible = false
-	debug_panel.visible = false
-	target.visible = false
-	gun_bench_interface.visible = true
-	gun_bench_interface.init_camera_atributes()
-	Globals.show_mouse()
-func hide_gun_bench_interface() -> void:
-	on_inventory = false
-	inventory.visible = false
-	debug_panel.visible = true
-	target.visible = true
-	gun_bench_interface.visible = false
-	Globals.hide_mouse()
-
+	on_craft_interface = true
 func hide_craft_interface() -> void:
 	on_inventory = false
 	inventory.visible = false
@@ -104,3 +109,4 @@ func hide_craft_interface() -> void:
 	hotbar.visible = true
 	craft_interface.visible = false
 	Globals.hide_mouse()
+	on_craft_interface = false

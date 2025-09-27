@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://24nknqcg5stl"]
+[gd_scene load_steps=3 format=3 uid="uid://24nknqcg5stl"]
 
 [ext_resource type="Script" uid="uid://coag5f4apj5ge" path="res://map_generation/map_generator/map_generator.gd" id="1_n74el"]
+[ext_resource type="PackedScene" uid="uid://p3u00rljwmwy" path="res://map_generation/terrain_chunk/terrain_chunk.tscn" id="2_84178"]
 
 [node name="MapGenerator" type="Node3D"]
 script = ExtResource("1_n74el")
+chunkSize = null
+terrain_height = null
+view_distance = null
+chunk_mesh_scene = ExtResource("2_84178")
+thread_count = null
+render_wireframe = null

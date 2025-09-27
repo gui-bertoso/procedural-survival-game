@@ -4,11 +4,11 @@ var _game_save_path: String = "res://saves/game_save.txt"
 
 var current_save: String = ""
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	load_game_save()
+	Globals.apply_game_settings()
 
 func save_game_save() -> void:
-	if current_save == "": return
 	var _file := FileAccess.open(_game_save_path, FileAccess.WRITE)
 	_file.store_var(Globals.game_data_dictionary.duplicate(true), true)
 	_file.close()

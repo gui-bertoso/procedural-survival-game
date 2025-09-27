@@ -8,7 +8,7 @@ class_name TerrainChunk
 
 @export var terrain_height_multiplier: int = 5
 @export var chunk_lods: Array[int] = [2, 4, 8, 15, 20, 50]
-@export var LOD_distances: Array[int] = [2000, 1500, 1050, 900, 790, 550]
+@export var LOD_distances: Array[int] = [4000, 2000, 1050, 900, 790, 550]
 
 var position_coordinades: Vector2 = Vector2()
 var grid_coordinades: Vector2 = Vector2()
@@ -87,13 +87,14 @@ func update_lod(view_position: Vector2):
 	var new_lod = chunk_lods[0]
 	
 	for i in range(chunk_lods.size()):
-		if viewer_distance < LOD_distances[i]:
+		if viewer_distance <= LOD_distances[i]:
 			new_lod = chunk_lods[i]
 	
 	set_collision = new_lod >= chunk_lods.back()
-			
+	
 	if terrain_resolution != new_lod:
 		terrain_resolution = new_lod
+		$Label3D.text = str(terrain_resolution)
 		return true
 	return false
 

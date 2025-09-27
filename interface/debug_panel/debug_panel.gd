@@ -12,7 +12,7 @@ class_name DebugPanel
 func _process(_delta: float) -> void:
 	fps_label.text = str(int(Engine.get_frames_per_second()))
 	frametime_label.text = str("%.1f" % _delta) + "ms"
-	
+	if Globals.player == null: return
 	can_rise_label.text = str(Globals.player.can_rise).to_upper()
 	
 	rise_v0_label.text = str(Globals.player.rise_0).to_upper()

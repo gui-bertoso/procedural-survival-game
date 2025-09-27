@@ -6,6 +6,8 @@ class_name GunsBenchInterfaceComponent
 
 @onready var gun_data_panel: VBoxContainer = $GunData
 
+@onready var modifiers_container: VBoxContainer = $ModifiersPanel/ScrollContainer/ModifiersContainer
+
 @onready var gun_slot: BenchGunSlot = $GunSlot
 
 @onready var ingredients_container: VBoxContainer = $ModifierDataPanel/VContainer/ScrollContainer/IngredientsContainer
@@ -19,6 +21,14 @@ class_name GunsBenchInterfaceComponent
 @onready var gun_recoil_label: Label = $GunData/Recoil/Value0
 @onready var gun_precision_label: Label = $GunData/Precision/Value0
 @onready var gun_fire_range_label: Label = $GunData/FireRange/Value0
+
+@onready var gun_new_damage_label: Label = $GunData/Damage/Value0
+@onready var gun_new_fire_cadense_label: Label = $GunData/FireCadense/Value0
+@onready var gun_new_reload_time_label: Label = $GunData/ReloadTime/Value0
+@onready var gun_new_max_ammo_label: Label = $GunData/MaxAmmo/Value0
+@onready var gun_new_recoil_label: Label = $GunData/Recoil/Value0
+@onready var gun_new_precision_label: Label = $GunData/Precision/Value0
+@onready var gun_new_fire_range_label: Label = $GunData/FireRange/Value0
 
 @onready var gun_damage_sufix_label: Label = $GunData/Damage/ValueSufix
 @onready var gun_fire_cadense_sufix_label: Label = $GunData/FireCadense/ValueSufix
@@ -118,102 +128,102 @@ func update_stats_preview() -> void:
 	if on_butt:
 		var butt: GunButt = butt_snap.get_child(0)
 		gun_recoil_sufix_label.visible = true
-		gun_recoil_label.visible = true
+		gun_new_recoil_label.visible = true
 		gun_precision_sufix_label.visible = true
-		gun_precision_label.visible = true
+		gun_new_precision_label.visible = true
 		if butt.recoil >= 0:
-			gun_recoil_label.text = str(butt.recoil)
+			gun_new_recoil_label.text = str(butt.recoil)
 			gun_recoil_sufix_label.text = "+"
 			gun_recoil_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_recoil_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_recoil_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		else:
-			gun_recoil_label.text = str(butt.recoil * -1)
+			gun_new_recoil_label.text = str(butt.recoil * -1)
 			gun_recoil_sufix_label.text = "-"
 			gun_recoil_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_recoil_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_recoil_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		if butt.precision >= 0:
-			gun_precision_label.text = str(butt.precision)
+			gun_new_precision_label.text = str(butt.precision)
 			gun_precision_sufix_label.text = "+"
 			gun_precision_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		else:
-			gun_precision_label.text = str(butt.precision * -1)
+			gun_new_precision_label.text = str(butt.precision * -1)
 			gun_precision_sufix_label.text = "-"
 			gun_precision_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	elif on_handle:
 		var handle: GunHandle = handle_snap.get_child(0)
 		gun_recoil_sufix_label.visible = true
-		gun_recoil_label.visible = true
+		gun_new_recoil_label.visible = true
 		gun_precision_sufix_label.visible = true
-		gun_precision_label.visible = true
+		gun_new_precision_label.visible = true
 		if handle.recoil >= 0:
-			gun_recoil_label.text = str(handle.recoil)
+			gun_new_recoil_label.text = str(handle.recoil)
 			gun_recoil_sufix_label.text = "+"
 			gun_recoil_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_recoil_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_recoil_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		else:
-			gun_recoil_label.text = str(handle.recoil * -1)
+			gun_new_recoil_label.text = str(handle.recoil * -1)
 			gun_recoil_sufix_label.text = "-"
 			gun_recoil_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_recoil_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_recoil_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		if handle.precision >= 0:
-			gun_precision_label.text = str(handle.precision)
+			gun_new_precision_label.text = str(handle.precision)
 			gun_precision_sufix_label.text = "+"
 			gun_precision_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		else:
-			gun_precision_label.text = str(handle.precision * -1)
+			gun_new_precision_label.text = str(handle.precision * -1)
 			gun_precision_sufix_label.text = "-"
 			gun_precision_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	elif on_scope:
 		var scope: GunScope = scope_snap.get_child(0)
 		gun_precision_sufix_label.visible = true
-		gun_precision_label.visible = true
+		gun_new_precision_label.visible = true
 		if scope.precision >= 0:
-			gun_precision_label.text = str(scope.precision)
+			gun_new_precision_label.text = str(scope.precision)
 			gun_precision_sufix_label.text = "+"
 			gun_precision_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		else:
-			gun_precision_label.text = str(scope.precision * -1)
+			gun_new_precision_label.text = str(scope.precision * -1)
 			gun_precision_sufix_label.text = "-"
 			gun_precision_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	elif on_pipe:
 		var scope: GunPipe = pipe_snap.get_child(0)
 		gun_precision_sufix_label.visible = true
 		gun_fire_range_sufix_label.visible = true
-		gun_precision_label.visible = true
-		gun_fire_range_label.visible = true
+		gun_new_precision_label.visible = true
+		gun_new_fire_range_label.visible = true
 		if scope.precision >= 0:
-			gun_precision_label.text = str(scope.precision)
+			gun_new_precision_label.text = str(scope.precision)
 			gun_precision_sufix_label.text = "+"
 			gun_precision_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		else:
-			gun_precision_label.text = str(scope.precision * -1)
+			gun_new_precision_label.text = str(scope.precision * -1)
 			gun_precision_sufix_label.text = "-"
 			gun_precision_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_precision_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 		if scope.fire_range >= 0:
-			gun_fire_range_label.text = str(scope.fire_range)
+			gun_new_fire_range_label.text = str(scope.fire_range)
 			gun_fire_range_sufix_label.text = "+"
 			gun_fire_range_sufix_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
-			gun_fire_range_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
+			gun_new_fire_range_label.modulate = Color(0.0, 1.0, 0.0, 1.0)
 		else:
-			gun_fire_range_label.text = str(scope.fire_range * -1)
+			gun_new_fire_range_label.text = str(scope.fire_range * -1)
 			gun_fire_range_sufix_label.text = "-"
 			gun_fire_range_sufix_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
-			gun_fire_range_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
+			gun_new_fire_range_label.modulate = Color(1.0, 0.0, 0.0, 1.0)
 	else:
 		gun_precision_sufix_label.visible = false
 		gun_fire_range_sufix_label.visible = false
-		gun_precision_label.visible = false
-		gun_fire_range_label.visible = false
-		gun_recoil_label.visible = false
-		gun_recoil_label.visible = false
+		gun_new_precision_label.visible = false
+		gun_new_fire_range_label.visible = false
+		gun_new_recoil_label.visible = false
+		gun_new_recoil_label.visible = false
 
 func clear_stats_preview() -> void:
 	gun_precision_sufix_label.visible = false
@@ -235,43 +245,43 @@ func deselect_modification() -> void:
 	modifier_data_panel.hide()
 
 func set_mods_to_pipes() -> void:
-	for mod in ingredients_container.get_children():
+	for mod in modifiers_container.get_children():
 		mod.queue_free()
 	for mod in pipes_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
-		ingredients_container.add_child(a)
+		modifiers_container.add_child(a)
 
 func set_mods_to_butts() -> void:
-	for mod in ingredients_container.get_children():
+	for mod in modifiers_container.get_children():
 		mod.queue_free()
 	for mod in butts_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
-		ingredients_container.add_child(a)
+		modifiers_container.add_child(a)
 
 func set_mods_to_handles() -> void:
-	for mod in ingredients_container.get_children():
+	for mod in modifiers_container.get_children():
 		mod.queue_free()
 	for mod in handles_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
-		ingredients_container.add_child(a)
+		modifiers_container.add_child(a)
 
 func set_mods_to_scopes() -> void:
-	for mod in ingredients_container.get_children():
+	for mod in modifiers_container.get_children():
 		mod.queue_free()
 	for mod in scopes_modifications_list:
 		var a = modifier_scene.instantiate()
 		a.set_modification(mod.duplicate(true))
 		a.interface = self
-		ingredients_container.add_child(a)
+		modifiers_container.add_child(a)
 
 func hide_mods() -> void:
-	for mod in ingredients_container.get_children():
+	for mod in modifiers_container.get_children():
 		mod.queue_free()
 	modifier_data_panel.hide()
 	modifier_data_panel.hide()
@@ -416,7 +426,7 @@ func show_gun_data() -> void:
 
 func _on_modify_handle_button_up() -> void:
 	if on_handle:
-		modifier_data_panel.visible = false
+		modifiers_panel.visible = false
 		hide_mods()
 		deselect_modification()
 		on_butt = false
@@ -425,7 +435,7 @@ func _on_modify_handle_button_up() -> void:
 		on_scope = false
 		clear_preview()
 	else:
-		modifier_data_panel.visible = true
+		modifiers_panel.visible = true
 		set_mods_to_handles()
 		on_butt = false
 		on_pipe = false
@@ -435,7 +445,7 @@ func _on_modify_handle_button_up() -> void:
 
 func _on_modify_butt_button_up() -> void:
 	if on_butt:
-		modifier_data_panel.visible = false
+		modifiers_panel.visible = false
 		hide_mods()
 		deselect_modification()
 		on_butt = false
@@ -444,7 +454,7 @@ func _on_modify_butt_button_up() -> void:
 		on_scope = false
 		clear_preview()
 	else:
-		modifier_data_panel.visible = true
+		modifiers_panel.visible = true
 		set_mods_to_butts()
 		on_butt = true
 		on_pipe = false
@@ -454,7 +464,7 @@ func _on_modify_butt_button_up() -> void:
 
 func _on_modify_scope_button_up() -> void:
 	if on_scope:
-		modifier_data_panel.visible = false
+		modifiers_panel.visible = false
 		hide_mods()
 		deselect_modification()
 		on_butt = false
@@ -463,7 +473,7 @@ func _on_modify_scope_button_up() -> void:
 		on_scope = false
 		clear_preview()
 	else:
-		modifier_data_panel.visible = true
+		modifiers_panel.visible = true
 		set_mods_to_scopes()
 		on_scope = true
 		on_butt = false
@@ -473,7 +483,7 @@ func _on_modify_scope_button_up() -> void:
 
 func _on_modify_pipe_button_up() -> void:
 	if on_pipe:
-		modifier_data_panel.visible = false
+		modifiers_panel.visible = false
 		hide_mods()
 		deselect_modification()
 		on_pipe = false
@@ -482,7 +492,7 @@ func _on_modify_pipe_button_up() -> void:
 		on_butt = false
 		clear_preview()
 	else:
-		modifier_data_panel.visible = true
+		modifiers_panel.visible = true
 		set_mods_to_pipes()
 		on_pipe = true
 		on_handle = false

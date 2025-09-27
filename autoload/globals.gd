@@ -131,18 +131,24 @@ func apply_game_settings() -> void:
 	match game_data_dictionary.fsr_enabled:
 		0:
 			ProjectSettings.set_setting("rendering/scaling_3d/mode", "bilinear")
+			RenderingServer.viewport_set_scaling_3d_mode(get_viewport(), RenderingServer.VIEWPORT_SCALING_3D_MODE_BILINEAR)
 		1:
 			ProjectSettings.set_setting("rendering/scaling_3d/mode", "fsr")
+			RenderingServer.viewport_set_scaling_3d_mode(get_viewport(), RenderingServer.VIEWPORT_SCALING_3D_MODE_FSR)
 		2:
 			ProjectSettings.set_setting("rendering/scaling_3d/mode", "fsr_2")
+			RenderingServer.viewport_set_scaling_3d_mode(get_viewport(), RenderingServer.VIEWPORT_SCALING_3D_MODE_FSR2)
 	if game_data_dictionary.fsr_enabled > 0:
 		match game_data_dictionary.fsr_quality:
 			0:
 				ProjectSettings.set_setting("rendering/scaling_3d/scale", 0.5)
+				RenderingServer.viewport_set_scaling_3d_scale(get_viewport(), 0.5)
 			1:
 				ProjectSettings.set_setting("rendering/scaling_3d/scale", 0.75)
+				RenderingServer.viewport_set_scaling_3d_scale(get_viewport(), 0.75)
 			2:
 				ProjectSettings.set_setting("rendering/scaling_3d/scale", 0.90)
+				RenderingServer.viewport_set_scaling_3d_scale(get_viewport(), 0.90)
 	else:
 		ProjectSettings.set_setting("rendering/scaling_3d/scale", 1.0)
 	match game_data_dictionary.language:

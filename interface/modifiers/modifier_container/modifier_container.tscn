@@ -4,10 +4,13 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q7f58"]
 
-[node name="ModifierContainer" type="ColorRect"]
+[node name="ModifierContainer" type="ColorRect" node_paths=PackedStringArray("item_texture", "item_name")]
 custom_minimum_size = Vector2(192, 39)
+size_flags_horizontal = 3
 color = Color(0.11858138, 0.11858138, 0.11858138, 1)
 script = ExtResource("1_nnqm5")
+item_texture = NodePath("ItemTexture")
+item_name = NodePath("ItemName")
 
 [node name="ItemTexture" type="TextureRect" parent="."]
 layout_mode = 0
