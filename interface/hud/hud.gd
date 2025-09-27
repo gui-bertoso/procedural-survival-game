@@ -15,7 +15,6 @@ var on_inventory: bool = false
 var on_gun_bench: bool = false
 var on_craft_interface: bool = false
 
-
 func _enter_tree() -> void:
 	Globals.hud = self
 
@@ -41,9 +40,13 @@ func inventory_behavior() -> void:
 func show_pause_menu() -> void:
 	on_pause_menu = true
 	on_inventory = false
+	on_gun_bench = false
+	on_craft_interface = false
 	pause_menu.visible = true
 	inventory.visible = false
 	debug_panel.visible = false
+	gun_bench_interface.visible = false
+	craft_interface.visible = false
 	hotbar.visible = false
 	Globals.show_mouse()
 	get_tree().paused = true
@@ -51,8 +54,12 @@ func show_pause_menu() -> void:
 func hide_pause_menu() -> void:
 	on_pause_menu = false
 	on_inventory = false
+	on_gun_bench = false
+	on_craft_interface = false
 	pause_menu.visible = false
 	inventory.visible = false
+	gun_bench_interface.visible = false
+	craft_interface.visible = false
 	debug_panel.visible = true
 	hotbar.visible = true
 	Globals.hide_mouse()
