@@ -64,6 +64,7 @@ mesh = SubResource("BoxMesh_pjt0s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, -0.429)
 
 [node name="Camera" type="Camera3D" parent="CameraOffset"]
+cull_mask = 524287
 current = true
 
 [node name="RayCast" type="RayCast3D" parent="CameraOffset/Camera"]

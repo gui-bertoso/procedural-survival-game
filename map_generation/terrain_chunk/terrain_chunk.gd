@@ -4,11 +4,11 @@ class_name TerrainChunk
 @onready var mesh: MeshInstance3D = $Mesh
 
 @export_range(20, 400, 1) var terrain_size: int = 200
-@export_range(1, 100, 1) var terrain_resolution: int = 20
+@export_range(1, 100, 1) var terrain_resolution: int = 1
 
 @export var terrain_height_multiplier: int = 5
 @export var chunk_lods: Array[int] = [2, 4, 8, 15, 20, 50]
-@export var LOD_distances: Array[int] = [4000, 2000, 1050, 900, 790, 550]
+@export var LOD_distances: Array[int] = [1200, 1000, 800, 600, 400, 200]
 
 var position_coordinades: Vector2 = Vector2()
 var grid_coordinades: Vector2 = Vector2()
