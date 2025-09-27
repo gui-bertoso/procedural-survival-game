@@ -122,8 +122,8 @@ func option_selected(option_index: int, option_name: String) -> void:
 			Globals.game_data_dictionary.window_mode = option_index
 		"window_size":
 			Globals.game_data_dictionary.window_size = option_index
-		"framerate":
-			Globals.game_data_dictionary.framerate = option_index
+		"frame_rate":
+			Globals.game_data_dictionary.frame_rate = option_index
 		"v_sync":
 			Globals.game_data_dictionary.v_sync = option_index
 		"fsr_enabled":
@@ -169,3 +169,4 @@ func _on_back_button_up() -> void:
 
 func _on_apply_button_up() -> void:
 	Globals.apply_game_settings()
+	DataManagement.save_game_save()

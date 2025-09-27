@@ -15,8 +15,8 @@ fractal_weighted_strength = 0.65
 [node name="Envinroment" parent="." instance=ExtResource("4_xweh3")]
 
 [node name="TerrainChunksManager" parent="." node_paths=PackedStringArray("viewer") instance=ExtResource("1_7yvjg")]
-render_distance = 1600
 noise = SubResource("FastNoiseLite_7yvjg")
 viewer = NodePath("../Character")
 
 [node name="Character" parent="." instance=ExtResource("2_dkf8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)

@@ -18,3 +18,8 @@ material_override = SubResource("StandardMaterial3D_c0sna")
 
 [node name="ResourcesChunk" parent="." instance=ExtResource("3_gtrl7")]
 collision_distance = 10.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.005235962, 0.9999863, 0, -0.9999863, 0.005235962, 0, 114.535126, 0)
+pixel_size = 3.3345
+text = "999"

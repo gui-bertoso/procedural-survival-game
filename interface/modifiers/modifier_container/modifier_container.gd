@@ -1,8 +1,8 @@
 extends ColorRect
 class_name ModificationRecipe
 
-@onready var item_texture: TextureRect = $ItemTexture
-@onready var item_name: Label = $ItemName
+@export var item_texture: TextureRect = null
+@export var item_name: Label = null
 
 var interface: GunsBenchInterfaceComponent = null
 

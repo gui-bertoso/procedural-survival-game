@@ -42,10 +42,17 @@ scope_snap = NodePath("SubViewportContainer/SubViewport/Scene/Snaps/ScopeSnap")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
-offset_left = -81.0
-offset_top = -389.0
-offset_right = 1319.0
-offset_bottom = 1011.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -700.0
+offset_right = 700.0
+offset_bottom = 700.0
+grow_horizontal = 2
+grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
@@ -54,6 +61,7 @@ size = Vector2i(1400, 1400)
 render_target_update_mode = 4
 
 [node name="Scene" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -159.03938, 0)
 
 [node name="Camera" type="Camera3D" parent="SubViewportContainer/SubViewport/Scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.596824)
@@ -95,11 +103,18 @@ theme_override_font_sizes/font_size = 25
 text = "GUNS BENCH"
 
 [node name="GunData" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 850.0
-offset_top = 453.0
-offset_right = 1135.0
-offset_bottom = 638.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -301.0
+offset_top = -183.0
+offset_right = -16.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Damage" type="HBoxContainer" parent="GunData"]
 layout_mode = 2
@@ -277,11 +292,15 @@ layout_mode = 2
 text = "9999.5"
 
 [node name="PipeModifierButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1087.0
-offset_top = 77.0
-offset_right = 1122.0
-offset_bottom = 111.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 82.0
+offset_right = -25.0
+offset_bottom = 116.0
+grow_horizontal = 0
 disabled = true
 texture_normal = ExtResource("8_6a6wx")
 texture_pressed = ExtResource("1_0fbet")
@@ -289,11 +308,15 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ScopeModifierButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1030.0
-offset_top = 22.0
-offset_right = 1065.0
-offset_bottom = 56.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = 24.0
+offset_right = -81.0
+offset_bottom = 58.0
+grow_horizontal = 0
 disabled = true
 texture_normal = ExtResource("8_6a6wx")
 texture_pressed = ExtResource("1_0fbet")
@@ -301,11 +324,15 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="ButtModifierButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 974.0
-offset_top = 75.0
-offset_right = 1009.0
-offset_bottom = 109.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_top = 83.0
+offset_right = -135.0
+offset_bottom = 117.0
+grow_horizontal = 0
 disabled = true
 texture_normal = ExtResource("8_6a6wx")
 texture_pressed = ExtResource("1_0fbet")
@@ -313,24 +340,56 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="HandleModifierButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1030.0
-offset_top = 137.0
-offset_right = 1065.0
-offset_bottom = 171.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_top = 140.0
+offset_right = -79.0
+offset_bottom = 174.0
+grow_horizontal = 0
 disabled = true
 texture_normal = ExtResource("8_6a6wx")
 texture_pressed = ExtResource("1_0fbet")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="GunSlot" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -129.0
+offset_top = 67.0
+offset_right = -65.0
+offset_bottom = 131.0
+grow_horizontal = 0
+texture = ExtResource("5_kbped")
+expand_mode = 1
+script = ExtResource("6_fj5cn")
+
+[node name="ItemImage" type="TextureRect" parent="GunSlot"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -26.0
+offset_right = 26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="ModifiersPanel" type="Panel" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 22.0
-offset_top = 74.0
-offset_right = 241.0
-offset_bottom = 444.0
+layout_mode = 1
+offset_left = 21.0
+offset_top = 72.0
+offset_right = 251.0
+offset_bottom = 427.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
 
 [node name="Title" type="Label" parent="ModifiersPanel"]
@@ -356,7 +415,7 @@ anchor_bottom = 0.5
 offset_left = -96.5
 offset_top = -138.0
 offset_right = 95.5
-offset_bottom = 166.0
+offset_bottom = 166.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -368,10 +427,10 @@ size_flags_vertical = 3
 [node name="ModifierDataPanel" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 245.0
-offset_top = 74.0
-offset_right = 455.0
-offset_bottom = 245.0
+offset_left = 262.0
+offset_top = 71.0
+offset_right = 507.0
+offset_bottom = 302.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kbped")
 
 [node name="VContainer" type="VBoxContainer" parent="ModifierDataPanel"]
@@ -415,37 +474,13 @@ size_flags_vertical = 3
 
 [node name="ModifyButton" type="Button" parent="ModifierDataPanel"]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 184.0
-offset_right = 203.0
-offset_bottom = 227.0
+offset_left = 5.0
+offset_top = 248.0
+offset_right = 200.0
+offset_bottom = 291.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hvebx")
 disabled = true
 text = "MODIFY"
-
-[node name="GunSlot" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1016.0
-offset_top = 61.0
-offset_right = 1080.0
-offset_bottom = 125.0
-texture = ExtResource("5_kbped")
-expand_mode = 1
-script = ExtResource("6_fj5cn")
-
-[node name="ItemImage" type="TextureRect" parent="GunSlot"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -26.0
-offset_top = -26.0
-offset_right = 26.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="button_up" from="PipeModifierButton" to="." method="_on_modify_pipe_button_up"]
 [connection signal="button_up" from="ScopeModifierButton" to="." method="_on_modify_scope_button_up"]

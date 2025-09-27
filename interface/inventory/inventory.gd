@@ -15,13 +15,16 @@ func add_item(_item: Item) -> void:
 			if i.item != null and i.item.item_name == _item.item_name and i.item.item_amount < i.item.item_stack:
 				i.update_amount("+", _item.item_amount)
 				save_inventory()
+				update_hotbar()
 				return
 	for i in slots_container.get_children():
 		if i.item == null:
 			i.set_item(_item)
 			save_inventory()
+			update_hotbar()
 			return
 	save_inventory()
+	update_hotbar()
 
 func get_hotbar_items() -> Array:
 	var a = []

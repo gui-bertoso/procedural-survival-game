@@ -1,10 +1,10 @@
 extends ColorRect
 class_name ModifierIngredient
 
-@onready var item_texture: TextureRect = $HContainer/ItemTexture
-@onready var item_name: Label = $HContainer/ItemName
-@onready var item_sufix: Label = $HContainer/Sufix
-@onready var item_amount: Label = $HContainer/ItemAmount
+@export var item_texture: TextureRect = null
+@export var item_name: Label = null
+@export var item_sufix: Label = null
+@export var item_amount: Label = null
 
 var can_craft: bool = false
 
