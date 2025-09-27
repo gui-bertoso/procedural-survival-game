@@ -13,7 +13,7 @@ var addicional_hunger: float = 0
 var base_thirst: float = 100
 var addicional_thirst: float = 0
 
-var base_movement_speed: float = 17
+var base_movement_speed: float = 4
 var addicional_movement_speed: float = 0
 
 var base_jump_force: float = 10

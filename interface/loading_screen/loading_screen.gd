@@ -1,7 +1,7 @@
 extends CanvasLayer
-class_name LoadingScreen
 
-@onready var tip_label: Label = $Background/Tip
+@export var animation: AnimationPlayer = null
+@export var tip_label: Label = null
 
 @onready var tips_list: Array[String] = [
 	"This game is not a copy of minecraft, terraria is not a copy of minecraft.",
@@ -13,7 +13,28 @@ class_name LoadingScreen
 	"This game was made by a random guy looking for a game that gives freedom to the player."
 ]
 
-func _ready() -> void:
+var loading: bool = false
+
+func _process(_delta: float) -> void:
+	if loading:
+		var progress: Array = []
+		ResourceLoader.load_threaded_get_status("res://map/default_map/default_map.tscn", progress)
+		if progress[0] == 1:
+			var packed_scene: PackedScene = ResourceLoader.load_threaded_get("res://map/default_map/default_map.tscn")
+			get_tree().change_scene_to_packed(packed_scene)
+			await get_tree().create_timer(7.0).timeout
+			animation.play("fade_out")
+			loading = false
+
+func randomize_tip() -> void:
 	if tip_label == null:
 		tip_label = $Background/Tip
 	tip_label.text = tips_list[randi_range(0, tips_list.size()-1)]
+
+func load_default_map() -> void:
+	randomize_tip()
+	animation.play("fade_in")
+
+func load_scene() -> void:
+	ResourceLoader.load_threaded_request("res://map/default_map/default_map.tscn")
+	loading = true
