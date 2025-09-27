@@ -6,6 +6,7 @@ var player: Character = null
 var hotbar: Hotbar = null
 var inventory: Inventory = null
 var hud: HUD = null
+var player_hand: PlayerHand = null
 
 var on_menu: bool = false
 
@@ -74,7 +75,7 @@ var world_data_dictionary: Dictionary = {
 	"inventory_data": [null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],
 	"inventory_data_amounts": [0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0],
 	
-	"selected_hotbar_slot": 0,
+	"current_hotbar_slot": 0,
 }
 
 func show_mouse() -> void:

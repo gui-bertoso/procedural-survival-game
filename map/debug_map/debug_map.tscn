@@ -545,3 +545,5 @@ transform = Transform3D(0.09890295, 0, -0.9950971, 0, 1, 0, 0.9950971, 0, 0.0989
 
 [node name="Character" parent="." instance=ExtResource("7_t8vms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64672, 0)
+
+[editable path="Envinroment"]

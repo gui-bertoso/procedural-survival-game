@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://pv2b1pa4gl85"]
+
+[node name="SceneLoader" type="CanvasLayer"]

@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://5b3ac6g27rj2"]
+[gd_scene load_steps=6 format=3 uid="uid://5b3ac6g27rj2"]
 
 [ext_resource type="Texture2D" uid="uid://x5q2s245mrk3" path="res://assets/sprites/slot_background.png" id="1_d0q8x"]
 [ext_resource type="Script" uid="uid://ses1rq51tkkj" path="res://interface/slot/slot.gd" id="2_d0q8x"]
 [ext_resource type="Texture2D" uid="uid://dralemcrtyi8o" path="res://assets/sprites/green_bar_background.png" id="3_fhqif"]
 [ext_resource type="Texture2D" uid="uid://cfq7np8n1a0r5" path="res://assets/sprites/green_bar_fill.png" id="4_f8rww"]
+[ext_resource type="Texture2D" uid="uid://8j15ga5lag17" path="res://assets/sprites/modified_item.png" id="5_duuew"]
 
-[node name="Slot" type="TextureRect"]
+[node name="Slot" type="TextureRect" node_paths=PackedStringArray("item_texture", "item_amount_label", "item_durability_bar", "item_modified_indicator")]
 modulate = Color(1, 1, 1, 0.69803923)
 custom_minimum_size = Vector2(64, 64)
 offset_right = 64.0
@@ -13,6 +14,10 @@ offset_bottom = 64.0
 texture = ExtResource("1_d0q8x")
 expand_mode = 1
 script = ExtResource("2_d0q8x")
+item_texture = NodePath("ItemImage")
+item_amount_label = NodePath("ItemAmount")
+item_durability_bar = NodePath("ItemDurability")
+item_modified_indicator = NodePath("ModifiedIndicator")
 
 [node name="ItemImage" type="TextureRect" parent="."]
 layout_mode = 1
@@ -63,3 +68,13 @@ grow_vertical = 0
 nine_patch_stretch = true
 texture_under = ExtResource("3_fhqif")
 texture_progress = ExtResource("4_f8rww")
+
+[node name="ModifiedIndicator" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 44.0
+offset_top = 44.0
+offset_right = 59.0
+offset_bottom = 60.0
+texture = ExtResource("5_duuew")
+expand_mode = 1

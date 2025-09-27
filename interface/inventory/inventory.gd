@@ -64,3 +64,4 @@ func load_inventory() -> void:
 
 func update_hotbar() -> void:
 	Globals.hotbar.update_items(get_hotbar_items())
+	Globals.hotbar.update_outline()
