@@ -155,6 +155,11 @@ func _on_create_save_button_up() -> void:
 	create_save_button.disabled = false
 
 func _on_create_button_up() -> void:
+	Globals.world_data_dictionary.map_noise_seed = randi_range(0, 9999999999999999999999999999)
+	Globals.world_data_dictionary.map_noise_frequency = randf_range(0.005, 0.01)
+	Globals.world_data_dictionary.map_noise_lacunality = randf_range(1.5, 2.5)
+	Globals.world_data_dictionary.map_noise_gain = randf_range(0.3, 0.7)
+	Globals.world_data_dictionary.map_noise_strenght = randf_range(0.0, 0.4)
 	DataManagement.world_save("user://saves/" + save_name_editor.text + ".txt")
 	Globals.game_data_dictionary.saves.append(save_name_editor.text)
 	save_name_editor.text = _randomize_save_name()

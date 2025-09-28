@@ -32,18 +32,11 @@ func _process(_delta: float) -> void:
 func set_noise_data() -> void:
 	noise = FastNoiseLite.new()
 	noise.noise_type = FastNoiseLite.TYPE_PERLIN
-	if Globals.world_data_dictionary.map_noise_seed == -1:
-		noise.seed = randi_range(0, 9999999999999999999999999999)
-		noise.frequency = randf_range(0.005, 0.01)
-		noise.fractal_lacunarity = randf_range(1.5, 2.5)
-		noise.fractal_gain = randf_range(0.3, 0.7)
-		noise.fractal_weighted_strength = randf_range(0.0, 0.4)
-	else:
-		noise.seed = Globals.world_data_dictionary.map_noise_seed
-		noise.frequency = Globals.world_data_dictionary.map_noise_frequency
-		noise.fractal_lacunarity = Globals.world_data_dictionary.map_noise_lacunality
-		noise.fractal_gain = Globals.world_data_dictionary.map_noise_gain
-		noise.fractal_weighted_strength = Globals.world_data_dictionary.map_noise_strenght
+	noise.seed = Globals.world_data_dictionary.map_noise_seed
+	noise.frequency = Globals.world_data_dictionary.map_noise_frequency
+	noise.fractal_lacunarity = Globals.world_data_dictionary.map_noise_lacunality
+	noise.fractal_gain = Globals.world_data_dictionary.map_noise_gain
+	noise.fractal_weighted_strength = Globals.world_data_dictionary.map_noise_strenght
 
 func load_settings() -> void:
 	render_distance = int(200 * (Globals.game_data_dictionary.render_distance+1)*2)
