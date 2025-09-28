@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2myotrh1nv65"
-path="res://.godot/imported/T_Trees_temp_climate.png-6acfb69c321f6de2c3bef98dc9cc3889.ctex"
+path="res://.godot/imported/T_Trees_temp_climate.png-272a27ee17f8cfcce14a0d62f52a8161.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meshs/temporary_thirdparty_mehs/Textures/T_Trees_temp_climate.png"
-dest_files=["res://.godot/imported/T_Trees_temp_climate.png-6acfb69c321f6de2c3bef98dc9cc3889.ctex"]
+source_file="res://assets/meshs/temporary_thirdparty_mehs/textures/T_Trees_temp_climate.png"
+dest_files=["res://.godot/imported/T_Trees_temp_climate.png-272a27ee17f8cfcce14a0d62f52a8161.ctex"]
 
 [params]
 
