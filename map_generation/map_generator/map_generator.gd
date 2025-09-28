@@ -7,6 +7,7 @@ class_name TerrainChunkManager
 @export var viewer: Node3D
 @export var chunk_mesh_scene: PackedScene = null
 @export var thread_count: int = 10
+
 @export var noise: FastNoiseLite
 
 var viewer_position: Vector2 = Vector2()
@@ -18,6 +19,7 @@ var last_visible_chunks: Array = []
 
 func _ready() -> void:
 	load_settings()
+	set_noise_data()
 	for i in range(thread_count):
 		threads.append(Thread.new())
 	chunks_visible = roundi(render_distance / terrain_chunk_size)
@@ -27,19 +29,27 @@ func _process(_delta: float) -> void:
 	viewer_position = Vector2(viewer.global_position.x, viewer.global_position.z)
 	update_visible_chunks()
 
+func set_noise_data() -> void:
+	noise = FastNoiseLite.new()
+	noise.noise_type = FastNoiseLite.TYPE_PERLIN
+	if Globals.world_data_dictionary.map_noise_seed == -1:
+		noise.seed = randi_range(0, 9999999999999999999999999999)
+		noise.frequency = randf_range(0.005, 0.01)
+		noise.fractal_lacunarity = randf_range(1.5, 2.5)
+		noise.fractal_gain = randf_range(0.3, 0.7)
+		noise.fractal_weighted_strength = randf_range(0.0, 0.4)
+	else:
+		noise.seed = Globals.world_data_dictionary.map_noise_seed
+		noise.frequency = Globals.world_data_dictionary.map_noise_frequency
+		noise.fractal_lacunarity = Globals.world_data_dictionary.map_noise_lacunality
+		noise.fractal_gain = Globals.world_data_dictionary.map_noise_gain
+		noise.fractal_weighted_strength = Globals.world_data_dictionary.map_noise_strenght
+
 func load_settings() -> void:
 	render_distance = int(200 * (Globals.game_data_dictionary.render_distance+1)*2)
-	#match Globals.game_data_dictionary.terrain_quality:
-		#0:
-			#chunk_lods = [2, 4, 8, 15, 20, 40]
-		#1:
-			#chunk_lods = [3, 6, 10, 18, 24, 47]
-		#2:
-			#chunk_lods = [5, 8, 13, 21, 29, 50]
-		#3:
-			#chunk_lods = [8, 12, 16, 27, 40, 60]
 
 func update_visible_chunks() -> void:
+	chunks_visible = roundi(render_distance / terrain_chunk_size)
 	for chunk in last_visible_chunks:
 		chunk.set_chunk_visible(false)
 	last_visible_chunks.clear()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=51 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://map/debug_map/debug_map.gd" id="1_etbag"]
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="2_vli17"]
 [ext_resource type="PackedScene" uid="uid://c4ec6w0kvbitf" path="res://envinroment/envinroment.tscn" id="3_3sjwf"]
 [ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="4_0br2h"]
+[ext_resource type="PackedScene" uid="uid://bkhoh0t08l1nd" path="res://assets/meshs/temporary_thirdparty_mehs/Bush_temp_climate/Fbx/Bush_temp_climate_008.fbx" id="4_wgow7"]
 [ext_resource type="PackedScene" uid="uid://qoqjfixkdnil" path="res://structures/debug_item_giver/debug_item_giver.tscn" id="5_kmygn"]
 [ext_resource type="PackedScene" uid="uid://btx0w2vsahbvu" path="res://structures/debug_craft_station/debug_craft_station.tscn" id="6_yeo7i"]
 [ext_resource type="PackedScene" uid="uid://ddc8k6gybq8ur" path="res://character/character.tscn" id="7_t8vms"]
@@ -141,6 +142,9 @@ script = ExtResource("1_etbag")
 [node name="HUD" parent="." instance=ExtResource("2_vli17")]
 
 [node name="Envinroment" parent="." instance=ExtResource("3_3sjwf")]
+
+[node name="Bush_temp_climate_008" parent="Envinroment" instance=ExtResource("4_wgow7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -225.19487, 0.5039585, -216.49481)
 
 [node name="Scenario" type="Node3D" parent="."]
 
