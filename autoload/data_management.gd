@@ -1,6 +1,6 @@
 extends Node
 
-var _game_save_path: String = "res://saves/game_save.txt"
+var _game_save_path: String = "user://saves/game_save.txt"
 
 var current_save: String = ""
 
@@ -9,6 +9,8 @@ func _ready() -> void:
 	Globals.apply_game_settings()
 
 func save_game_save() -> void:
+	if not FileAccess.file_exists("user://saves"):
+		DirAccess.make_dir_absolute("user://saves")
 	var _file := FileAccess.open(_game_save_path, FileAccess.WRITE)
 	_file.store_var(Globals.game_data_dictionary.duplicate(true), true)
 	_file.close()

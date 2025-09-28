@@ -155,7 +155,7 @@ func _on_create_save_button_up() -> void:
 	create_save_button.disabled = false
 
 func _on_create_button_up() -> void:
-	DataManagement.world_save("res://" + "saves/" + save_name_editor.text + ".txt")
+	DataManagement.world_save("user://saves/" + save_name_editor.text + ".txt")
 	Globals.game_data_dictionary.saves.append(save_name_editor.text)
 	save_name_editor.text = _randomize_save_name()
 	save_seed_editor.text = str(_randomize_save_seed())
@@ -176,11 +176,11 @@ func _on_cancel_button_up() -> void:
 	create_save_button.disabled = false
 
 func _on_play_save_button_up() -> void:
-	DataManagement.load_world_save("res://" + "save/" + saves_list.get_item_text(_selected_save_index) + ".txt")
+	DataManagement.load_world_save("user://saves/" + saves_list.get_item_text(_selected_save_index) + ".txt")
 	LoadingScreen.load_default_map()
 
 func _on_delete_save_button_up() -> void:
-	DirAccess.remove_absolute("res://" + "save/" + DataManagement.current_save + ".txt")
+	DirAccess.remove_absolute("user://saves/" + DataManagement.current_save + ".txt")
 	Globals.game_data_dictionary.saves.erase(DataManagement.current_save)
 	DataManagement.current_save = ""
 	saves_list.deselect(_selected_save_index)
