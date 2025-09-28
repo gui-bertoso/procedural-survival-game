@@ -182,7 +182,7 @@ next_hotbar_slot={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation/translate_v1.de.translation", "res://translation/translate_v1.en.translation", "res://translation/translate_v1.fr.translation", "res://translation/translate_v1.pt.translation", "res://translation/translate_v1.pt_BR.translation", "res://translation/translate_v1.ru.translation", "res://translation/translate_v1.zh.translation")
+locale/translations=PackedStringArray("res://translation/translate_v3.de.translation", "res://translation/translate_v3.en.translation", "res://translation/translate_v3.es.translation", "res://translation/translate_v3.fr.translation", "res://translation/translate_v3.pt_BR.translation", "res://translation/translate_v3.pt_PT.translation", "res://translation/translate_v3.ru.translation", "res://translation/translate_v3.zh.translation")
 
 [rendering]
 
