@@ -13,6 +13,7 @@ extends CollisionShape3D
 @export var stones_noise: FastNoiseLite = null
 
 var visibility_end_distance: float = 0.0
+var lod: float = 0.22
 
 # ---------- LISTAS ----------
 var bushs_list: Array[PackedScene] = [
@@ -132,19 +133,14 @@ var _instances_to_add: Array = []
 var _generating: bool = false
 var _generated: bool = false
 
-var lod: float = 0.22
-
 func _ready() -> void:
 	visibility_end_distance = 100.0 * (1 + Globals.game_data_dictionary.vegetation_quality)
 	match Globals.game_data_dictionary.vegetation_quality:
-		0:
-			lod = 0.12
-		1:
-			lod = 0.22
-		2:
-			lod = 0.34
-		3:
-			lod = 0.4
+		0: lod = 0.12
+		1: lod = 0.22
+		2: lod = 0.34
+		3: lod = 0.4
+	
 	terrain_noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	terrain_noise.seed = Globals.world_data_dictionary.map_noise_seed
 	terrain_noise.frequency = Globals.world_data_dictionary.map_noise_frequency
@@ -153,6 +149,7 @@ func _ready() -> void:
 	terrain_noise.fractal_weighted_strength = Globals.world_data_dictionary.map_noise_strenght
 
 func _process(_delta: float) -> void:
+	print(_instances_to_add)
 	if _instances_to_add.size() > 0:
 		_mutex.lock()
 		for inst in _instances_to_add:
@@ -179,68 +176,44 @@ func clear() -> void:
 
 func _thread_generate() -> void:
 	var new_instances: Array = []
-
-	# Grass
-	for i in grass_quantity:
-		var inst: Node3D = grass_list[randi_range(0, grass_list.size()-1)].instantiate()
-		inst.global_position = get_random_position()
-		inst.get_child(0).set("lod_bias", lod)
-		inst.get_child(0).set("visibility_range_end", visibility_end_distance)
-		new_instances.append(inst)
-
-	# Mushrooms
-	for i in mushrooms_quantity:
-		var inst: Node3D = mushrooms_list[randi_range(0, mushrooms_list.size()-1)].instantiate()
-		inst.global_position = get_random_position()
-		inst.scale = Vector3(0.5, 0.5, 0.5)
-		inst.get_child(0).set("visibility_range_end", visibility_end_distance)
-		inst.get_child(0).set("lod_bias", lod)
-		new_instances.append(inst)
-
-	# Bushes
-	for i in bush_quantity:
-		var inst: Node3D = bushs_list[randi_range(0, bushs_list.size()-1)].instantiate()
-		inst.global_position = get_random_position()
-		inst.get_child(0).set("visibility_range_end", visibility_end_distance)
-		inst.get_child(0).set("lod_bias", lod)
-		new_instances.append(inst)
-
-	# Stones
-	var placed_stones := 0
-	while placed_stones < stones_quantity:
-		var rp: Vector3 = get_random_position()
-		if stones_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.12:
-			var inst: Node3D = stones_list[randi_range(0, stones_list.size()-1)].instantiate()
-			inst.global_position = rp
-			inst.get_child(0).set("visibility_range_end", visibility_end_distance)
-			inst.get_child(0).set("lod_bias", lod)
-			inst.scale = Vector3(2, 2, 2)
-			new_instances.append(inst)
-			placed_stones += 1
-
-	# Trees
-	var placed_trees := 0
-	while placed_trees < trees_quantity:
-		var rp: Vector3 = get_random_position()
-		if trees_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.07:
-			var inst: Node3D = trees_list[randi_range(0, trees_list.size()-1)].instantiate()
-			inst.global_position = rp
-			inst.get_child(0).set("visibility_range_end", visibility_end_distance)
-			inst.get_child(0).set("lod_bias", lod)
-			inst.scale = Vector3(2, 2, 2)
-			new_instances.append(inst)
-			placed_trees += 1
-
-	# Passa para a main thread
+	new_instances.append(create_multimesh(grass_quantity, grass_list))
+	new_instances.append(create_multimesh(mushrooms_quantity, mushrooms_list, Vector3(0.5,0.5,0.5)))
+	new_instances.append(create_multimesh(bush_quantity, bushs_list))
+	new_instances.append(create_multimesh(stones_quantity, stones_list, Vector3(2,2,2), stones_noise, 0.12))
+	new_instances.append(create_multimesh(trees_quantity, trees_list, Vector3(2,2,2), trees_noise, 0.07))
+	
 	_mutex.lock()
 	_instances_to_add = new_instances
 	_mutex.unlock()
 
+func create_multimesh(instances_quantity: int, scenes_list: Array, scale_factor: Vector3 = Vector3.ONE, noise_check: FastNoiseLite = null, noise_threshold: float = 0.0) -> MultiMeshInstance3D:
+	var mm := MultiMeshInstance3D.new()
+	var multi := MultiMesh.new()
+	multi.transform_format = MultiMesh.TRANSFORM_3D
+	multi.instance_count = instances_quantity
+	mm.multimesh = multi
+
+	for i in range(instances_quantity):
+		var pos := get_random_position()
+		if noise_check != null and noise_check.get_noise_2d(pos.x, pos.z) * 10 < noise_threshold:
+			i -= 1
+			continue
+		var rot_y := randf_range(0, TAU)
+		# Cria o Basis com rotação
+		var b := Basis(Vector3.UP, rot_y)
+		# Aplica a escala multiplicando cada coluna
+		b[0] *= scale_factor.x
+		b[1] *= scale_factor.y
+		b[2] *= scale_factor.z
+		var xform := Transform3D(b, pos)
+		multi.set_instance_transform(i, xform)
+	
+	return mm
+
+
+
 func get_random_position() -> Vector3:
 	var x = randf_range(-shape.size.x/2, shape.size.x/2)
 	var z = randf_range(-shape.size.z/2, shape.size.z/2)
-	var y = terrain_noise.get_noise_2d(
-		x + global_position.x,
-		z + global_position.z
-	) * terrain_height_multiplier
+	var y = terrain_noise.get_noise_2d(x + global_position.x, z + global_position.z) * terrain_height_multiplier
 	return Vector3(x, y, z)
