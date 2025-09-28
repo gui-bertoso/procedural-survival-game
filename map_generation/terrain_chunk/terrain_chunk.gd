@@ -101,11 +101,12 @@ func update_lod(view_position: Vector2):
 		if viewer_distance <= LOD_distances[i]:
 			new_lod = chunk_lods[i]
 	
-	set_collision = new_lod >= chunk_lods.back()
-	if new_lod >= 30:
-		$VegetationSpawner.generate = true
+	set_collision = new_lod >= 30
+	print(new_lod)
+	if new_lod >= 15:
+		$VegetationSpawner.generate()
 	else:
-		$VegetationSpawner.generate = false
+		$VegetationSpawner.clear()
 	
 	if terrain_resolution != new_lod:
 		terrain_resolution = new_lod

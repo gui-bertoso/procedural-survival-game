@@ -1,8 +1,5 @@
 extends CollisionShape3D
 
-@export var generate: bool = false
-@export var clear: bool = false
-
 @export_category("Quantitys")
 @export var grass_quantity: int = 100
 @export var bush_quantity: int = 30
@@ -15,6 +12,7 @@ extends CollisionShape3D
 @export var trees_noise: FastNoiseLite = null
 @export var stones_noise: FastNoiseLite = null
 
+# ---------- LISTAS ----------
 var bushs_list: Array[PackedScene] = [
 	preload("res://assets/meshs/temporary_thirdparty_mehs/fbx/_bush_1.fbx"),
 	preload("res://assets/meshs/temporary_thirdparty_mehs/fbx/_bush_2.fbx"),
@@ -125,15 +123,12 @@ var mushrooms_list: Array[PackedScene] = [
 	preload("res://assets/meshs/temporary_thirdparty_mehs/fbx/_mashroom_4.fbx")
 ]
 
-var generating_bush: bool = false
-var generating_stones: bool = false
-var generating_trees: bool = false
-var generating_mushrooms: bool = false
-var generating_grass: bool = false
-
-var count: int = 0
-
-var cleaning: bool = false
+# ---------- THREAD CONTROL ----------
+var _thread: Thread
+var _mutex := Mutex.new()
+var _instances_to_add: Array = []
+var _generating: bool = false
+var _generated: bool = false
 
 func _ready() -> void:
 	terrain_noise.noise_type = FastNoiseLite.TYPE_PERLIN
@@ -143,105 +138,85 @@ func _ready() -> void:
 	terrain_noise.fractal_gain = Globals.world_data_dictionary.map_noise_gain
 	terrain_noise.fractal_weighted_strength = Globals.world_data_dictionary.map_noise_strenght
 
-var generated: bool = false
-
 func _process(_delta: float) -> void:
-	if generate and not generated:
-		generate = false
-		generating_grass = true
-		generated = true
-		count = 0
-	
-	if clear or (generated and generate == false):
-		clear = false
-		generating_bush = false
-		generating_grass = false
-		generating_mushrooms = false
-		generating_stones = false
-		generating_trees = false
-		cleaning = true
-	
-	if cleaning:
-		if get_child_count() > 0:
-			get_child(-1).queue_free()
-		else:
-			cleaning = false
-			generated = false
+	if _instances_to_add.size() > 0:
+		_mutex.lock()
+		for inst in _instances_to_add:
+			add_child(inst)
+		_instances_to_add.clear()
+		_mutex.unlock()
+		_generating = false
+		_generated = true
+
+func generate() -> void:
+	if _generating or _generated:
 		return
-	
-	if generating_grass:
-		if count < grass_quantity:
-			for i in range(2):
-				count += 1
-				var a: Node3D = grass_list[randi_range(0, grass_list.size()-1)].instantiate()
-				a.global_position = get_random_position()
-				add_child(a)
-		else:
-			generating_grass = false
-			generating_mushrooms = true
-			count = 0
-	if generating_mushrooms:
-		if count < mushrooms_quantity:
-			for i in range(2):
-				count += 1
-				var a: Node3D = mushrooms_list[randi_range(0, mushrooms_list.size()-1)].instantiate()
-				a.global_position = get_random_position()
-				a.scale = Vector3(0.5, 0.5, 0.5)
-				add_child(a)
-		else:
-			generating_mushrooms = false
-			generating_bush = true
-			count = 0
-	if generating_bush:
-		if count < bush_quantity:
-			for i in range(2):
-				count += 1
-				var a: Node3D = bushs_list[randi_range(0, bushs_list.size()-1)].instantiate()
-				a.global_position = get_random_position()
-				add_child(a)
-		else:
-			generating_bush = false
-			generating_stones = true
-			count = 0
-	if generating_stones:
-		if count < stones_quantity:
-			for i in range(2):
-				count += 1
-				var rp: Vector3 = get_random_position()
-				if stones_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.12:
-					var a: Node3D = stones_list[randi_range(0, stones_list.size()-1)].instantiate()
-					a.global_position = rp
-					a.scale = Vector3(2, 2, 2)
-					add_child(a)
-		else:
-			generating_stones = false
-			generating_trees = true
-			count = 0
-	if generating_trees:
-		if count < trees_quantity:
-			for i in range(2):
-				count += 1
-				var rp: Vector3 = get_random_position()
-				if trees_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.07:
-					var a: Node3D = trees_list[randi_range(0, trees_list.size()-1)].instantiate()
-					a.global_position = rp
-					a.scale = Vector3(2, 2, 2)
-					add_child(a)
-		else:
-			generating_trees = false
-			count = 0
+	_generating = true
+	_thread = Thread.new()
+	_thread.start(Callable(self, "_thread_generate"))
+
+func clear() -> void:
+	if _generating:
+		_thread.wait_to_finish()
+	for child in get_children():
+		child.queue_free()
+	_generated = false
+	_generating = false
+
+func _thread_generate() -> void:
+	var new_instances: Array = []
+
+	# Grass
+	for i in grass_quantity:
+		var inst: Node3D = grass_list[randi_range(0, grass_list.size()-1)].instantiate()
+		inst.global_position = get_random_position()
+		new_instances.append(inst)
+
+	# Mushrooms
+	for i in mushrooms_quantity:
+		var inst: Node3D = mushrooms_list[randi_range(0, mushrooms_list.size()-1)].instantiate()
+		inst.global_position = get_random_position()
+		inst.scale = Vector3(0.5, 0.5, 0.5)
+		new_instances.append(inst)
+
+	# Bushes
+	for i in bush_quantity:
+		var inst: Node3D = bushs_list[randi_range(0, bushs_list.size()-1)].instantiate()
+		inst.global_position = get_random_position()
+		new_instances.append(inst)
+
+	# Stones
+	var placed_stones := 0
+	while placed_stones < stones_quantity:
+		var rp: Vector3 = get_random_position()
+		if stones_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.12:
+			var inst: Node3D = stones_list[randi_range(0, stones_list.size()-1)].instantiate()
+			inst.global_position = rp
+			inst.scale = Vector3(2, 2, 2)
+			new_instances.append(inst)
+			placed_stones += 1
+
+	# Trees
+	var placed_trees := 0
+	while placed_trees < trees_quantity:
+		var rp: Vector3 = get_random_position()
+		if trees_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.07:
+			var inst: Node3D = trees_list[randi_range(0, trees_list.size()-1)].instantiate()
+			inst.global_position = rp
+			inst.scale = Vector3(2, 2, 2)
+			new_instances.append(inst)
+			placed_trees += 1
+
+	# Passa para a main thread
+	_mutex.lock()
+	_instances_to_add = new_instances
+	_mutex.unlock()
 
 func get_random_position() -> Vector3:
-	var x: float = 0
-	var z: float = 0
-	var y: float = 1
-	
-	x = randf_range(-shape.size.x/2, shape.size.x/2)
-	z = randf_range(-shape.size.z/2, shape.size.z/2)
-	
-	y = terrain_noise.get_noise_2d(
+	var x = randf_range(-shape.size.x/2, shape.size.x/2)
+	var z = randf_range(-shape.size.z/2, shape.size.z/2)
+	var y = terrain_noise.get_noise_2d(
 		x + global_position.x,
 		z + global_position.z
 	) * terrain_height_multiplier
-	
 	return Vector3(x, y, z)
