@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ie5v82tignc6"]
+
+[ext_resource type="Texture2D" uid="uid://cuynsf8cds1ei" path="res://assets/meshs/temporary_thirdparty_mehs/textures/T_Bush_temp_climate.png" id="1_susql"]
+
+[resource]
+albedo_texture = ExtResource("1_susql")
