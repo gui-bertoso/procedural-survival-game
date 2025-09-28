@@ -160,10 +160,12 @@ func apply_game_settings() -> void:
 		2:
 			TranslationServer.set_locale("pt_BR")
 		3:
-			TranslationServer.set_locale("fr")
+			TranslationServer.set_locale("es")
 		4:
-			TranslationServer.set_locale("de")
+			TranslationServer.set_locale("fr")
 		5:
-			TranslationServer.set_locale("zh")
+			TranslationServer.set_locale("de")
 		6:
+			TranslationServer.set_locale("zh")
+		7:
 			TranslationServer.set_locale("ru")

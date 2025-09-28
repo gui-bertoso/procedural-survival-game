@@ -9,7 +9,7 @@
 [resource]
 script = ExtResource("1_l2kk8")
 item_name = "GunCore3"
-item_descryption = "A gun core to mage your gun"
+item_descryption = "A gun core to make your gun"
 item_type = "weapon"
 weapon_type = "gun"
 item_scene = ExtResource("4_d7tfb")
