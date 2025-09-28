@@ -128,12 +128,3 @@ func set_chunk_visible(_is_visible: bool) -> void:
 
 func get_chunk_visible() -> bool:
 	return visible
-
-
-func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
-	if not $VegetationSpawner.visible:
-		$VegetationSpawner.visible = true
-
-func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	if $VegetationSpawner.visible:
-		$VegetationSpawner.visible = false
