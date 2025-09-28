@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=58 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://map/debug_map/debug_map.gd" id="1_etbag"]
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="2_vli17"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dtbpdmvoi5mp" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/Tree_temp_climate_002.FBX" id="9_55xl3"]
 [ext_resource type="PackedScene" uid="uid://bsw8t64samyw3" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/Tree_temp_climate_005.FBX" id="10_fa3ol"]
 [ext_resource type="PackedScene" uid="uid://cbsk74j4mxndf" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/Tree_temp_climate_009.FBX" id="11_5rp13"]
-[ext_resource type="Script" uid="uid://b3glmceju5r82" path="res://map/debug_map/vegetation_spawner.gd" id="17_idey0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_color = Color(0, 0.227451, 0.0627451, 1)
@@ -577,9 +576,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.580439, 0.49987793, -10.8
 transform = Transform3D(0.09890295, 0, -0.9950971, 0, 1, 0, 0.9950971, 0, 0.09890295, -10.532869, 0.5039173, -13.266298)
 
 [node name="Character" parent="." instance=ExtResource("7_t8vms")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64672, 0)
-
-[node name="VegetationSpawner" type="Node3D" parent="."]
-script = ExtResource("17_idey0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.5943, 2.64672, 95.554146)
 
 [editable path="Envinroment"]

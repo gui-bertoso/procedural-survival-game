@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgyrrwv1qx147"]
+[gd_scene load_steps=8 format=3 uid="uid://cgyrrwv1qx147"]
 
 [ext_resource type="PackedScene" uid="uid://24nknqcg5stl" path="res://map_generation/map_generator/map_generator.tscn" id="1_7yvjg"]
 [ext_resource type="Script" uid="uid://b38ws7mnhe62l" path="res://map/default_map/default_map.gd" id="1_l3m3u"]
@@ -6,11 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="3_swb1k"]
 [ext_resource type="PackedScene" uid="uid://c4ec6w0kvbitf" path="res://envinroment/envinroment.tscn" id="4_xweh3"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l3m3u"]
+noise_type = 3
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7yvjg"]
 fractal_weighted_strength = 0.65
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_l3m3u")
+a = SubResource("FastNoiseLite_l3m3u")
 
 [node name="HUD" parent="." instance=ExtResource("3_swb1k")]
 
@@ -18,7 +22,6 @@ script = ExtResource("1_l3m3u")
 
 [node name="MapGenerator" parent="." node_paths=PackedStringArray("viewer") instance=ExtResource("1_7yvjg")]
 viewer = NodePath("../Character")
-thread_count = 10
 noise = SubResource("FastNoiseLite_7yvjg")
 
 [node name="Character" parent="." instance=ExtResource("2_dkf8j")]

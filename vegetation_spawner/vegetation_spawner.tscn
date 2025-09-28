@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c23rbbe12l4hj"]
+
+[ext_resource type="Script" uid="uid://b3glmceju5r82" path="res://vegetation_spawner/vegetation_spawner.gd" id="1_qyuj3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_608w3"]
+size = Vector3(200, 2.515, 200)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qyuj3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_608w3"]
+noise_type = 3
+frequency = 0.006
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_swb1r"]
+noise_type = 3
+seed = 95
+frequency = 0.0036
+
+[node name="VegetationSpawner" type="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.697, -0.49211502, 143.493)
+shape = SubResource("BoxShape3D_608w3")
+script = ExtResource("1_qyuj3")
+bush_quantity = 630
+trees_quantity = 1200
+stones_quantity = 85
+mushrooms_quantity = 47
+terrain_noise = SubResource("FastNoiseLite_qyuj3")
+trees_noise = SubResource("FastNoiseLite_608w3")
+stones_noise = SubResource("FastNoiseLite_swb1r")
