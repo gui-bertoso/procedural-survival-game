@@ -43,6 +43,12 @@ var game_data_dictionary: Dictionary = {
 var world_data_dictionary: Dictionary = {
 	"first_read": true,
 	
+	"map_noise_seed": -1,
+	"map_noise_strenght": -1,
+	"map_noise_frequency": -1,
+	"map_noise_gain": -1,
+	"map_noise_lacunality": -1,
+	
 	"player_position": Vector3(0, 0, 0),
 	"player_rotation": Vector3(0, 0, 0),
 	

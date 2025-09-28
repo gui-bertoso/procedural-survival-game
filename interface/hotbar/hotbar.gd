@@ -77,3 +77,6 @@ func update_items(items_array: Array) -> void:
 		else:
 			slots_container.get_child(c).clear_item()
 		c += 1
+
+func _exit_tree() -> void:
+	Globals.world_data_dictionary.current_hotbar_slot = current_slot_index

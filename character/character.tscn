@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddc8k6gybq8ur"]
+[gd_scene load_steps=20 format=3 uid="uid://ddc8k6gybq8ur"]
 
 [ext_resource type="Texture2D" uid="uid://ckk7o2jwmdbac" path="res://assets/sprites/placeholder_meter_texture.png" id="1_glpr6"]
 [ext_resource type="Script" uid="uid://cv3m1jlux8g8b" path="res://character/character.gd" id="1_pjt0s"]
@@ -25,6 +25,160 @@ uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_pjt0s"]
 size = Vector3(0.58, 0.165, 0.36)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o6jyn"]
+size = Vector3(0.14, 0.14, 0.14)
+
+[sub_resource type="Animation" id="Animation_tgjim"]
+resource_name = "idle"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.43700117, 0.89322114, -0.44124937), Vector3(0.437, 0.983, -0.441), Vector3(0.43700117, 0.89322114, -0.44124937)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wy5t8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.43700117, 0.89322114, -0.44124937)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dy06j"]
+resource_name = "walk"
+length = 1.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.43700117, 0.89322114, -0.44124937), Vector3(0.39591032, 0.9366609, -0.44124937), Vector3(0.42644188, 0.90468174, -0.44124937), Vector3(0.45697343, 0.9516394, -0.44124937), Vector3(0.43700117, 0.89322114, -0.44124937)]
+}
+
+[sub_resource type="Animation" id="Animation_qkjfd"]
+resource_name = "spring"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.43700117, 0.89322114, -0.44124937), Vector3(0.39591032, 0.9366609, -0.44124937), Vector3(0.42644188, 0.90468174, -0.44124937), Vector3(0.45697343, 0.9516394, -0.44124937), Vector3(0.43700117, 0.89322114, -0.44124937)]
+}
+
+[sub_resource type="Animation" id="Animation_gx66j"]
+resource_name = "attack"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.43700117, 0.89322114, -0.44124937), Vector3(0.1086753, 1.023253, -0.784891), Vector3(0.43700117, 0.89322114, -0.44124937)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hand:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8brn5"]
+_data = {
+&"RESET": SubResource("Animation_wy5t8"),
+&"attack": SubResource("Animation_gx66j"),
+&"idle": SubResource("Animation_tgjim"),
+&"spring": SubResource("Animation_qkjfd"),
+&"walk": SubResource("Animation_dy06j")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wa5vi"]
 radius = 0.4638672
@@ -54,6 +208,14 @@ mesh = SubResource("BoxMesh_pjt0s")
 [node name="Hand" type="Marker3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43700117, 0.89322114, -0.44124937)
 script = ExtResource("3_o6jyn")
+
+[node name="HandMesh" type="MeshInstance3D" parent="Body/Hand"]
+mesh = SubResource("BoxMesh_o6jyn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
+libraries = {
+&"": SubResource("AnimationLibrary_8brn5")
+}
 
 [node name="CameraOffset" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.425, -0.429)
@@ -108,10 +270,10 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 2.313840
 target_position = Vector3(0, -0.935, 0)
 collision_mask = 3
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="MapIcon" type="Node3D" parent="."]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 0, 0, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+[node name="Sprite3D" type="Sprite3D" parent="MapIcon"]
 transform = Transform3D(-5, -4.3711321e-07, 7.629325e-10, 0, -0.00872693, -4.9999924, 4.371139e-07, -4.9999924, 0.00872693, 0, 5.6129937, 0)
 layers = 524288
 texture = ExtResource("5_0rvpn")
