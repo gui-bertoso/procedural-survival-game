@@ -188,4 +188,3 @@ locale/translations=PackedStringArray("res://translation/translate_v3.de.transla
 
 anti_aliasing/quality/msaa_2d=2
 anti_aliasing/quality/msaa_3d=2
-mesh_lod/lod_change/threshold_pixels=0.5

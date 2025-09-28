@@ -12,6 +12,8 @@ extends CollisionShape3D
 @export var trees_noise: FastNoiseLite = null
 @export var stones_noise: FastNoiseLite = null
 
+var visibility_end_distance: float = 0.0
+
 # ---------- LISTAS ----------
 var bushs_list: Array[PackedScene] = [
 	preload("res://assets/meshs/temporary_thirdparty_mehs/fbx/_bush_1.fbx"),
@@ -130,7 +132,19 @@ var _instances_to_add: Array = []
 var _generating: bool = false
 var _generated: bool = false
 
+var lod: float = 0.22
+
 func _ready() -> void:
+	visibility_end_distance = 100.0 * (1 + Globals.game_data_dictionary.vegetation_quality)
+	match Globals.game_data_dictionary.vegetation_quality:
+		0:
+			lod = 0.12
+		1:
+			lod = 0.22
+		2:
+			lod = 0.34
+		3:
+			lod = 0.4
 	terrain_noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	terrain_noise.seed = Globals.world_data_dictionary.map_noise_seed
 	terrain_noise.frequency = Globals.world_data_dictionary.map_noise_frequency
@@ -170,6 +184,8 @@ func _thread_generate() -> void:
 	for i in grass_quantity:
 		var inst: Node3D = grass_list[randi_range(0, grass_list.size()-1)].instantiate()
 		inst.global_position = get_random_position()
+		inst.get_child(0).set("lod_bias", lod)
+		inst.get_child(0).set("visibility_range_end", visibility_end_distance)
 		new_instances.append(inst)
 
 	# Mushrooms
@@ -177,12 +193,16 @@ func _thread_generate() -> void:
 		var inst: Node3D = mushrooms_list[randi_range(0, mushrooms_list.size()-1)].instantiate()
 		inst.global_position = get_random_position()
 		inst.scale = Vector3(0.5, 0.5, 0.5)
+		inst.get_child(0).set("visibility_range_end", visibility_end_distance)
+		inst.get_child(0).set("lod_bias", lod)
 		new_instances.append(inst)
 
 	# Bushes
 	for i in bush_quantity:
 		var inst: Node3D = bushs_list[randi_range(0, bushs_list.size()-1)].instantiate()
 		inst.global_position = get_random_position()
+		inst.get_child(0).set("visibility_range_end", visibility_end_distance)
+		inst.get_child(0).set("lod_bias", lod)
 		new_instances.append(inst)
 
 	# Stones
@@ -192,6 +212,8 @@ func _thread_generate() -> void:
 		if stones_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.12:
 			var inst: Node3D = stones_list[randi_range(0, stones_list.size()-1)].instantiate()
 			inst.global_position = rp
+			inst.get_child(0).set("visibility_range_end", visibility_end_distance)
+			inst.get_child(0).set("lod_bias", lod)
 			inst.scale = Vector3(2, 2, 2)
 			new_instances.append(inst)
 			placed_stones += 1
@@ -203,6 +225,8 @@ func _thread_generate() -> void:
 		if trees_noise.get_noise_2d(rp.x, rp.z) * 10 > 0.07:
 			var inst: Node3D = trees_list[randi_range(0, trees_list.size()-1)].instantiate()
 			inst.global_position = rp
+			inst.get_child(0).set("visibility_range_end", visibility_end_distance)
+			inst.get_child(0).set("lod_bias", lod)
 			inst.scale = Vector3(2, 2, 2)
 			new_instances.append(inst)
 			placed_trees += 1
