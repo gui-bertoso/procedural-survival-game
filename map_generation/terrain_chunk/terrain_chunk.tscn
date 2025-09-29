@@ -23,4 +23,3 @@ pixel_size = 3.3345
 text = "999"
 
 [node name="VegetationSpawner" parent="." instance=ExtResource("3_kcxeo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
