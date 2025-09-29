@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jhnj48luoh1k"]
+
+[ext_resource type="Script" uid="uid://cp88hkbs1g765" path="res://animals/animal_template/animal_template.gd" id="1_qhlxt"]
+[ext_resource type="PackedScene" uid="uid://i10fnx643qb2" path="res://components/stats_component/stats_component.tscn" id="2_t8yn5"]
+
+[node name="AnimalTemplate" type="CharacterBody3D"]
+script = ExtResource("1_qhlxt")
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="Stats" parent="." instance=ExtResource("2_t8yn5")]
