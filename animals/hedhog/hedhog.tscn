@@ -1,0 +1,133 @@
+[gd_scene load_steps=19 format=3 uid="uid://co2adcr73fro7"]
+
+[ext_resource type="PackedScene" uid="uid://jhnj48luoh1k" path="res://animals/animal_template/animal_template.tscn" id="1_xfpge"]
+[ext_resource type="PackedScene" uid="uid://cyhk5bhxrk2qu" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/hedhog.fbx" id="2_5d837"]
+
+[sub_resource type="Animation" id="Animation_j32y8"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ta3sq"]
+resource_name = "idle"
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_kq2q6"]
+resource_name = "spring"
+length = 0.7
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_38jyj"]
+resource_name = "walk"
+step = 0.05
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtcit"]
+_data = {
+&"RESET": SubResource("Animation_j32y8"),
+&"idle": SubResource("Animation_ta3sq"),
+&"spring": SubResource("Animation_kq2q6"),
+&"walk": SubResource("Animation_38jyj")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1so02"]
+radius = 0.0042368737
+height = 0.042368736
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_an221"]
+radius = 0.004435727
+height = 0.04435727
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dq0ji"]
+radius = 0.002823013
+height = 0.02823013
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4f5vk"]
+radius = 0.0026139547
+height = 0.026139548
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kurv6"]
+radius = 0.0028230122
+height = 0.028230121
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gkv5t"]
+radius = 0.0026139568
+height = 0.026139569
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_amx32"]
+radius = 0.0065951063
+height = 0.065951064
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0l4jm"]
+radius = 0.0022379477
+height = 0.022379477
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_igiti"]
+radius = 0.0022369642
+height = 0.022369642
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v18av"]
+radius = 0.0022379404
+height = 0.022379404
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yif3q"]
+radius = 0.002236962
+height = 0.022369621
+
+[node name="AnimalTemplate" instance=ExtResource("1_xfpge")]
+
+[node name="Body" parent="." index="0"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="hedhog" parent="Body" index="0" instance=ExtResource("2_5d837")]
+
+[node name="Animation" type="AnimationPlayer" parent="Body" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_rtcit")
+}
+
+[node name="Stats" parent="." index="1"]
+movement_speed = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(-3.3648007e-07, 4.202359e-07, 1, -0.97055095, 0.24089597, -4.2780417e-07, -0.24089597, -0.97055095, 3.2680362e-07, 4.2393676e-08, 0.09871697, 0.0045603067)
+shape = SubResource("CapsuleShape3D_1so02")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(-4.393616e-07, 3.2773497e-07, 1, -0.9992523, -0.038663987, -4.263615e-07, 0.038663987, -0.99925226, 3.444774e-07, 5.8564734e-08, 0.10296269, -0.038162246)
+shape = SubResource("CapsuleShape3D_an221")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(2.452247e-07, 0.09806224, 0.9951803, 0.27588236, -0.95655876, 0.09425652, 0.9611915, 0.27455264, -0.027053876, -0.04960296, 0.047392182, -0.03035126)
+shape = SubResource("CapsuleShape3D_dq0ji")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(-7.525432e-07, 0.06032055, 0.9981791, -0.5359278, -0.8427265, 0.050926056, 0.84426385, -0.5349518, 0.03232809, -0.047431394, 0.022875968, -0.033467747)
+shape = SubResource("CapsuleShape3D_4f5vk")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." index="6"]
+transform = Transform3D(8.702772e-08, -0.09806203, 0.99518037, 0.27588344, -0.9565585, -0.09425638, 0.96119106, 0.27455378, 0.027053611, 0.049602997, 0.04739287, -0.0303511)
+shape = SubResource("CapsuleShape3D_kurv6")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(1.9635947e-06, -0.060318373, 0.9981792, -0.53592896, -0.84272593, -0.050923523, 0.84426314, -0.53495306, -0.032328013, 0.047430508, 0.022876754, -0.033467606)
+shape = SubResource("CapsuleShape3D_gkv5t")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(-0.58468807, -0.7705251, 0.2538324, 0.720974, -0.63697755, -0.27286628, 0.37193584, 0.023464916, 0.9279618, -0.025408398, 0.07827485, 0.052325882)
+shape = SubResource("CapsuleShape3D_amx32")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." index="9"]
+transform = Transform3D(-4.0724234e-07, 0.18270877, 0.98316705, -0.36729002, -0.91445005, 0.16993846, 0.93010646, -0.3611074, 0.06710748, -0.048770215, 0.047037918, 0.049059402)
+shape = SubResource("CapsuleShape3D_0l4jm")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="." index="10"]
+transform = Transform3D(6.8751297e-07, -4.7978332e-08, 1, 0.3960385, -0.91823393, -3.1633695e-07, 0.91823393, 0.3960385, -6.122965e-07, -0.04673107, 0.026534785, 0.04944774)
+shape = SubResource("CapsuleShape3D_igiti")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="." index="11"]
+transform = Transform3D(-9.228583e-08, -0.1827098, 0.98316693, -0.36728904, -0.9144503, -0.16993967, 0.93010694, -0.36110643, -0.06710722, 0.04877959, 0.04704224, 0.049060922)
+shape = SubResource("CapsuleShape3D_v18av")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="." index="12"]
+transform = Transform3D(8.9622444e-07, 5.125057e-07, 1, 0.39603952, -0.9182335, 1.15659574e-07, 0.9182335, 0.39603952, -1.0259157e-06, 0.046728425, 0.026535414, 0.049449015)
+shape = SubResource("CapsuleShape3D_yif3q")
+
+[editable path="Body/hedhog"]
