@@ -1,0 +1,213 @@
+[gd_scene load_steps=29 format=3 uid="uid://b37o81cs3bgqj"]
+
+[ext_resource type="PackedScene" uid="uid://jhnj48luoh1k" path="res://animals/animal_template/animal_template.tscn" id="1_a0nl1"]
+[ext_resource type="PackedScene" uid="uid://dap7bgiqw4p1q" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/deer_1.fbx" id="2_gc4nn"]
+
+[sub_resource type="Animation" id="Animation_j32y8"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ta3sq"]
+resource_name = "idle"
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_kq2q6"]
+resource_name = "spring"
+length = 0.7
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_38jyj"]
+resource_name = "walk"
+step = 0.05
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtcit"]
+_data = {
+&"RESET": SubResource("Animation_j32y8"),
+&"idle": SubResource("Animation_ta3sq"),
+&"spring": SubResource("Animation_kq2q6"),
+&"walk": SubResource("Animation_38jyj")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a76mt"]
+radius = 0.028529793
+height = 0.28529793
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mnxtq"]
+radius = 0.022694621
+height = 0.22694622
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_va4eb"]
+radius = 0.016384192
+height = 0.16384192
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5gf1d"]
+radius = 0.019432964
+height = 0.19432963
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5dxu"]
+radius = 0.021303657
+height = 0.21303657
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xejvg"]
+radius = 0.01968554
+height = 0.19685541
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ol214"]
+radius = 0.016752314
+height = 0.16752313
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p4gik"]
+radius = 0.0063231
+height = 0.063231
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mrvph"]
+radius = 0.021303648
+height = 0.21303648
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h0rd6"]
+radius = 0.019685548
+height = 0.19685547
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_anp66"]
+radius = 0.016752345
+height = 0.16752346
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ev3gv"]
+radius = 0.0063231066
+height = 0.063231066
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8yndn"]
+radius = 0.0338796
+height = 0.33879602
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ovu5"]
+radius = 0.026552623
+height = 0.26552624
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_776kv"]
+radius = 0.02112155
+height = 0.21121551
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cve64"]
+radius = 0.026556958
+height = 0.26556957
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sxwqy"]
+radius = 0.0064366953
+height = 0.06436695
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3546h"]
+radius = 0.026552627
+height = 0.26552626
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lbjjb"]
+radius = 0.021121565
+height = 0.21121566
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1486d"]
+radius = 0.026556933
+height = 0.26556933
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r7vav"]
+radius = 0.006436702
+height = 0.06436702
+
+[node name="AnimalTemplate" instance=ExtResource("1_a0nl1")]
+
+[node name="Body" parent="." index="0"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="deer_1" parent="Body" index="0" instance=ExtResource("2_gc4nn")]
+
+[node name="Animation" type="AnimationPlayer" parent="Body" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_rtcit")
+}
+
+[node name="Stats" parent="." index="1"]
+movement_speed = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(-1.0680725e-07, 1.0242382e-05, 1, -0.9999302, 0.011815858, -2.2782231e-07, -0.011815857, -0.9999302, 1.0240405e-05, 1.3650039e-06, 0.77366805, -0.05233918)
+shape = SubResource("CapsuleShape3D_a76mt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(-7.232118e-06, 7.383055e-06, 1, -0.72596264, -0.6877341, -1.7266862e-07, 0.6877341, -0.72596264, 1.0333597e-05, 3.6641645e-06, 0.6973203, -0.27737617)
+shape = SubResource("CapsuleShape3D_mnxtq")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(3.808026e-06, -8.943104e-06, 1, -0.6580603, 0.7529653, 9.239757e-06, -0.7529653, -0.6580603, -3.01779e-06, 3.769058e-06, 0.68096393, -0.41366333)
+shape = SubResource("CapsuleShape3D_va4eb")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(4.6810924e-06, 1.8442779e-05, 1, -0.49532348, 0.86870855, -1.3702745e-05, -0.86870855, -0.49532348, 1.3201647e-05, 4.8270167e-06, 0.8270545, -0.51570123)
+shape = SubResource("CapsuleShape3D_5gf1d")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." index="6"]
+transform = Transform3D(-5.305181e-06, 0.0003763881, 0.99999994, 0.20845883, -0.97803116, 0.0003692252, 0.97803116, 0.20845883, -7.327279e-05, -0.19715646, 0.5505374, -0.19035101)
+shape = SubResource("CapsuleShape3D_x5dxu")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." index="7"]
+transform = Transform3D(-2.7459186e-05, 0.018769879, 0.99982387, 0.057044704, -0.99819577, 0.01874088, 0.9983717, 0.057035163, -0.0010433124, -0.19526891, 0.34810913, -0.16253284)
+shape = SubResource("CapsuleShape3D_xejvg")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." index="8"]
+transform = Transform3D(-4.525107e-05, -0.033189483, 0.99944913, -0.0100765, -0.9993983, -0.033188257, 0.9999492, -0.01007245, -0.00028921003, -0.19620143, 0.16614783, -0.15776289)
+shape = SubResource("CapsuleShape3D_ol214")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="." index="9"]
+transform = Transform3D(-2.7274414e-06, 5.0073277e-06, 1, -0.5346902, -0.8450482, 2.7730964e-06, 0.8450482, -0.53469026, 4.9821883e-06, -0.19902357, 0.0557201, -0.17551108)
+shape = SubResource("CapsuleShape3D_p4gik")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="." index="10"]
+transform = Transform3D(-5.6078075e-06, -0.0003814839, 0.99999994, 0.2084624, -0.9780303, -0.00037193383, 0.97803044, 0.20846237, 8.500965e-05, 0.197162, 0.550537, -0.19034904)
+shape = SubResource("CapsuleShape3D_mrvph")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="." index="11"]
+transform = Transform3D(-7.522684e-06, -0.018772218, 0.9998238, 0.05704209, -0.9981958, -0.018741224, 0.99837184, 0.05703189, 0.0010783155, 0.19527343, 0.34810284, -0.16253018)
+shape = SubResource("CapsuleShape3D_h0rd6")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="." index="12"]
+transform = Transform3D(3.561335e-05, 0.03318964, 0.9994491, -0.010074379, -0.99939835, 0.033188313, 0.9999493, -0.01007001, 0.00029877308, 0.19619359, 0.16614252, -0.1577416)
+shape = SubResource("CapsuleShape3D_anp66")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="." index="13"]
+transform = Transform3D(-4.57891e-06, 1.8929351e-06, 1, -0.5346911, -0.84504753, -8.486825e-07, 0.8450476, -0.5346911, 4.8815327e-06, 0.19896512, 0.05571929, -0.17550912)
+shape = SubResource("CapsuleShape3D_ev3gv")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="." index="14"]
+transform = Transform3D(1, -8.82307e-06, -5.2447554e-05, -5.3184467e-05, -0.16459881, -0.9863606, 6.992377e-08, 0.98636067, -0.16459881, -2.8578866e-06, 0.77684027, 0.33659446)
+shape = SubResource("CapsuleShape3D_8yndn")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="." index="15"]
+transform = Transform3D(-3.2518544e-06, -0.08824695, 0.99609864, 0.3941253, -0.91547126, -0.08110267, 0.9190568, 0.39258736, 0.03478333, -0.1734805, 0.60589826, 0.32218793)
+shape = SubResource("CapsuleShape3D_1ovu5")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="." index="16"]
+transform = Transform3D(-3.0380545e-06, -0.0009864798, 0.9999996, 0.74638873, -0.66551, -0.0006542449, 0.66551036, 0.7463884, 0.0007383191, -0.18532318, 0.41406965, 0.4531356)
+shape = SubResource("CapsuleShape3D_776kv")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="." index="17"]
+transform = Transform3D(-6.7169144e-06, 0.00050930143, 0.99999994, -0.14279658, -0.98975194, 0.000503123, 0.9897521, -0.14279656, 7.937458e-05, -0.18529509, 0.21236257, 0.51299566)
+shape = SubResource("CapsuleShape3D_cve64")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="." index="18"]
+transform = Transform3D(-3.2694757e-06, -0.0367309, 0.9993252, -0.51211953, -0.8583346, -0.031550366, 0.85891426, -0.51177406, -0.018807804, -0.18645622, 0.053311985, 0.47756347)
+shape = SubResource("CapsuleShape3D_sxwqy")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="." index="19"]
+transform = Transform3D(-7.829423e-06, 0.088242196, 0.9960991, 0.39412662, -0.9154707, 0.08110261, 0.9190562, 0.39258978, -0.03477143, 0.17347631, 0.60589874, 0.32218987)
+shape = SubResource("CapsuleShape3D_3546h")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="." index="20"]
+transform = Transform3D(-3.3099675e-06, 0.00097635336, 0.9999995, 0.7463868, -0.6655121, 0.00065224577, 0.6655124, 0.74638647, -0.0007265344, 0.18527357, 0.4140725, 0.45313504)
+shape = SubResource("CapsuleShape3D_lbjjb")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="." index="21"]
+transform = Transform3D(-2.7183266e-06, -0.0005046519, 0.9999999, -0.14279939, -0.9897516, -0.00049986824, 0.9897517, -0.14279938, -6.937352e-05, 0.18533087, 0.21236278, 0.5129973)
+shape = SubResource("CapsuleShape3D_1486d")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="." index="22"]
+transform = Transform3D(-2.8191514e-06, 0.03672994, 0.9993252, -0.5121152, -0.8583373, 0.03154652, 0.8589168, -0.51176953, 0.018812379, 0.18644597, 0.053312957, 0.47756362)
+shape = SubResource("CapsuleShape3D_r7vav")
+
+[editable path="Body/deer_1"]

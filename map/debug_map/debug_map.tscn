@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=64 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://map/debug_map/debug_map.gd" id="1_etbag"]
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="2_vli17"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://b221p3p2jrrdy" path="res://animals/wolf/wolf.tscn" id="17_idey0"]
 [ext_resource type="PackedScene" uid="uid://b5jm2cibux5qq" path="res://animals/fox/fox.tscn" id="18_178wh"]
 [ext_resource type="PackedScene" uid="uid://dgjwqc7djjmxg" path="res://animals/bear/bear.tscn" id="19_3negl"]
+[ext_resource type="PackedScene" uid="uid://dsvgsxmkgdcmd" path="res://animals/boar/boar.tscn" id="20_3negl"]
+[ext_resource type="PackedScene" uid="uid://dixwf5a3iqj7n" path="res://animals/female_deer/female_deer.tscn" id="21_55xl3"]
+[ext_resource type="PackedScene" uid="uid://b37o81cs3bgqj" path="res://animals/male_deer/male_deer.tscn" id="22_fa3ol"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_color = Color(0, 0.227451, 0.0627451, 1)
@@ -589,5 +592,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89848757, 0.5014719, -4.463
 
 [node name="AnimalTemplate3" parent="." instance=ExtResource("19_3negl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.511545, 0.989092, -4.926747)
+
+[node name="AnimalTemplate4" parent="." instance=ExtResource("20_3negl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.406239, 0.51070935, -5.530255)
+
+[node name="AnimalTemplate5" parent="." instance=ExtResource("21_55xl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0109725, 1.1478934, -3.086013)
+
+[node name="AnimalTemplate6" parent="." instance=ExtResource("22_fa3ol")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.163027, 0.5033146, -0.6358166)
 
 [editable path="Envinroment"]

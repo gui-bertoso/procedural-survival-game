@@ -132,8 +132,8 @@ func apply_state() -> void:
 			velocity.x = move_toward(velocity.x, 0.0, stats.movement_speed)
 			velocity.z = move_toward(velocity.z, 0.0, stats.movement_speed)
 		State.wander:
-			velocity.x = wander_direction.x * stats.movement_speed
-			velocity.z = wander_direction.z * stats.movement_speed
+			velocity.x = wander_direction.x * stats.movement_speed / 2
+			velocity.z = wander_direction.z * stats.movement_speed / 2
 		State.chase:
 			pass
 		State.attack_0:

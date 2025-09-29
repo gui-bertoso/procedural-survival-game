@@ -111,6 +111,9 @@ libraries = {
 
 [node name="fox" parent="Body" index="1" instance=ExtResource("2_s1kyh")]
 
+[node name="Stats" parent="." index="1"]
+movement_speed = 7.0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(-0.0020997673, -0.022465993, 0.9997454, -0.9956625, 0.09303826, -4.6223653e-07, -0.09301457, -0.9954091, -0.022563905, 0.0040881867, 0.41198543, -0.086992584)
 shape = SubResource("CapsuleShape3D_bc7nx")
