@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bnsd14hsq3cd3" path="res://character/stats.gd" id="3_wa5vi"]
 [ext_resource type="Material" uid="uid://df5f5oki6ynt" path="res://materials/material_2.tres" id="4_wy5t8"]
 [ext_resource type="Texture2D" uid="uid://d2klja3wfg8m7" path="res://assets/sprites/player_map_icon.png" id="5_0rvpn"]
+[ext_resource type="PackedScene" uid="uid://b17yii88urdmw" path="res://weapons/swords/sword_handle/sword_handle_0.tscn" id="5_wy5t8"]
 
 [sub_resource type="Animation" id="Animation_wy5t8"]
 length = 0.001
@@ -1188,9 +1189,6 @@ _data = {
 &"walk": SubResource("Animation_dy06j")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_o6jyn"]
-size = Vector3(0.14, 0.14, 0.14)
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wa5vi"]
 radius = 0.30322266
 height = 1.7033691
@@ -1262,11 +1260,11 @@ bone_name = "Hand_R"
 bone_idx = 23
 
 [node name="Hand" type="Marker3D" parent="Body/peasant_5/Armature/Skeleton3D/BoneAttachment3D"]
-transform = Transform3D(0.99999785, 0, 0, 0, 0.99999857, 0, 0, 0, 1.0000011, 0, 0, 0)
+transform = Transform3D(0.9560881, -0.19601983, -0.2178711, 0.1960196, 0.9803554, -0.021832973, 0.21787038, -0.021832615, 0.9757346, -0.026633382, 0.05094533, 0.05662431)
 script = ExtResource("3_o6jyn")
 
-[node name="HandMesh" type="MeshInstance3D" parent="Body/peasant_5/Armature/Skeleton3D/BoneAttachment3D/Hand"]
-mesh = SubResource("BoxMesh_o6jyn")
+[node name="SwordHandle" parent="Body/peasant_5/Armature/Skeleton3D/BoneAttachment3D/Hand" instance=ExtResource("5_wy5t8")]
+transform = Transform3D(0.96898586, -0.03667313, 0.24439377, -0.040655352, 0.9517995, 0.30401877, -0.24376214, -0.30452606, 0.92078394, 0.014096737, 0.10836825, -0.024831176)
 
 [node name="CameraOffset" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65055, -0.036177784)
