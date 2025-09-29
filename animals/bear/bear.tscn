@@ -87,6 +87,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_rtcit")
 }
 
+[node name="Stats" parent="." index="1"]
+movement_speed = 3.0
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(-0.00041697628, -0.008957653, 0.9999598, -0.998921, 0.0464429, -5.069933e-07, -0.046441026, -0.99888086, -0.008967352, -0.0014685539, 1.0735438, -0.09820412)
 shape = SubResource("CapsuleShape3D_s1kyh")
