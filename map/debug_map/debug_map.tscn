@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=66 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://map/debug_map/debug_map.gd" id="1_etbag"]
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="2_vli17"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://dsvgsxmkgdcmd" path="res://animals/boar/boar.tscn" id="20_3negl"]
 [ext_resource type="PackedScene" uid="uid://dixwf5a3iqj7n" path="res://animals/female_deer/female_deer.tscn" id="21_55xl3"]
 [ext_resource type="PackedScene" uid="uid://b37o81cs3bgqj" path="res://animals/male_deer/male_deer.tscn" id="22_fa3ol"]
+[ext_resource type="PackedScene" uid="uid://bq3w7rvy7kno5" path="res://npcs/npc/npc.tscn" id="24_5rp13"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_color = Color(0, 0.227451, 0.0627451, 1)
@@ -617,5 +618,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8706937, 0.5003973, -5.5931
 
 [node name="Character" parent="Scenario" instance=ExtResource("7_t8vms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8063498, 0.49999905, -10.156787)
+
+[node name="NPC" parent="." instance=ExtResource("24_5rp13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.155871, 0.50144994, -13.674983)
 
 [editable path="Envinroment"]

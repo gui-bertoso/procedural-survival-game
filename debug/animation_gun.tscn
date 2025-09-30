@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://cskwccqcvc71b"]
+
+[ext_resource type="PackedScene" uid="uid://c8ppnfp75dxyd" path="res://weapons/guns/gun_parts/gun_cores/gun_core_1.tscn" id="1_qwgsp"]
+[ext_resource type="PackedScene" uid="uid://m3at5j4dbgn5" path="res://weapons/guns/gun_parts/gun_pipes/gun_pipe_0.tscn" id="2_hrh01"]
+[ext_resource type="PackedScene" uid="uid://cgbdw8nmuwoh" path="res://weapons/guns/gun_parts/gun_handles/gun_handle_2.tscn" id="3_hbxfy"]
+[ext_resource type="PackedScene" uid="uid://cwpvwno8xryiw" path="res://weapons/guns/gun_parts/gun_butts/gun_butt_5.tscn" id="4_lrdoj"]
+[ext_resource type="PackedScene" uid="uid://io2xjhkxffxa" path="res://weapons/guns/gun_parts/gun_scopes/gun_scope_5.tscn" id="5_h7jtl"]
+
+[node name="AnimationGun" type="Node3D"]
+
+[node name="GunCore" parent="." instance=ExtResource("1_qwgsp")]
+
+[node name="GunPipe" parent="GunCore/ComponentsSnaps/PipeSnap" index="0" instance=ExtResource("2_hrh01")]
+
+[node name="GunHandle" parent="GunCore/ComponentsSnaps/HandleSnap" index="0" instance=ExtResource("3_hbxfy")]
+
+[node name="GunButt2" parent="GunCore/ComponentsSnaps/ButtSnap" index="0" instance=ExtResource("4_lrdoj")]
+
+[node name="GunScope" parent="GunCore/ComponentsSnaps/ScopeSnap" index="0" instance=ExtResource("5_h7jtl")]
+
+[editable path="GunCore"]

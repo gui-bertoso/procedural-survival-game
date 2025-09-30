@@ -1,0 +1,371 @@
+[gd_scene load_steps=37 format=3 uid="uid://bq3w7rvy7kno5"]
+
+[ext_resource type="PackedScene" uid="uid://3bocdgm5w2dx" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/peasant_4.fbx" id="1_cqqm2"]
+[ext_resource type="Material" uid="uid://df5f5oki6ynt" path="res://materials/material_2.tres" id="2_ig0h0"]
+[ext_resource type="PackedScene" uid="uid://cskwccqcvc71b" path="res://debug/animation_gun.tscn" id="3_eepe7"]
+[ext_resource type="AnimationLibrary" uid="uid://ddrttuy0utqcd" path="res://animation_librarys/character_animations.res" id="3_ig0h0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cqqm2"]
+radius = 0.09180699
+height = 0.91806996
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eepe7"]
+radius = 0.011374865
+height = 0.11374865
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ig0h0"]
+radius = 0.013515879
+height = 0.13515879
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_phx8h"]
+radius = 0.013619555
+height = 0.13619556
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_166f1"]
+radius = 0.009265622
+height = 0.09265622
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5uoa2"]
+radius = 0.007849898
+height = 0.07849898
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y1rpx"]
+radius = 0.008086201
+height = 0.08086201
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jbrvs"]
+radius = 0.02218659
+height = 0.2218659
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rc7hn"]
+radius = 0.02950883
+height = 0.2950883
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ut13e"]
+radius = 0.0036048095
+height = 0.036048096
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5pb0d"]
+radius = 0.0043734936
+height = 0.043734938
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wsqk0"]
+radius = 0.0016082458
+height = 0.016082458
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tu21d"]
+radius = 0.0029353253
+height = 0.029353254
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q2667"]
+radius = 0.0024620802
+height = 0.024620803
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l83cy"]
+radius = 0.00301786
+height = 0.0301786
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tkpqk"]
+radius = 0.0022657483
+height = 0.022657484
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqpt"]
+radius = 0.0080860695
+height = 0.0808607
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b2njo"]
+radius = 0.022186706
+height = 0.22186705
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_37m7g"]
+radius = 0.029508794
+height = 0.29508793
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bb5o4"]
+radius = 0.0036049343
+height = 0.036049344
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7qo75"]
+radius = 0.0043735327
+height = 0.04373533
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2um87"]
+radius = 0.0016080219
+height = 0.01608022
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n88lo"]
+radius = 0.0029352629
+height = 0.029352628
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jis1w"]
+radius = 0.0024621298
+height = 0.024621299
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8blda"]
+radius = 0.0030178705
+height = 0.030178705
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8hox6"]
+radius = 0.0022657197
+height = 0.022657197
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0qmrw"]
+radius = 0.033930905
+height = 0.33930907
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_70731"]
+radius = 0.04678104
+height = 0.4678104
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_73r1x"]
+radius = 0.012992039
+height = 0.1299204
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3d10g"]
+radius = 0.03393091
+height = 0.3393091
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f3bco"]
+radius = 0.046780907
+height = 0.46780908
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_seis0"]
+radius = 0.012992
+height = 0.12992
+
+[node name="NPC" type="CharacterBody3D"]
+
+[node name="Body" type="Node3D" parent="."]
+
+[node name="peasant_5" parent="Body" instance=ExtResource("1_cqqm2")]
+
+[node name="Skeleton3D" parent="Body/peasant_5/Armature" index="0"]
+bones/0/rotation = Quaternion(-4.0081805e-10, 0.999986, 0.0053085205, -7.5501106e-08)
+bones/1/position = Vector3(2.6441956e-13, 0.9294784, -1.5292317e-06)
+bones/1/rotation = Quaternion(0.08337228, -3.1675867e-08, 9.938737e-09, 0.99651855)
+bones/2/position = Vector3(7.820622e-11, 0.13650338, -1.3103709e-06)
+bones/2/rotation = Quaternion(0.00047548866, 1.199041e-14, 4.159462e-11, 0.99999994)
+bones/3/position = Vector3(-1.8125625e-09, 0.18486795, -2.6896596e-06)
+bones/3/rotation = Quaternion(0.008057255, 5.107026e-15, 7.0438627e-10, 0.9999676)
+bones/4/position = Vector3(1.7419203e-09, 0.14380816, 1.5497208e-06)
+bones/4/rotation = Quaternion(0.03488532, -4.4408925e-15, 3.0497682e-09, 0.9993914)
+bones/5/position = Vector3(-1.8787367e-09, 0.09014343, -5.736947e-07)
+bones/5/rotation = Quaternion(-0.22947566, -9.742208e-15, -2.0061377e-08, 0.97331446)
+bones/6/position = Vector3(-1.6426875e-09, 0.09618661, 1.12354755e-05)
+bones/6/rotation = Quaternion(3.091991e-07, 4.218854e-15, 2.9662596e-14, 1)
+bones/7/position = Vector3(-0.06082282, 0.032087665, -0.055566285)
+bones/7/rotation = Quaternion(0.062202968, 0.22998896, 0.66870564, 0.7043215)
+bones/8/position = Vector3(-0.02083282, 0.16030748, -0.010313284)
+bones/8/rotation = Quaternion(-0.2187822, 0.055969425, 0.6141772, 0.7561668)
+bones/9/position = Vector3(0.00039584967, 0.20643522, -0.00033712893)
+bones/9/rotation = Quaternion(-0.14897731, -0.0164085, 0.1334039, 0.9796632)
+bones/10/position = Vector3(1.8528084e-05, 0.23449917, 7.5474964e-07)
+bones/10/rotation = Quaternion(-0.18626058, -0.72047794, -0.0063026412, 0.6679662)
+bones/11/position = Vector3(1.4572607e-05, 0.04801005, 7.9907477e-07)
+bones/11/rotation = Quaternion(0.1902038, 0.03874645, -0.051356744, 0.9796345)
+bones/12/position = Vector3(-4.5357656e-06, 0.050148405, 5.852431e-06)
+bones/12/rotation = Quaternion(0.12912881, -0.027076295, 0.08045479, 0.9879877)
+bones/13/position = Vector3(3.5347628e-05, 0.017303463, -6.420538e-06)
+bones/13/rotation = Quaternion(-3.9627793e-07, 4.8754583e-07, -4.6633536e-07, 1)
+bones/14/position = Vector3(0.03315882, 0.06596972, 0.044790022)
+bones/14/rotation = Quaternion(0.33558297, 0.06296911, -0.11729135, 0.93255657)
+bones/15/position = Vector3(-9.5397354e-08, 0.03809868, 5.5879354e-09)
+bones/15/rotation = Quaternion(0.028736299, -0.007310442, 0.061335918, 0.99767673)
+bones/16/position = Vector3(5.847886e-08, 0.028536046, -1.1175871e-08)
+bones/16/rotation = Quaternion(-1.9854633e-06, 2.4601388e-05, -2.1095035e-05, 1)
+bones/17/position = Vector3(0.033781618, 0.039569385, 0.07370417)
+bones/17/rotation = Quaternion(0.4763725, 0.03997769, -0.11388039, 0.8709204)
+bones/18/position = Vector3(5.477267e-06, 0.032028794, -3.5493288e-06)
+bones/18/rotation = Quaternion(-0.04018094, 0.0022911287, 0.018583136, 0.999017)
+bones/19/position = Vector3(1.2257061e-07, 0.02764912, 7.450581e-09)
+bones/19/rotation = Quaternion(1.7933772e-07, -1.0627359e-07, -2.1811438e-06, 1)
+bones/20/position = Vector3(0.060823053, 0.03208462, -0.05556991)
+bones/20/rotation = Quaternion(0.06220416, -0.22998247, -0.6686881, 0.7043401)
+bones/21/position = Vector3(0.0533347, 0.15083498, -0.047568485)
+bones/21/rotation = Quaternion(-0.3611993, 0.17224519, -0.61456704, 0.6798338)
+bones/22/position = Vector3(-7.230119e-06, 0.20816924, 1.7959974e-06)
+bones/22/rotation = Quaternion(-0.14162152, -0.39168826, -0.59131205, 0.6905605)
+bones/23/position = Vector3(-1.4806693e-05, 0.23452553, -1.4250109e-06)
+bones/23/rotation = Quaternion(-0.39712954, 0.07596973, -0.14138013, 0.90361965)
+bones/24/position = Vector3(-1.4432738e-06, 0.048019513, 2.1528453e-05)
+bones/24/rotation = Quaternion(0.19020462, -0.038779616, 0.051398706, 0.9796308)
+bones/25/position = Vector3(2.9056204e-05, 0.050129686, -8.452684e-06)
+bones/25/rotation = Quaternion(0.12913753, 0.027140843, -0.08065082, 0.9879688)
+bones/26/position = Vector3(3.821809e-05, 0.017335659, 2.0228326e-06)
+bones/26/rotation = Quaternion(-7.3434785e-07, 3.0513146e-07, -7.9019566e-07, 1)
+bones/27/position = Vector3(-0.03315275, 0.065978445, 0.044821218)
+bones/27/rotation = Quaternion(0.335595, -0.062912814, 0.117184855, 0.9325694)
+bones/28/position = Vector3(6.3285825e-08, 0.03809916, 6.519258e-09)
+bones/28/rotation = Quaternion(0.0287329, 0.0072615445, -0.061198186, 0.99768555)
+bones/29/position = Vector3(-4.4223725e-08, 0.028534772, 3.7252903e-09)
+bones/29/rotation = Quaternion(-7.36327e-07, 4.0663213e-05, -3.9946186e-05, 1)
+bones/30/position = Vector3(-0.03374243, 0.039583266, 0.07373435)
+bones/30/rotation = Quaternion(0.47638184, -0.03997394, 0.11386874, 0.870917)
+bones/31/position = Vector3(4.6857986e-06, 0.032044098, -3.3111428e-06)
+bones/31/rotation = Quaternion(-0.040196825, -0.00228327, -0.01853015, 0.99901736)
+bones/32/position = Vector3(-1.6265585e-07, 0.027648237, 9.313226e-10)
+bones/32/rotation = Quaternion(1.2981762e-06, -5.4813686e-06, 8.56523e-06, 1)
+bones/33/position = Vector3(-0.09756058, -0.012390142, 0.00989087)
+bones/33/rotation = Quaternion(-0.0033877208, 0.09844633, 0.993392, 0.058900576)
+bones/34/position = Vector3(-4.3976256e-06, 0.44198698, -1.76311e-06)
+bones/34/rotation = Quaternion(0.09542375, 0.00019478801, 0.0014163291, 0.9954357)
+bones/35/position = Vector3(-8.277741e-07, 0.4016824, 5.031936e-06)
+bones/35/rotation = Quaternion(-0.63902426, -0.025663964, 0.051514283, 0.7670305)
+bones/36/position = Vector3(0.025845395, 0.15551092, 0.0043799495)
+bones/36/rotation = Quaternion(-3.7262936e-08, -1.4210968e-08, 3.8555745e-09, 1)
+bones/37/position = Vector3(0.09755968, -0.012400016, 0.009891792)
+bones/37/rotation = Quaternion(0.0033902205, 0.09846848, 0.99338984, -0.058898997)
+bones/38/position = Vector3(7.596484e-07, 0.44200003, 7.1828254e-07)
+bones/38/rotation = Quaternion(0.09542322, -0.00019479275, -0.0014159654, 0.9954358)
+bones/39/position = Vector3(-2.3135269e-07, 0.40166342, -6.3795596e-08)
+bones/39/rotation = Quaternion(-0.63902324, 0.025664277, -0.051515322, 0.76703113)
+bones/40/position = Vector3(-0.025096774, 0.15550475, 0.004377386)
+bones/40/rotation = Quaternion(7.4437634e-09, 2.100372e-07, -4.5980975e-08, 1)
+
+[node name="peasant_4" parent="Body/peasant_5/Armature/Skeleton3D" index="0"]
+material_override = ExtResource("2_ig0h0")
+
+[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Body/peasant_5/Armature/Skeleton3D" index="1"]
+transform = Transform3D(-0.05787307, 0.9600515, 0.27377334, 0.21262276, 0.2797939, -0.9362192, -0.97541845, 0.004028812, -0.22032106, -0.08029497, 1.10531, 0.13501051)
+bone_name = "Hand_R"
+bone_idx = 23
+
+[node name="Marker3D" type="Marker3D" parent="Body/peasant_5/Armature/Skeleton3D/BoneAttachment3D2"]
+transform = Transform3D(-0.9478562, -0.2092141, 0.24041001, -0.30289468, 0.825972, -0.4754204, -0.09910729, -0.5234493, -0.84627324, -0.047005273, 0.18422046, 0.099948525)
+
+[node name="AnimationGun" parent="Body/peasant_5/Armature/Skeleton3D/BoneAttachment3D2/Marker3D" instance=ExtResource("3_eepe7")]
+
+[node name="Animation" type="AnimationPlayer" parent="Body"]
+libraries = {
+&"character_animations": ExtResource("3_ig0h0")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, -6.0339077e-12, -1.5100434e-07, -1.6091223e-09, 0.9999437, 0.010616178, 1.5099576e-07, 0.010616178, -0.9999437, -2.7936752e-12, 0.4589673, 0.0048726127)
+shape = SubResource("CapsuleShape3D_cqqm2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 9.779772e-09, -8.743192e-08, 2.327161e-08, 0.98780817, -0.15567626, 8.484348e-08, -0.15567626, -0.98780817, 5.5622074e-10, 0.98560643, 0.001015598)
+shape = SubResource("CapsuleShape3D_eepe7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, -2.3180775e-09, -8.7431324e-08, 1.1404444e-08, 0.9876582, -0.15662478, 8.671533e-08, -0.1566248, -0.9876582, -2.3688573e-10, 1.1310121, -0.021965839)
+shape = SubResource("CapsuleShape3D_ig0h0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, -1.0221386e-08, -8.743122e-08, 5.0156896e-09, 0.98500574, -0.17252205, 8.7883656e-08, -0.17252207, -0.9850057, 1.0403977e-09, 1.3139354, -0.05208123)
+shape = SubResource("CapsuleShape3D_phx8h")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 5.389772e-09, -8.743112e-08, 2.6282908e-08, 0.97057956, -0.24078047, 8.3561105e-08, -0.24078047, -0.97057956, 2.4045874e-10, 1.4334689, -0.076299146)
+shape = SubResource("CapsuleShape3D_166f1")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 7.927427e-09, -8.743058e-08, -1.133532e-08, 0.9759182, 0.21813698, 8.7054346e-08, 0.21813697, -0.97591823, 2.1804487e-09, 1.5143021, -0.07828699)
+shape = SubResource("CapsuleShape3D_5uoa2")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.000113392074, 0.9133567, -0.40716034, 1, -0.00010195104, 4.9794668e-05, 3.9698757e-06, -0.40716034, -0.9133568, 0.09775075, 1.4330249, -0.035400275)
+shape = SubResource("CapsuleShape3D_y1rpx")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.96990913, 0.24346668, -0.0006610835, 0.23918732, -0.953361, -0.18409847, -0.04545209, 0.17840064, -0.98290765, 0.23844628, 1.3022832, -0.054999918)
+shape = SubResource("CapsuleShape3D_jbrvs")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9996977, -0.02458621, -0.00036413778, -0.0219089, -0.88391733, -0.4671298, 0.011163084, 0.46699652, -0.88418865, 0.25843796, 1.0809141, 0.031274796)
+shape = SubResource("CapsuleShape3D_rc7hn")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.044978738, 0.25390515, -0.9661828, -0.6796986, -0.71656525, -0.15666562, -0.7321112, 0.6496664, 0.20480916, 0.2609069, 0.9911966, 0.08356576)
+shape = SubResource("CapsuleShape3D_ut13e")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.025797946, -0.12715693, -0.99154705, -0.5975492, -0.7971335, 0.08667819, -0.8014172, 0.590262, -0.096546926, 0.26574418, 0.9522763, 0.1159397)
+shape = SubResource("CapsuleShape3D_5pb0d")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.06756348, -0.37420982, -0.9248796, -0.7036633, -0.63930804, 0.3100699, -0.7073142, 0.6717531, -0.22012381, 0.2591346, 0.9245805, 0.13804527)
+shape = SubResource("CapsuleShape3D_wsqk0")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1013021, -0.41246593, -0.905323, -0.4984126, -0.8086076, 0.31263193, -0.8610011, 0.41955405, -0.2874919, 0.2222707, 0.915417, 0.105772644)
+shape = SubResource("CapsuleShape3D_tu21d")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.03385371, -0.4721841, -0.8808497, -0.58753324, -0.7223793, 0.36465457, -0.80849165, 0.5051835, -0.30187905, 0.20679255, 0.8875726, 0.121816784)
+shape = SubResource("CapsuleShape3D_q2667")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.08775561, -0.6714389, -0.7358457, -0.5170862, -0.6620825, 0.5424653, -0.8514228, 0.33289126, -0.40529326, 0.1835151, 0.9312483, 0.09295517)
+shape = SubResource("CapsuleShape3D_l83cy")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.06733095, -0.6130663, -0.7871571, -0.5444935, -0.68368447, 0.48590374, -0.83605826, 0.39588556, -0.3798437, 0.16519623, 0.9122834, 0.1030821)
+shape = SubResource("CapsuleShape3D_tkpqk")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="."]
+transform = Transform3D(7.690693e-05, -0.9133547, 0.4071648, -1, -7.1597744e-05, 2.8275519e-05, 3.3265014e-06, -0.40716478, -0.91335475, -0.09775135, 1.4331782, -0.035396267)
+shape = SubResource("CapsuleShape3D_qhqpt")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.965027, -0.26191443, 0.011128642, -0.18520257, -0.7111959, -0.6781596, 0.18553443, 0.6523813, -0.7348304, -0.2470097, 1.2958121, 0.03547052)
+shape = SubResource("CapsuleShape3D_b2njo")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.18680175, 0.8299042, -0.5257036, 0.02260719, -0.5386128, -0.84225017, -0.9821375, 0.14544913, -0.1193756, -0.15002847, 1.147188, 0.12036391)
+shape = SubResource("CapsuleShape3D_37m7g")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.07183373, 0.9599989, 0.27063277, 0.21261217, 0.27983543, -0.9362095, -0.97449267, -0.009711597, -0.22420907, -0.060550846, 1.105389, 0.1328521)
+shape = SubResource("CapsuleShape3D_bb5o4")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.037156373, 0.99352634, -0.107354224, 0.14547108, -0.111661665, -0.98304117, -0.98866457, 0.020909308, -0.14867829, -0.010020966, 1.1113292, 0.1330162)
+shape = SubResource("CapsuleShape3D_7qo75")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.106700346, 0.9267574, -0.36018875, 0.2335541, -0.3287601, -0.9150789, -0.9664717, -0.1817628, -0.18136916, 0.025510468, 1.105533, 0.13211988)
+shape = SubResource("CapsuleShape3D_2um87")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1530847, 0.9015124, -0.4047722, 0.070940495, -0.41856864, -0.9054103, -0.9856635, 0.10988971, -0.1280302, 0.013227532, 1.0636507, 0.15625907)
+shape = SubResource("CapsuleShape3D_n88lo")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.049513943, 0.88918316, -0.4548645, 0.1376362, -0.45715266, -0.8786739, -0.9892445, -0.019099213, -0.14501923, 0.04529006, 1.0482179, 0.15859649)
+shape = SubResource("CapsuleShape3D_jis1w")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.13236423, 0.7384246, -0.6612177, 0.08448736, -0.6730647, -0.734742, -0.9875939, 0.04138901, -0.15147723, -0.0063416045, 1.0250534, 0.14961831)
+shape = SubResource("CapsuleShape3D_8blda")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1010367, 0.7935101, -0.60011107, 0.104803704, -0.6083307, -0.78673375, -0.98934716, 0.016595118, -0.14462654, 0.015173916, 1.006752, 0.15050226)
+shape = SubResource("CapsuleShape3D_8hox6")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.9930384, 0.117690906, -0.004866637, 0.11779149, -0.9921942, 0.040937208, -1.0711787e-05, -0.041225463, -0.9991499, 0.117527775, 0.7473186, -0.0049656513)
+shape = SubResource("CapsuleShape3D_0qmrw")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99337125, 0.111857824, -0.026483534, 0.1149502, -0.9666706, 0.2287675, -1.1417861e-05, -0.23029535, -0.97312087, 0.17573805, 0.25094303, -0.070070274)
+shape = SubResource("CapsuleShape3D_70731")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 2.033228e-05, 2.9365e-05, 3.5063236e-05, -0.40225545, -0.91552746, -6.80253e-06, 0.9155275, -0.40225542, 0.19450548, 0.06268434, -0.04922444)
+shape = SubResource("CapsuleShape3D_73r1x")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99303913, -0.117684804, 0.0048628384, -0.11778522, -0.99219334, 0.04097671, 2.5400202e-06, -0.041264247, -0.9991483, -0.117522344, 0.7473071, -0.0049725757)
+shape = SubResource("CapsuleShape3D_3d10g")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99337184, -0.11185363, 0.026479293, -0.11494515, -0.9666626, 0.22880356, 4.031889e-06, -0.23033068, -0.97311246, -0.1757412, 0.25098133, -0.0700882)
+shape = SubResource("CapsuleShape3D_f3bco")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -1.5705418e-05, -2.6700389e-05, -3.0762567e-05, -0.4022652, -0.91552323, 3.6380377e-06, 0.91552323, -0.4022652, -0.19450669, 0.06268418, -0.04925092)
+shape = SubResource("CapsuleShape3D_seis0")
+
+[editable path="Body/peasant_5"]
