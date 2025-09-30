@@ -3,6 +3,7 @@ class_name CharacterBody
 
 @export var animation: AnimationPlayer = null
 @export var character: Character = null
+@export var hand: PlayerHand = null
 
 var animation_to_play: String = "idle"
 
@@ -19,4 +20,4 @@ func animate() -> void:
 		animation_to_play = "idle"
 	
 	if not animation.is_playing() or (animation.is_playing() and not animation.current_animation.begins_with(animation_to_play)):
-		animation.play(animation_to_play)
+			animation.play("character_animations/"+animation_to_play+"_gun_core_1")
