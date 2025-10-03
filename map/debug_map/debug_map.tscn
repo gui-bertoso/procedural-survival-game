@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene load_steps=60 format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://map/debug_map/debug_map.gd" id="1_etbag"]
 [ext_resource type="PackedScene" uid="uid://dvewtmm6d837k" path="res://interface/hud/hud.tscn" id="2_vli17"]
@@ -16,13 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dtbpdmvoi5mp" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/Tree_temp_climate_002.FBX" id="9_55xl3"]
 [ext_resource type="PackedScene" uid="uid://bsw8t64samyw3" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/Tree_temp_climate_005.FBX" id="10_fa3ol"]
 [ext_resource type="PackedScene" uid="uid://cbsk74j4mxndf" path="res://assets/meshs/temporary_thirdparty_mehs/fbx/Tree_temp_climate_009.FBX" id="11_5rp13"]
-[ext_resource type="PackedScene" uid="uid://co2adcr73fro7" path="res://animals/hedhog/hedhog.tscn" id="16_fa3ol"]
-[ext_resource type="PackedScene" uid="uid://b221p3p2jrrdy" path="res://animals/wolf/wolf.tscn" id="17_idey0"]
 [ext_resource type="PackedScene" uid="uid://b5jm2cibux5qq" path="res://animals/fox/fox.tscn" id="18_178wh"]
-[ext_resource type="PackedScene" uid="uid://dgjwqc7djjmxg" path="res://animals/bear/bear.tscn" id="19_3negl"]
-[ext_resource type="PackedScene" uid="uid://dsvgsxmkgdcmd" path="res://animals/boar/boar.tscn" id="20_3negl"]
-[ext_resource type="PackedScene" uid="uid://dixwf5a3iqj7n" path="res://animals/female_deer/female_deer.tscn" id="21_55xl3"]
-[ext_resource type="PackedScene" uid="uid://b37o81cs3bgqj" path="res://animals/male_deer/male_deer.tscn" id="22_fa3ol"]
 [ext_resource type="PackedScene" uid="uid://bq3w7rvy7kno5" path="res://npcs/npc/npc.tscn" id="24_5rp13"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
@@ -583,43 +577,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.580439, 0.49987793, -10.8
 [node name="GunsBench" parent="Scenario" instance=ExtResource("8_b5phr")]
 transform = Transform3D(0.09890295, 0, -0.9950971, 0, 1, 0, 0.9950971, 0, 0.09890295, -10.532869, 0.5039173, -13.266298)
 
-[node name="AnimalTemplate" parent="Scenario" instance=ExtResource("16_fa3ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5607333, 0.5003978, -5.2351847)
-
-[node name="AnimalTemplate2" parent="Scenario" instance=ExtResource("17_idey0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9036336, 1.1192416, -1.5240623)
-
-[node name="AnimalTemplate3" parent="Scenario" instance=ExtResource("18_178wh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.89848757, 0.5014719, -4.463225)
-
-[node name="AnimalTemplate4" parent="Scenario" instance=ExtResource("19_3negl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.511545, 0.989092, -4.926747)
-
-[node name="AnimalTemplate5" parent="Scenario" instance=ExtResource("20_3negl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.406239, 0.51070935, -5.530255)
-
-[node name="AnimalTemplate6" parent="Scenario" instance=ExtResource("21_55xl3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0109725, 1.1478934, -3.086013)
-
-[node name="AnimalTemplate7" parent="Scenario" instance=ExtResource("22_fa3ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.163027, 0.5033146, -0.6358166)
-
-[node name="AnimalTemplate8" parent="Scenario" instance=ExtResource("16_fa3ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.430726, 0.5003973, -6.2750816)
-
-[node name="AnimalTemplate9" parent="Scenario" instance=ExtResource("16_fa3ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8727453, 0.5003973, -6.110557)
-
-[node name="AnimalTemplate10" parent="Scenario" instance=ExtResource("16_fa3ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3764634, 0.5003973, -6.1279078)
-
-[node name="AnimalTemplate11" parent="Scenario" instance=ExtResource("16_fa3ol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8706937, 0.5003973, -5.593185)
-
 [node name="Character" parent="Scenario" instance=ExtResource("7_t8vms")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8063498, 0.49999905, -10.156787)
 
 [node name="NPC" parent="." instance=ExtResource("24_5rp13")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.155871, 0.50144994, -13.674983)
+
+[node name="AnimalTemplate" parent="." instance=ExtResource("18_178wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9984014, 0.50147223, -4.9587917)
 
 [editable path="Envinroment"]
