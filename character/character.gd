@@ -3,8 +3,8 @@ class_name Character
 
 @onready var _body: Node3D = $Body
 @onready var _stats: CharacterStats = $Stats
-@onready var _camera: Camera3D = $CameraOffset/Camera
-@onready var _camera_offset: Node3D = $CameraOffset
+@onready var _camera: Camera3D = $BoneAttachment3D/CameraOffset/Camera
+@onready var _camera_offset: Node3D = $BoneAttachment3D/CameraOffset
 
 @onready var _crouched_collision: CollisionShape3D = $CrouchedCollision
 @onready var _normal_collision: CollisionShape3D = $NormalCollision
