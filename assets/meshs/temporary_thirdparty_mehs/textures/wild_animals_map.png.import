@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v7qcv3lqhicn"
-path.s3tc="res://.godot/imported/wild_animals_map.png-f1b602f0de38666a0c8e989a0fd89749.s3tc.ctex"
+path.s3tc="res://.godot/imported/wild_animals_map.png-a5fe46a634dbdba08b524abb42379195.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/meshs/temporary_thirdparty_mehs/textures/wild_animals_map.png"
-dest_files=["res://.godot/imported/wild_animals_map.png-f1b602f0de38666a0c8e989a0fd89749.s3tc.ctex"]
+source_file="res://assets/meshs/temporary_thirdparty_mehs/Textures/wild_animals_map.png"
+dest_files=["res://.godot/imported/wild_animals_map.png-a5fe46a634dbdba08b524abb42379195.s3tc.ctex"]
 
 [params]
 
