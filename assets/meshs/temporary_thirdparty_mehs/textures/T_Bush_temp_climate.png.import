@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuynsf8cds1ei"
-path.s3tc="res://.godot/imported/T_Bush_temp_climate.png-24a0f5d398760c426c96538544cc7478.s3tc.ctex"
+path.s3tc="res://.godot/imported/T_Bush_temp_climate.png-5e106aed8917cc2a033d1449ad36a25d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/meshs/temporary_thirdparty_mehs/textures/T_Bush_temp_climate.png"
-dest_files=["res://.godot/imported/T_Bush_temp_climate.png-24a0f5d398760c426c96538544cc7478.s3tc.ctex"]
+source_file="res://assets/meshs/temporary_thirdparty_mehs/Textures/T_Bush_temp_climate.png"
+dest_files=["res://.godot/imported/T_Bush_temp_climate.png-5e106aed8917cc2a033d1449ad36a25d.s3tc.ctex"]
 
 [params]
 
