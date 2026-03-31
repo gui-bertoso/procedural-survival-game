@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="20174307-4f56-43f8-92a7-c1bc44b4cb70" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Dance.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Dance.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Death01.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Death01.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Fixing_Kneeling.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Fixing_Kneeling.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Hit_Head.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Hit_Head.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Jump_Land.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Jump_Land.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Jump_Start.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Jump_Start.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/PickUp_Table.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/PickUp_Table.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Pistol_Reload.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Pistol_Reload.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Punch_Jab.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Punch_Jab.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Push.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Push.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Roll.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Roll.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Roll_RM.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Roll_RM.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sitting_Enter.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sitting_Enter.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sitting_Exit.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sitting_Exit.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Spell_Simple_Enter.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Spell_Simple_Enter.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Spell_Simple_Exit.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Spell_Simple_Exit.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sprint.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sprint.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Swim_Fwd.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Swim_Fwd.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sword_Attack.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sword_Attack.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sword_Attack_RM.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Sword_Attack_RM.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Walk_Formal.res" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/animations/character_animations/Walk_Formal.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/Ekfs_bush_map.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/Ekfs_bush_map.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/T_Bush_temp_climate.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/T_Bush_temp_climate.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/T_Grass.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/T_Grass.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/people_texture_map.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/people_texture_map.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/wild_animals_map.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/assets/meshs/temporary_thirdparty_mehs/textures/wild_animals_map.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/envinroments/very_low_quality_envinroment.tres" beforeDir="false" afterPath="$PROJECT_DIR$/envinroments/very_low_quality_envinroment.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/hud/hud.tscn1463735903.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/hud/hud.tscn1471276728.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/hud/hud.tscn1480685714.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/hud/hud.tscn1483991449.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/inventory/inventory.tscn1675741875.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/settings_screen/settings_screen.tscn6752152060.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/settings_screen/settings_screen.tscn6756044364.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_generation/map_generator/map_generator.gd" beforeDir="false" afterPath="$PROJECT_DIR$/map_generation/map_generator/map_generator.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_generation/map_generator/map_generator.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/map_generation/map_generator/map_generator.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map_generation/terrain_chunk/terrain_chunk.gd" beforeDir="false" afterPath="$PROJECT_DIR$/map_generation/terrain_chunk/terrain_chunk.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3AwmvQvc7bUEcc5SFpim1qTLhMz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected=".NET Executable.Player">
+    <configuration name="Debug GDScript (Running session)" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory">
+      <option name="json" value="{&#10;  // Launch: &quot;Launch a new instance of the game&quot;,&#10;  // Attach: &quot;Attach to an already running game, which was started from the Godot Editor&quot;&#10;  &quot;request&quot; : &quot;Attach&quot;,&#10;  &quot;debugServer&quot; : 6006, // port should match the Debug Adapter port in the Godot Editor project settings.&#10;  &quot;scene&quot; : &quot;main&quot;, // main, current, res://path/to/file.tscn&#10;  &#10;  // &quot;playArgs&quot; : [ &quot;--editor&quot; ], // debugging a tool script&#10;  // &quot;playArgs&quot;: [&quot;--debug-collisions&quot;,&quot;--debug-navigation&quot;], // different options&#10;  &#10;  // one click deploy and debug via Godot Editor:&#10;  // &quot;platform&quot;: &quot;Android&quot;, // including Android, iOS, Web and W4 consoles&#10;  // &quot;device&quot;: &quot;0&quot;, // index of the device of a &quot;platform&quot; type&#10;}" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory">
+      <option name="json" value="{&#10;  // Launch: &quot;Launch a new instance of the game&quot;,&#10;  // Attach: &quot;Attach to an already running game, which was started from the Godot Editor&quot;&#10;  &quot;request&quot; : &quot;Launch&quot;,&#10;  &quot;debugServer&quot; : 6006, // port should match the Debug Adapter port in the Godot Editor project settings.&#10;  &quot;scene&quot; : &quot;main&quot;, // main, current, res://path/to/file.tscn&#10;  &#10;  // &quot;playArgs&quot; : [ &quot;--editor&quot; ], // debugging a tool script&#10;  // &quot;playArgs&quot;: [&quot;--debug-collisions&quot;,&quot;--debug-navigation&quot;], // different options&#10;  &#10;  // one click deploy and debug via Godot Editor:&#10;  // &quot;platform&quot;: &quot;Android&quot;, // including Android, iOS, Web and W4 consoles&#10;  // &quot;device&quot;: &quot;0&quot;, // index of the device of a &quot;platform&quot; type&#10;}" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Godot_v4.7-dev2_mono_win64/Godot_v4.7-dev2_mono_win64.exe" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\guilh\OneDrive\Documents\GitHub\my-game-project" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Player" type="RunExe" factoryName=".NET Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Godot_v4.7-dev2_mono_win64/Godot_v4.7-dev2_mono_win64.exe" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot;" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\guilh\OneDrive\Documents\GitHub\my-game-project" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
+      <option name="RUNTIME_TYPE" value="coreclr" />
+      <method v="2">
+        <option name="Build Solution" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Editor" type="RunNativeExe" factoryName="Native Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Godot_v4.7-dev2_mono_win64/Godot_v4.7-dev2_mono_win64.exe" />
+      <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\guilh\OneDrive\Documents\GitHub\my-game-project" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20174307-4f56-43f8-92a7-c1bc44b4cb70" name="Changes" comment="" />
+      <created>1773512238621</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1773512238621</updated>
+      <workItem from="1773512239242" duration="204000" />
+      <workItem from="1773513245987" duration="31000" />
+      <workItem from="1773513297939" duration="11000" />
+      <workItem from="1773513340689" duration="27000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
