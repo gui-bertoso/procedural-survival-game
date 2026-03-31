@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="MyGameProject"
 config/description="Um projeto de jogo meu onde basicamente tudo sera procedural ou customizavel para dar uma liberdade real ao jogador e render muitas muitas horas de gameplay não lachante e não coreografada, trabalho nisso quando dá então vai ser demorado de fazer tudo ficar pronto, mas um dia foca bom."
 run/main_scene="uid://xd0gh2k0h52c"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="uid://b8vcf8hijtbds"
@@ -31,6 +31,10 @@ LoadingScreen="*res://interface/loading_screen/loading_screen.tscn"
 [display]
 
 window/vsync/vsync_mode=0
+
+[dotnet]
+
+project/assembly_name="MyGameProject"
 
 [global_group]
 
