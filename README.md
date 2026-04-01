@@ -1,4 +1,4 @@
-# 🌍 procedural survival game
+# procedural survival game
 
 a fully procedural survival game built with godot.
 
@@ -6,7 +6,7 @@ focused on performance, scalability and real-time world generation.
 
 ---
 
-## 🚀 features
+## features
 
 - chunk-based world streaming  
 - procedural terrain generation  
@@ -16,7 +16,7 @@ focused on performance, scalability and real-time world generation.
 
 ---
 
-## 🧠 technical highlights
+## technical highlights
 
 - dynamic chunk loading/unloading  
 - object pooling to reduce allocations  
@@ -25,13 +25,13 @@ focused on performance, scalability and real-time world generation.
 
 ---
 
-## 🎯 goal
+## goal
 
 build a scalable survival game capable of generating large worlds in real time.
 
 ---
 
-## ⚙️ stack
+## stack
 
 - godot (gdscript / c#)
 - procedural generation
@@ -39,12 +39,6 @@ build a scalable survival game capable of generating large worlds in real time.
 
 ---
 
-## 📸 preview
-
-_(coloca gif depois, isso aqui vale ouro)_
-
----
-
-## 📌 status
+## status
 
 in development
